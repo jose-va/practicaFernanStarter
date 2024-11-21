@@ -1,18 +1,16 @@
 import java.util.Scanner;
 
-public class MenúInversor {
+public class MenúAdministrador {
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
-        System.out.println("¡Bienvenido al menú del inversor!");
+        System.out.println("¡Bienvenido al menú del administrador!");
         int menu=0;
 
         while (menu==Integer.parseInt(null)) {
-            System.out.println("1. Mis inversiones");
+            System.out.println("1. Panel de control");
             System.out.println("2. Proyectos");
-            System.out.println("3. Cartera digital");
-            System.out.println("4. Invita a un amigo");
-            System.out.println("5. Configuración");
-            System.out.println("6. Cerrar sesión");
+            System.out.println("3. Configuración");
+            System.out.println("4. Cerrar sesión");
             menu = s.nextInt();
             if (menu == Integer.parseInt(null)) ;
             System.out.println("Debes de introducir alguna opcion");
@@ -31,13 +29,6 @@ public class MenúInversor {
             case 4:
 
                 break;
-            case 5:
-
-                break;
-            case 6:
-
-                break;
         }
-
     }
 }
