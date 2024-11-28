@@ -11,13 +11,13 @@ public class Main {
         String inversor2= "toranzo", contrasenaInversor2="1234toranzo";
 
         String nombreProyectoA = "", nombreProyectoB = "", nombreProyectoC="";
-        String descripcionProyectoA = "", descripcionProyectoB = "", descripcionProyectoC;
+        String descripcionProyectoA = "", descripcionProyectoB = "", descripcionProyectoC="";
         int categoriaA=0, categoriaB=0, categoriaC=0;
         int cantidadA=0, cantidadB=0, cantidadC=0;
-        int proyectos=0, saldo=0, saldoTotal=0, amigos=0;
-        int inversiones=0;
+        int proyectos=0, saldo=0, saldoTotal=0, inversiones=0, amigos=0;
+        String amigo1="", correo1, amigo2="", correo2, amigo3="", correo3, amigo4="", correo4, amigo5="", correo5;
 
-        int intentos=3, menu, opcion;
+        int intentos=3, opcion, opcion2, menu;
         boolean bloqueoGestor=false, bloqueoInversor1=false, bloqueoInversor2=false,sesion=true;
 
         do {
@@ -121,14 +121,34 @@ public class Main {
                     switch (menu) {
                         case 1:
                             System.out.println("MIS INVERSIONES");
-                            if (inversiones==0){
+                            if (inversiones == 0) {
                                 System.out.println("Actualmente, no ha realizado ninguna inversión");
-                                System.out.println("¿Desea invertir en algún proyecto?");
+                                System.out.println("¿Desea invertir en algún proyecto? (s/n)");
+                                String respuesta2 = s.nextLine();
+                                if (respuesta2.equals("s")){
+                                    opcion = 0;
+                                    while (opcion !=1 || opcion !=2 || opcion !=3)
+                                        System.out.println("¿En que proyecto desea invertir? Introduce el número correspondiente");
+                                    System.out.println("1. Proyecto 1: " + nombreProyectoA);
+                                    System.out.println("2. Proyecto 2: " + nombreProyectoB);
+                                    System.out.println("3. Proyecto 3: " + nombreProyectoC);
+                                    opcion2 = s.nextInt();
+                                    switch (opcion2){
+                                        case 1:
+                                            System.out.println("La versión necesaria de este proyecto es de "+cantidadA);
+                                            System.out.println("¿Que cantidad desea aportar?");
+                                            cantidadAportadaA = s.nextInt();
+                                            break;
+                                        case 2:
+                                            break;
+                                        case 3:
+                                            break;
+                                        default:
+                                            System.out.println("Debe de introducir la opción correspondiente correcta");
+                                    }
+                                }
+
                             }
-
-
-
-
                             break;
                         case 2:
                             System.out.println("PROYECTOS");
@@ -176,15 +196,34 @@ public class Main {
                                 opcion=s.nextInt();
                                 switch (opcion){
                                     case 1:
-                                        if (amigos==0){
-                                            System.out.println("Usted no ha añadido a ningún amigo");
-                                            break;
-                                        }else{
-
-                                        }
+                                        System.out.println("LISTADO DE AMIGOS");
+                                        System.out.println(amigo1);
+                                        System.out.println(amigo2);
+                                        System.out.println(amigo3);
+                                        System.out.println(amigo4);
+                                        System.out.println(amigo5);
                                     case 2:
-                                        System.out.println("Introduzca el nombre del amigo: ");
-
+                                        System.out.println("AÑADIR A UN AMIGO (max. 5)");
+                                        System.out.println("Introduzca el correo electrónico del amigo que desea referir: (* para acabar)");
+                                        correo1=s.nextLine();
+                                        if (correo1.equals("*")) break;
+                                        amigo1= amigo1.concat(correo1);
+                                        System.out.println("Introduzca el correo electrónico del amigo que desea referir: ");
+                                        correo2=s.nextLine();
+                                        if (correo1.equals("*")) break;
+                                        amigo2= amigo2.concat(correo2);
+                                        System.out.println("Introduzca el correo electrónico del amigo que desea referir: ");
+                                        correo3=s.nextLine();
+                                        if (correo1.equals("*")) break;
+                                        amigo3= amigo3.concat(correo3);
+                                        System.out.println("Introduzca el correo electrónico del amigo que desea referir: ");
+                                        correo4=s.nextLine();
+                                        if (correo1.equals("*")) break;
+                                        amigo4= amigo4.concat(correo4);
+                                        System.out.println("Introduzca el correo electrónico del amigo que desea referir: ");
+                                        correo5=s.nextLine();
+                                        if (correo1.equals("*")) break;
+                                        amigo5= amigo5.concat(correo5);
                                 }
 
                             }while(opcion!=3);
@@ -594,6 +633,8 @@ public class Main {
                                         System.out.println("Introduzca su nueva contraseña: ");
                                         contrasenaGestor = s.nextLine();
                                         break;
+                                    case 3:
+                                        System.out.println("");
                                 }
                             }while (opcion!=3);
                             break;
