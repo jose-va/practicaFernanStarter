@@ -10,11 +10,12 @@ public class Main {
         String inversor1= "eladio", contrasenaInversor1="1234eladio";
         String inversor2= "toranzo", contrasenaInversor2="1234toranzo";
 
-        String nombreProyectoA = "", nombreProyectoB = "", nombreProyectoC;
+        String nombreProyectoA = "", nombreProyectoB = "", nombreProyectoC="";
         String descripcionProyectoA = "", descripcionProyectoB = "", descripcionProyectoC;
         int categoriaA=0, categoriaB=0, categoriaC=0;
         int cantidadA=0, cantidadB=0, cantidadC=0;
         int proyectos=0, saldo=0, saldoTotal=0, amigos=0;
+        int inversiones=0;
 
         int intentos=3, menu, opcion;
         boolean bloqueoGestor=false, bloqueoInversor1=false, bloqueoInversor2=false,sesion=true;
@@ -119,7 +120,15 @@ public class Main {
 
                     switch (menu) {
                         case 1:
-                            System.out.println("INVERSIONES");
+                            System.out.println("MIS INVERSIONES");
+                            if (inversiones==0){
+                                System.out.println("Actualmente, no ha realizado ninguna inversión");
+                                System.out.println("¿Desea invertir en algún proyecto?");
+                            }
+
+
+
+
                             break;
                         case 2:
                             System.out.println("PROYECTOS");
@@ -150,6 +159,7 @@ public class Main {
                                         System.out.println("¿Cuánto dinero desea ingresar?");
                                         saldo=Integer.parseInt(s.next());
                                         saldoTotal+=saldo;
+                                        System.out.println("Su saldo ha sido añadido correctamente");
                                     case 3:
                                         System.out.println("Usted ha seleccionado salir.");
                                     default:

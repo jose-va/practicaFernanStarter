@@ -29,6 +29,11 @@ public class MenúGestor {
 
         String gestor= "pablo", contrasenaGestor="1234pablo";
 
+        //Identificadores para saber que proyectos ha creado el gestor (Proyecto 1 (A), Proyecto 2 (B)...)
+        boolean creadoGestorA = false;
+        boolean creadoGestorB = false;
+        boolean creadoGestorC = false;
+
         System.out.println("Bienvenido. Cuenta de gestor");
         do {
             System.out.println("1. Mis proyectos");
@@ -60,6 +65,8 @@ public class MenúGestor {
                             System.out.print("Introduzca la cantidad de inversión necesaria: ");
                             cantidadA = s.nextInt();
                             proyectos+=1;
+                            creadoGestorA = true;
+
                             break;
                         } else if (respuesta.equals("n")) {
                             System.out.println("No hay proyectos existentes");
@@ -93,6 +100,8 @@ public class MenúGestor {
                                     categoriaB = s.nextInt();
                                     System.out.print("Introduzca la cantidad de inversión necesaria: ");
                                     cantidadB = s.nextInt();
+                                    proyectos+=1;
+                                    creadoGestorA = true;
 
                                 } else if (proyectos == 2) {
                                     //tercer proyecto
@@ -112,6 +121,8 @@ public class MenúGestor {
                                     categoriaC = s.nextInt();
                                     System.out.print("Introduzca la cantidad de inversión necesaria: ");
                                     cantidadC = s.nextInt();
+                                    proyectos+=1;
+                                    creadoGestorA = true;
 
                                 } else if (proyectos == 3) {
                                     System.out.println("Máximo de proyectos alcanzado. No es posible crear más proyectos");
@@ -253,8 +264,6 @@ public class MenúGestor {
                     break;
                 default:
                     System.out.println("Por favor, introduce una opcion válida (1 - 3)");
-
-
             }
         } while (menu!=3);
     }
