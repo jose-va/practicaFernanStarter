@@ -16,6 +16,19 @@ public class Main {
         int cantidadA=0, cantidadB=0, cantidadC=0;
         int proyectos=0, saldo=0, saldoTotal=0, amigos=0;
         int inversiones=0;
+        int cantidadAportadaA=0;
+        int cantidadAportadaB=0;
+        int cantidadAportadaC=0;
+        //Aportación del inversor 1 a diferentes proyectos
+        int aportacionI1 =0;
+        boolean inversionA1 = false;
+        boolean inversionB1 = false;
+        boolean inversionC1 = false;
+        //Aportación del inversor 2 a diferentes proyectos
+        int aportacionI2=0;
+        boolean inversionA2 = false;
+        boolean inversionB2 = false;
+        boolean inversionC2 = false;
 
         int intentos=3, menu, opcion;
         boolean bloqueoGestor=false, bloqueoInversor1=false, bloqueoInversor2=false,sesion=true;
@@ -121,24 +134,51 @@ public class Main {
                     switch (menu) {
                         case 1:
                             System.out.println("MIS INVERSIONES");
-                            if (inversiones==0){
+
+                            if (inversiones == 0) {
                                 System.out.println("Actualmente, no ha realizado ninguna inversión");
-                                System.out.println("¿Desea invertir en algún proyecto?");
+                                System.out.println("¿Desea invertir en algún proyecto? (s/n)");
+                                String respuesta2 = s.nextLine();
+                                if (respuesta2.equals("s")) {
+                                    int opcion2 = 0;
+                                    while (opcion2 != 1 || opcion2 != 2 || opcion2 != 3) {
+                                        System.out.println("¿En que proyecto desea invertir? Introduce el número correspondiente");
+                                        System.out.println("Proyecto 1: " + nombreProyectoA);
+                                        System.out.println("Proyecto 2: " + nombreProyectoB);
+                                        System.out.println("Proyecto 3: " + nombreProyectoC);
+                                        aportacionI1 = Integer.parseInt(s.nextLine());
+                                        switch (aportacionI1) {
+                                            case 1:
+                                                System.out.println("La versión necesaria de este proyecto es de " + cantidadA);
+                                                System.out.println("¿Que cantidad desea aportar?");
+                                                cantidadAportadaA = s.nextInt();
+                                                inversionA1 = true;
+                                                break;
+                                            case 2:
+                                                System.out.println("La versión necesaria de este proyecto es de " + cantidadB);
+                                                System.out.println("¿Que cantidad desea aportar?");
+                                                cantidadAportadaB = s.nextInt();
+                                                inversionB1 = true;
+                                                break;
+                                            case 3:
+                                                System.out.println("La versión necesaria de este proyecto es de " + cantidadC);
+                                                System.out.println("¿Que cantidad desea aportar?");
+                                                cantidadAportadaC = s.nextInt();
+                                                inversionC1 = true;
+                                                break;
+                                            default:
+                                                System.out.println("Debe de introducir la opción correspondiente correcta");
+                                        }
+                                    }
+                                } else if (!respuesta2.equals("n")) {
+                                    System.out.println("Introduce una opcion valida (s/n)");
+                                }
+                            } else if (inversiones>0){
+                                if (inversionA2=true){
+                                    System.out.println(nombreProyectoA);
+                                    System.out.println(categoriaA);
+                                }
                             }
-
-
-
-
-                            break;
-                        case 2:
-                            System.out.println("PROYECTOS");
-                            if (proyectos==0){
-                                System.out.println("No existen proyectos. El gestor debe de crear uno.");
-                                break;
-                            }else if(proyectos==1){
-
-                            }
-                            break;
                         case 3:
                             System.out.println("CARTERA DIGITAL");
                             do{
