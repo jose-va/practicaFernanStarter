@@ -16,7 +16,7 @@ public class Main {
         int proyectos=0, saldo=0, saldoTotal=0, inversiones=0, amigos=0;
         int aportacionI1=0;
         int aportacionI2=0;
-        boolean inversionA, inversionB, inversionC;
+        boolean inversionA=false, inversionB=false, inversionC=false;
         String correo, amigo="";
 
         int intentos=3, opcion, opcion2, menu;
@@ -204,9 +204,45 @@ public class Main {
                                             }
                                         }
                                     } else if (inversiones>0){
-                                        System.out.println("Consulta de inversiones");
+                                        System.out.println("*****Consulta de inversiones*****");
+                                        System.out.println("¿Que inversión desea consultar?");
+                                        if (inversiones==1){
+                                            if (inversionA=true){
+
+                                            }
+                                            if (inversionB=true){
+
+                                            }
+                                            if (inversionC=true){
+
+                                            }
+                                        }
+                                        if (inversiones==2){
+                                            /*if (inversionA && inversionB=true) {
+                                                System.out.println("duhewj");
+
+                                            }
+                                            if (inversionA=true && inversionC=true) {
+
+                                            }
+                                            if (inversionB=true && inversionC=true) {
+
+                                            }*/
+                                        }
+                                        if (inversiones==3){
+                                            if (inversionA=true){
+                                            }
+                                        }
                                     }
                                     break;
+                                        case 3:
+
+
+
+
+
+
+                                            break;
                             }
                         case 2:
                             System.out.println("CONSULTA DE PROYECTOS");
