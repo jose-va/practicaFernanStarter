@@ -603,6 +603,7 @@ public class Main {
                             do {
                                 System.out.println("1. Listado de amigos");
                                 System.out.println("2. Añadir a un amigo");
+                                System.out.println("3. Salir");
                                 opcion = Integer.parseInt(s.next());
                                 switch (opcion) {
                                     case 1:
@@ -611,11 +612,14 @@ public class Main {
                                         break;
                                     case 2:
                                         System.out.println("AÑADIR A UN AMIGO: ");
-                                        correo = s.nextLine();
+                                        correo = s.next();
                                         amigo = amigo.concat(" " + correo);
                                         break;
+                                    case 3:
+                                        System.out.println("Salir.");
+                                        break;
                                     default:
-                                        System.out.println("Opción inválida");
+                                        System.out.println("Opción inválida.");
                                         break;
                                 }
 
@@ -1112,6 +1116,7 @@ public class Main {
                             do {
                                 System.out.println("1. Listado de amigos");
                                 System.out.println("2. Añadir a un amigo");
+                                System.out.println("3. Salir");
                                 opcion = s.nextInt();
                                 switch (opcion) {
                                     case 1:
@@ -1120,11 +1125,14 @@ public class Main {
                                         break;
                                     case 2:
                                         System.out.println("AÑADIR A UN AMIGO: ");
-                                        correo = s.nextLine();
+                                        correo = s.next();
                                         amigo = amigo.concat(" " + correo);
                                         break;
+                                    case 3:
+                                        System.out.println("Salir.");
+                                        break;
                                     default:
-                                        System.out.println("Opción inválida");
+                                        System.out.println("Opción inválida.");
                                         break;
                                 }
 
