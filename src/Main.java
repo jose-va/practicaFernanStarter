@@ -152,9 +152,10 @@ public class Main {
                                 switch (opcion) {
                                     case 1:
                                         System.out.println("¿En qué proyecto desea invertir?");
-                                        System.out.println("Proyecto 1: " + nombreProyectoA);
-                                        System.out.println("Proyecto 2: " + nombreProyectoB);
-                                        System.out.println("Proyecto 3: " + nombreProyectoC);
+                                        System.out.println("1. Proyecto 1: " + nombreProyectoA);
+                                        System.out.println("2. Proyecto 2: " + nombreProyectoB);
+                                        System.out.println("3. Proyecto 3 " + nombreProyectoC);
+                                        System.out.println("4. Salir");
                                         aportacionI1 = Integer.parseInt(s.next());
                                         switch (aportacionI1) {
                                             case 1:
@@ -205,6 +206,9 @@ public class Main {
                                                     System.out.println("¡¡¡Gracias por aportar su parte!!!");
                                                     break;
                                                 }
+                                            case 4:
+                                                System.out.println("Salir.");
+                                                break;
                                             default:
                                                 System.out.println("Debe de introducir la opción correspondiente correcta");
                                                 break;
@@ -227,9 +231,10 @@ public class Main {
                                                 int opcion3 = 0;
                                                 while (opcion3 != 1 || opcion3 != 2 || opcion3 != 3) {
                                                     System.out.println("¿En que proyecto desea invertir? Introduce el número correspondiente");
-                                                    System.out.println("Proyecto 1: " + nombreProyectoA);
-                                                    System.out.println("Proyecto 2: " + nombreProyectoB);
-                                                    System.out.println("Proyecto 3: " + nombreProyectoC);
+                                                    System.out.println("1. Proyecto 1: " + nombreProyectoA);
+                                                    System.out.println("2. Proyecto 2: " + nombreProyectoB);
+                                                    System.out.println("3. Proyecto 3 " + nombreProyectoC);
+                                                    System.out.println("4. Salir");
                                                     aportacionI1 = Integer.parseInt(s.next());
                                                     switch (aportacionI1) {
                                                         case 1:
@@ -280,6 +285,9 @@ public class Main {
                                                                 System.out.println("¡¡¡Gracias por aportar su parte!!!");
                                                                 break;
                                                             }
+                                                        case 4:
+                                                            System.out.println("Salir.");
+                                                            break;
                                                         default:
                                                             System.out.println("Debe de introducir la opción correspondiente correcta");
                                                             break;
@@ -398,11 +406,14 @@ public class Main {
                                                 System.out.println();
                                             }
                                         }
+                                        break;
                                     case 3:
                                         System.out.println("Salir. Redirigiendo al menú del inversor.");
                                         break;
+
                                 }
                             }
+                            break;
                         case 2:
                             System.out.println("CONSULTA DE PROYECTOS");
                             System.out.println("=================================================");
@@ -410,27 +421,31 @@ public class Main {
                                 System.out.println("****Actualmente no hay ningún proyecto****");
                                 break;
                             }
-                            System.out.println("PROYECTO 1");
-                            System.out.println(nombreProyectoA);
-                            System.out.println("Categoría: " + categoriaA);
-                            System.out.println("Cantidad necesaria: " + cantidadA+ "€");
-                            System.out.println("Cantidad financiada hasta el momento: " + cantidadAportadaA + "€");
-                            if (proyectos < 2) break;
-                            System.out.println("=================================================");
-                            System.out.println("PROYECTO 2");
-                            System.out.println(nombreProyectoB);
-                            System.out.println("Categoría: " + categoriaB);
-                            System.out.println("Cantidad necesaria: " + cantidadB+ "€");
-                            //Introducir la variable correspondiente para la cantidad financiada hasta el momento
-                            System.out.println("Cantidad financiada hasta el momento: "+ cantidadAportadaB + "€");
-                            if (proyectos < 3) break;
-                            System.out.println("=================================================");
-                            System.out.println("PROYECTO 3");
-                            System.out.println(nombreProyectoC);
-                            System.out.println("Categoría: " + categoriaC);
-                            System.out.println("Cantidad necesaria: " + cantidadC+ "€");
-                            //Introducir la variable correspondiente para la cantidad financiada hasta el momento
-                            System.out.println("Cantidad financiada hasta el momento: "+ cantidadAportadaC + "€");
+                            do{
+                                System.out.println("PROYECTO 1");
+                                System.out.println(nombreProyectoA);
+                                System.out.println("Categoría: " + categoriaA);
+                                System.out.println("Cantidad necesaria: " + cantidadA+ "€");
+                                System.out.println("Cantidad financiada hasta el momento: " + cantidadAportadaA + "€");
+                                if (proyectos < 2) break;
+                                System.out.println("=================================================");
+                                System.out.println("PROYECTO 2");
+                                System.out.println(nombreProyectoB);
+                                System.out.println("Categoría: " + categoriaB);
+                                System.out.println("Cantidad necesaria: " + cantidadB+ "€");
+                                //Introducir la variable correspondiente para la cantidad financiada hasta el momento
+                                System.out.println("Cantidad financiada hasta el momento: "+ cantidadAportadaB + "€");
+                                if (proyectos < 3) break;
+                                System.out.println("=================================================");
+                                System.out.println("PROYECTO 3");
+                                System.out.println(nombreProyectoC);
+                                System.out.println("Categoría: " + categoriaC);
+                                System.out.println("Cantidad necesaria: " + cantidadC+ "€");
+                                //Introducir la variable correspondiente para la cantidad financiada hasta el momento
+                                System.out.println("Cantidad financiada hasta el momento: "+ cantidadAportadaC + "€");
+                                break;
+                            }while (proyectos>0);
+
                             System.out.println("========================================================================");
                             System.out.println("Por favor, seleccione un proyecto para mostrar información detallada: ");
                             opcion = Integer.parseInt(s.next());
@@ -452,7 +467,7 @@ public class Main {
                                         System.out.println(fechaAperturaA + "/12/2024");
                                         System.out.print("Fecha de cierre: ");
                                         System.out.println(fechaCierreA + "/12/2024");
-                                        grafico = (float) (cantidadAportadaC * 100) / cantidadC;
+                                        grafico = (float) (cantidadAportadaA * 100) / cantidadA;
                                         System.out.println("Gráfica de financiación");
                                         System.out.print(grafico + "% \u2192 ");
                                         for (int i = 0; i <= grafico; i++) {
@@ -460,7 +475,7 @@ public class Main {
                                             if (i == 100) break;
                                         }
                                         System.out.println();
-                                        System.out.println("RECOMPENSA 1");
+                                        System.out.println("\u001B[37mRECOMPENSA 1");
                                         System.out.println(nombreRecompensaA1);
                                         System.out.println(descripcionRecompensaA1);
                                         System.out.println(precioRecompensaA1 + "€");
@@ -494,7 +509,7 @@ public class Main {
                                         System.out.println(fechaAperturaB + "/12/2024");
                                         System.out.print("Fecha de cierre: ");
                                         System.out.println(fechaCierreB + "/12/2024");
-                                        grafico = (float) (cantidadAportadaC * 100) / cantidadC;
+                                        grafico = (float) (cantidadAportadaB * 100) / cantidadB;
                                         System.out.println("Gráfica de financiación");
                                         System.out.print(grafico + "% \u2192 ");
                                         for (int i = 0; i <= grafico; i++) {
@@ -502,7 +517,7 @@ public class Main {
                                             if (i == 100) break;
                                         }
                                         System.out.println();
-                                        System.out.println("RECOMPENSA 1");
+                                        System.out.println("\u001B[37mRECOMPENSA 1");
                                         System.out.println(nombreRecompensaB1);
                                         System.out.println(descripcionRecompensaB1);
                                         System.out.println(precioRecompensaB1 + "€");
@@ -544,7 +559,7 @@ public class Main {
                                             if (i == 100) break;
                                         }
                                         System.out.println();
-                                        System.out.println("RECOMPENSA 1");
+                                        System.out.println("\u001B[37mRECOMPENSA 1");
                                         System.out.println(nombreRecompensaC1);
                                         System.out.println(descripcionRecompensaC1);
                                         System.out.println(precioRecompensaC1 + "€");
@@ -682,9 +697,10 @@ public class Main {
                                 switch (opcion) {
                                     case 1:
                                         System.out.println("¿En qué proyecto desea invertir?");
-                                        System.out.println("Proyecto 1: " + nombreProyectoA);
-                                        System.out.println("Proyecto 2: " + nombreProyectoB);
-                                        System.out.println("Proyecto 3: " + nombreProyectoC);
+                                        System.out.println("1. Proyecto 1: " + nombreProyectoA);
+                                        System.out.println("2. Proyecto 2: " + nombreProyectoB);
+                                        System.out.println("3. Proyecto 3 " + nombreProyectoC);
+                                        System.out.println("4. Salir");
                                         aportacionI2 = Integer.parseInt(s.next());
                                         switch (aportacionI2) {
                                             case 1:
@@ -738,7 +754,8 @@ public class Main {
                                             default:
                                                 System.out.println("Debe de introducir la opción correspondiente correcta");
                                                 break;
-                                        } break;
+                                        }
+                                        break;
                                     case 2:
                                         if (inversiones2 == 0) {
                                             System.out.println("Actualmente, no ha realizado ninguna inversión");
@@ -756,9 +773,10 @@ public class Main {
                                                 int opcion3 = 0;
                                                 while (opcion3 != 1 || opcion3 != 2 || opcion3 != 3) {
                                                     System.out.println("¿En que proyecto desea invertir? Introduce el número correspondiente");
-                                                    System.out.println("Proyecto 1: " + nombreProyectoA);
-                                                    System.out.println("Proyecto 2: " + nombreProyectoB);
-                                                    System.out.println("Proyecto 3: " + nombreProyectoC);
+                                                    System.out.println("1. Proyecto 1: " + nombreProyectoA);
+                                                    System.out.println("2. Proyecto 2: " + nombreProyectoB);
+                                                    System.out.println("3. Proyecto 3 " + nombreProyectoC);
+                                                    System.out.println("4. Salir");
                                                     aportacionI2 = Integer.parseInt(s.next());
                                                     switch (aportacionI2) {
                                                         case 1:
@@ -809,6 +827,9 @@ public class Main {
                                                                 System.out.println("¡¡¡Gracias por aportar su parte!!!");
                                                                 break;
                                                             }
+                                                        case 4:
+                                                            System.out.println("Salir.");
+                                                            break;
                                                         default:
                                                             System.out.println("Debe de introducir la opción correspondiente correcta");
                                                             break;
@@ -927,11 +948,13 @@ public class Main {
                                                 System.out.println();
                                             }
                                         }
+                                        break;
                                     case 3:
                                         System.out.println("Salir. Redirigiendo al menú del inversor.");
                                         break;
                                 }
                             }
+                            break;
                         case 2:
                             System.out.println("CONSULTA DE PROYECTOS");
                             System.out.println("=================================================");
@@ -939,26 +962,30 @@ public class Main {
                                 System.out.println("****Actualmente no hay ningún proyecto****");
                                 break;
                             }
-                            System.out.println("=================================================");
-                            System.out.println("PROYECTO 1");
-                            System.out.println(nombreProyectoA);
-                            System.out.println("Categoría: " + categoriaA);
-                            System.out.println("Cantidad necesaria: " + cantidadA+ "€");
-                            System.out.println("Cantidad financiada hasta el momento: "+ cantidadAportadaA + "€");
-                            if (proyectos < 2) break;
-                            System.out.println("=================================================");
-                            System.out.println("PROYECTO 2");
-                            System.out.println(nombreProyectoB);
-                            System.out.println("Categoría: " + categoriaB);
-                            System.out.println("Cantidad necesaria: " + cantidadB+ "€");
-                            System.out.println("Cantidad financiada hasta el momento: "+ cantidadAportadaB+ "€");
-                            if (proyectos < 3) break;
-                            System.out.println("=================================================");
-                            System.out.println("PROYECTO 3");
-                            System.out.println(nombreProyectoC);
-                            System.out.println("Categoría: " + categoriaC);
-                            System.out.println("Cantidad necesaria: " + cantidadC+ "€");
-                            System.out.println("Cantidad financiada hasta el momento: "+ cantidadAportadaC+ "€");
+                            do{
+                                System.out.println("=================================================");
+                                System.out.println("PROYECTO 1");
+                                System.out.println(nombreProyectoA);
+                                System.out.println("Categoría: " + categoriaA);
+                                System.out.println("Cantidad necesaria: " + cantidadA+ "€");
+                                System.out.println("Cantidad financiada hasta el momento: "+ cantidadAportadaA + "€");
+                                if (proyectos < 2) break;
+                                System.out.println("=================================================");
+                                System.out.println("PROYECTO 2");
+                                System.out.println(nombreProyectoB);
+                                System.out.println("Categoría: " + categoriaB);
+                                System.out.println("Cantidad necesaria: " + cantidadB+ "€");
+                                System.out.println("Cantidad financiada hasta el momento: "+ cantidadAportadaB+ "€");
+                                if (proyectos < 3) break;
+                                System.out.println("=================================================");
+                                System.out.println("PROYECTO 3");
+                                System.out.println(nombreProyectoC);
+                                System.out.println("Categoría: " + categoriaC);
+                                System.out.println("Cantidad necesaria: " + cantidadC+ "€");
+                                System.out.println("Cantidad financiada hasta el momento: "+ cantidadAportadaC+ "€");
+                                break;
+                            }while (proyectos>0);
+
                             System.out.println("========================================================================");
                             System.out.println("Por favor, seleccione un proyecto para mostrar información detallada: ");
                             opcion = Integer.parseInt(s.next());
@@ -974,7 +1001,7 @@ public class Main {
                                         System.out.println("Cantidad aportada hasta el momento: "+cantidadAportadaA+ "€");
                                         System.out.println("Fecha de apertura: "+fechaAperturaA + "/12/2024");
                                         System.out.println("Fecha de cierre: "+fechaCierreA + "/12/2024");
-                                        grafico= (float) (cantidadAportadaC*100)/cantidadC;
+                                        grafico= (float) (cantidadAportadaA*100)/cantidadA;
                                         System.out.println("Gráfica de financiación");
                                         System.out.print(grafico + "% \u2192 ");
                                         for(int i=0; i<=grafico; i++){
@@ -982,7 +1009,7 @@ public class Main {
                                             if (i==100) break;
                                         }
                                         System.out.println();
-                                        System.out.println("RECOMPENSA 1");
+                                        System.out.println("\u001B[37mRECOMPENSA 1");
                                         System.out.println(nombreRecompensaA1);
                                         System.out.println("Descripción: "+descripcionRecompensaA1);
                                         System.out.println("Precio de la recompensa: "+precioRecompensaA1+ "€");
@@ -1012,7 +1039,7 @@ public class Main {
                                         System.out.println(fechaAperturaB + "/12/2024");
                                         System.out.print("Fecha de cierre: ");
                                         System.out.println(fechaCierreB + "/12/2024");
-                                        grafico= (float) (cantidadAportadaC*100)/cantidadC;
+                                        grafico= (float) (cantidadAportadaB*100)/cantidadB;
                                         System.out.println("Gráfica de financiación");
                                         System.out.print(grafico + "% \u2192 ");
                                         for(int i=0; i<=grafico; i++){
@@ -1020,7 +1047,7 @@ public class Main {
                                             if (i==100) break;
                                         }
                                         System.out.println();
-                                        System.out.println("RECOMPENSA 1");
+                                        System.out.println("\u001B[37mRECOMPENSA 1");
                                         System.out.println(nombreRecompensaB1);
                                         System.out.println("Descripción: "  +descripcionRecompensaB1);
                                         System.out.println(precioRecompensaB1 + "€");
@@ -1058,7 +1085,7 @@ public class Main {
                                             if (i==100) break;
                                         }
                                         System.out.println();
-                                        System.out.println("RECOMPENSA 1");
+                                        System.out.println("\u001B[37mRECOMPENSA 1");
                                         System.out.println(nombreRecompensaC1);
                                         System.out.println("Descripción: "+descripcionRecompensaC1);
                                         System.out.println(precioRecompensaC1 + "€");
@@ -1412,32 +1439,37 @@ public class Main {
                                     case 2:
                                         System.out.println("CONSULTA DE PROYECTOS");
                                         System.out.println("=================================================");
-                                        if (proyectos <= 0){
+                                        if (proyectos <= 0) {
                                             System.out.println("****Actualmente no hay ningún proyecto****");
                                             break;
                                         }
-                                        System.out.println("PROYECTO 1");
-                                        System.out.println(nombreProyectoA);
-                                        System.out.println("Categoría: " + categoriaA);
-                                        System.out.println("Cantidad necesaria: " + cantidadA + "€");
-                                        //Introducir la variable correspondiente para la cantidad financiada hasta el momento
-                                        System.out.println("Cantidad financiada hasta el momento: " + cantidadAportadaA + "€");
-                                        if (proyectos<2) break;
-                                        System.out.println("=================================================");
-                                        System.out.println("PROYECTO 2");
-                                        System.out.println(nombreProyectoB);
-                                        System.out.println("Categoría: " + categoriaB);
-                                        System.out.println("Cantidad necesaria: " + cantidadB + "€");
-                                        //Introducir la variable correspondiente para la cantidad financiada hasta el momento
-                                        System.out.println("Cantidad financiada hasta el momento: " + cantidadAportadaB + "€");
-                                        if (proyectos<3) break;
-                                        System.out.println("=================================================");
-                                        System.out.println("PROYECTO 3");
-                                        System.out.println(nombreProyectoC);
-                                        System.out.println("Categoría: " + categoriaC);
-                                        System.out.println("Cantidad necesaria: " + cantidadC + "€");
-                                        //Introducir la variable correspondiente para la cantidad financiada hasta el momento
-                                        System.out.println("Cantidad financiada hasta el momento: " + cantidadAportadaC + "€");
+
+                                        do{
+                                            System.out.println("PROYECTO 1");
+                                            System.out.println(nombreProyectoA);
+                                            System.out.println("Categoría: " + categoriaA);
+                                            System.out.println("Cantidad necesaria: " + cantidadA + "€");
+                                            //Introducir la variable correspondiente para la cantidad financiada hasta el momento
+                                            System.out.println("Cantidad financiada hasta el momento: " + cantidadAportadaA + "€");
+                                            if (proyectos<2) break;
+                                            System.out.println("=================================================");
+                                            System.out.println("PROYECTO 2");
+                                            System.out.println(nombreProyectoB);
+                                            System.out.println("Categoría: " + categoriaB);
+                                            System.out.println("Cantidad necesaria: " + cantidadB + "€");
+                                            //Introducir la variable correspondiente para la cantidad financiada hasta el momento
+                                            System.out.println("Cantidad financiada hasta el momento: " + cantidadAportadaB + "€");
+                                            if (proyectos<3) break;
+                                            System.out.println("=================================================");
+                                            System.out.println("PROYECTO 3");
+                                            System.out.println(nombreProyectoC);
+                                            System.out.println("Categoría: " + categoriaC);
+                                            System.out.println("Cantidad necesaria: " + cantidadC + "€");
+                                            //Introducir la variable correspondiente para la cantidad financiada hasta el momento
+                                            System.out.println("Cantidad financiada hasta el momento: " + cantidadAportadaC + "€");
+                                            break;
+                                        }while (proyectos>0);
+
                                         System.out.println("========================================================================");
                                         System.out.println("Por favor, seleccione un proyecto para mostrar información detallada: ");
                                         opcion= Integer.parseInt(s.next());
@@ -1459,7 +1491,7 @@ public class Main {
                                                     System.out.println(fechaAperturaA + "/12/2024");
                                                     System.out.print("Fecha de cierre: ");
                                                     System.out.println(fechaCierreA + "/12/2024");
-                                                    grafico= (float) (cantidadAportadaC*100)/cantidadC;
+                                                    grafico= (float) (cantidadAportadaA*100)/cantidadA;
                                                     System.out.println("Gráfica de financiación");
                                                     System.out.print(grafico + "% \u2192 ");
                                                     for(int i=0; i<=grafico; i++){
@@ -1467,7 +1499,7 @@ public class Main {
                                                         if (i==100) break;
                                                     }
                                                     System.out.println();
-                                                    System.out.println("RECOMPENSA 1");
+                                                    System.out.println("\u001B[37mRECOMPENSA 1");
                                                     System.out.println(nombreRecompensaA1);
                                                     System.out.println(descripcionRecompensaA1);
                                                     System.out.println(precioRecompensaA1 + "€");
@@ -1501,7 +1533,7 @@ public class Main {
                                                     System.out.println(fechaAperturaB + "/12/2024");
                                                     System.out.print("Fecha de cierre: ");
                                                     System.out.println(fechaCierreB + "/12/2024");
-                                                    grafico= (float) (cantidadAportadaC*100)/cantidadC;
+                                                    grafico= (float) (cantidadAportadaB*100)/cantidadB;
                                                     System.out.println("Gráfica de financiación");
                                                     System.out.print(grafico + "% \u2192 ");
                                                     for(int i=0; i<=grafico; i++){
@@ -1509,7 +1541,7 @@ public class Main {
                                                         if (i==100) break;
                                                     }
                                                     System.out.println();
-                                                    System.out.println("RECOMPENSA 1");
+                                                    System.out.println("\u001B[37mRECOMPENSA 1");
                                                     System.out.println(nombreRecompensaB1);
                                                     System.out.println(descripcionRecompensaB1);
                                                     System.out.println(precioRecompensaB1 + "€");
@@ -1552,7 +1584,7 @@ public class Main {
                                                         if (i==100) break;
                                                     }
                                                     System.out.println();
-                                                    System.out.println("RECOMPENSA 1");
+                                                    System.out.println("\u001B[37mRECOMPENSA 1");
                                                     System.out.println(nombreRecompensaC1);
                                                     System.out.println(descripcionRecompensaC1);
                                                     System.out.println(precioRecompensaC1 + "€");
@@ -1972,33 +2004,36 @@ public class Main {
                                     case 2:
                                         System.out.println("CONSULTA DE PROYECTOS");
                                         System.out.println("=================================================");
-                                        System.out.println("=================================================");
                                         if (proyectos <= 0){
                                             System.out.println("****Actualmente no hay ningún proyecto****");
                                             break;
                                         }
-                                        System.out.println("PROYECTO 1");
-                                        System.out.println(nombreProyectoA);
-                                        System.out.println("Categoría: " + categoriaA);
-                                        System.out.println("Cantidad necesaria: " + cantidadA + "€");
-                                        //Introducir la variable correspondiente para la cantidad financiada hasta el momento
-                                        System.out.println("Cantidad financiada hasta el momento: " + cantidadAportadaA + "€");
-                                        if (proyectos<2) break;
-                                        System.out.println("=================================================");
-                                        System.out.println("PROYECTO 2");
-                                        System.out.println(nombreProyectoB);
-                                        System.out.println("Categoría: " + categoriaB + "€");
-                                        System.out.println("Cantidad necesaria: " + cantidadB + "€");
-                                        //Introducir la variable correspondiente para la cantidad financiada hasta el momento
-                                        System.out.println("Cantidad financiada hasta el momento: " + cantidadAportadaB + "€");
-                                        if (proyectos<3) break;
-                                        System.out.println("=================================================");
-                                        System.out.println("PROYECTO 3");
-                                        System.out.println(nombreProyectoC);
-                                        System.out.println("Categoría: " + categoriaC);
-                                        System.out.println("Cantidad necesaria: " + cantidadC + "€");
-                                        //Introducir la variable correspondiente para la cantidad financiada hasta el momento
-                                        System.out.println("Cantidad financiada hasta el momento: " + cantidadAportadaC + "€");
+                                        do{
+                                            System.out.println("PROYECTO 1");
+                                            System.out.println(nombreProyectoA);
+                                            System.out.println("Categoría: " + categoriaA);
+                                            System.out.println("Cantidad necesaria: " + cantidadA + "€");
+                                            //Introducir la variable correspondiente para la cantidad financiada hasta el momento
+                                            System.out.println("Cantidad financiada hasta el momento: " + cantidadAportadaA + "€");
+                                            if (proyectos<2) break;
+                                            System.out.println("=================================================");
+                                            System.out.println("PROYECTO 2");
+                                            System.out.println(nombreProyectoB);
+                                            System.out.println("Categoría: " + categoriaB + "€");
+                                            System.out.println("Cantidad necesaria: " + cantidadB + "€");
+                                            //Introducir la variable correspondiente para la cantidad financiada hasta el momento
+                                            System.out.println("Cantidad financiada hasta el momento: " + cantidadAportadaB + "€");
+                                            if (proyectos<3) break;
+                                            System.out.println("=================================================");
+                                            System.out.println("PROYECTO 3");
+                                            System.out.println(nombreProyectoC);
+                                            System.out.println("Categoría: " + categoriaC);
+                                            System.out.println("Cantidad necesaria: " + cantidadC + "€");
+                                            //Introducir la variable correspondiente para la cantidad financiada hasta el momento
+                                            System.out.println("Cantidad financiada hasta el momento: " + cantidadAportadaC + "€");
+                                            break;
+                                        }while (proyectos>0);
+
                                         System.out.println("========================================================================");
                                         System.out.println("Por favor, seleccione un proyecto para mostrar información detallada: ");
                                         opcion= Integer.parseInt(s.next());
@@ -2028,7 +2063,7 @@ public class Main {
                                                         if (i==100) break;
                                                     }
                                                     System.out.println();
-                                                    System.out.println("RECOMPENSA 1");
+                                                    System.out.println("\u001B[37mRECOMPENSA 1");
                                                     System.out.println(nombreRecompensaA1);
                                                     System.out.println(descripcionRecompensaA1);
                                                     System.out.println(precioRecompensaA1 + "€");
@@ -2070,7 +2105,7 @@ public class Main {
                                                         if (i==100) break;
                                                     }
                                                     System.out.println();
-                                                    System.out.println("RECOMPENSA 1");
+                                                    System.out.println("\u001B[37mRECOMPENSA 1");
                                                     System.out.println(nombreRecompensaB1);
                                                     System.out.println(descripcionRecompensaB1);
                                                     System.out.println(precioRecompensaB1 + "€");
@@ -2112,7 +2147,7 @@ public class Main {
                                                         if (i==100) break;
                                                     }
                                                     System.out.println();
-                                                    System.out.println("RECOMPENSA 1");
+                                                    System.out.println("\u001B[37mRECOMPENSA 1");
                                                     System.out.println(nombreRecompensaC1);
                                                     System.out.println(descripcionRecompensaC1);
                                                     System.out.println(precioRecompensaC1 + "€");
