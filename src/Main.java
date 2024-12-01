@@ -75,9 +75,9 @@ public class Main {
                 contrasena = s.next();
                 intentos=2;
                 while (!contrasena.equals(contrasenaGestor) && intentos > 0) {
-                    intentos--;
                     System.out.printf("Contraseña incorrecta. Por favor, introduzca su contraseña (%d intentos restantes):\n", intentos);
                     contrasena = s.next();
+                    intentos--;
                 }
 
                 if (intentos == 0) {
@@ -96,9 +96,9 @@ public class Main {
                 contrasena = s.next();
                 intentos=2;
                 while (!contrasena.equals(contrasenaInversor1) && intentos > 0) {
-                    intentos--;
                     System.out.printf("Contraseña incorrecta. Por favor, introduzca su contraseña (%d intentos restantes):\n", intentos);
                     contrasena = s.next();
+                    intentos--;
                 }
 
                 if (intentos == 0) {
@@ -116,9 +116,9 @@ public class Main {
                 System.out.println("Inversor. Introduzca su contraseña (3 intentos):  ");
                 contrasena = s.next();
                 while (!contrasena.equals(contrasenaInversor2) && intentos > 0) {
-                    intentos--;
                     System.out.printf("Contraseña incorrecta. Por favor, introduzca su contraseña (%d intentos restantes):\n", intentos);
                     contrasena = s.next();
+                    intentos--;
                 }
 
                 if (intentos == 0) {
@@ -152,10 +152,9 @@ public class Main {
                                 switch (opcion) {
                                     case 1:
                                         System.out.println("¿En qué proyecto desea invertir?");
-                                        System.out.println("1. " + nombreProyectoA);
-                                        System.out.println("2. " + nombreProyectoB);
-                                        System.out.println("3. " + nombreProyectoC);
-                                        System.out.println("4. Salir");
+                                        System.out.println("Proyecto 1: " + nombreProyectoA);
+                                        System.out.println("Proyecto 2: " + nombreProyectoB);
+                                        System.out.println("Proyecto 3: " + nombreProyectoC);
                                         aportacionI1 = Integer.parseInt(s.next());
                                         switch (aportacionI1) {
                                             case 1:
@@ -166,9 +165,7 @@ public class Main {
                                                     System.out.println("No dispone de saldo suficiente para realizar la aportación.");
                                                     System.out.println("Su saldo es de: " + saldoTotal1 + "€");
                                                     break;
-                                                } else if (cantidadAportadaA1<=0) {
-                                                    System.out.println("Por favor, introduzca un valor válido");
-                                                }else{
+                                                } else {
                                                     inversionA1 = true;
                                                     saldoTotal1 -= cantidadAportadaA1;
                                                     cantidadAportadaA += cantidadAportadaA1;
@@ -208,8 +205,6 @@ public class Main {
                                                     System.out.println("¡¡¡Gracias por aportar su parte!!!");
                                                     break;
                                                 }
-                                            case 4:
-                                                break;
                                             default:
                                                 System.out.println("Debe de introducir la opción correspondiente correcta");
                                                 break;
@@ -229,11 +224,12 @@ public class Main {
                                                 respuesta2 = s.next();
                                             }
                                             if (respuesta2.equals("s")) {
-                                                    System.out.println("¿En qué proyecto desea invertir?");
-                                                    System.out.println("1. " + nombreProyectoA);
-                                                    System.out.println("2. " + nombreProyectoB);
-                                                    System.out.println("3. " + nombreProyectoC);
-                                                    System.out.println("4. Salir");
+                                                int opcion3 = 0;
+                                                while (opcion3 != 1 || opcion3 != 2 || opcion3 != 3) {
+                                                    System.out.println("¿En que proyecto desea invertir? Introduce el número correspondiente");
+                                                    System.out.println("Proyecto 1: " + nombreProyectoA);
+                                                    System.out.println("Proyecto 2: " + nombreProyectoB);
+                                                    System.out.println("Proyecto 3: " + nombreProyectoC);
                                                     aportacionI1 = Integer.parseInt(s.next());
                                                     switch (aportacionI1) {
                                                         case 1:
@@ -244,9 +240,7 @@ public class Main {
                                                                 System.out.println("No dispone de saldo suficiente para realizar la aportación.");
                                                                 System.out.println("Su saldo es de: " + saldoTotal1 + "€");
                                                                 break;
-                                                            } else if (cantidadAportadaA1<=0) {
-                                                                System.out.println("Por favor, introduzca un valor válido");
-                                                            }else{
+                                                            } else {
                                                                 inversionA1 = true;
                                                                 saldoTotal1 -= cantidadAportadaA1;
                                                                 cantidadAportadaA += cantidadAportadaA1;
@@ -286,11 +280,10 @@ public class Main {
                                                                 System.out.println("¡¡¡Gracias por aportar su parte!!!");
                                                                 break;
                                                             }
-                                                        case 4:
-                                                            break;
                                                         default:
                                                             System.out.println("Debe de introducir la opción correspondiente correcta");
                                                             break;
+                                                    }
                                                 }
                                             }
                                         } else if (inversiones1 > 0) {
@@ -456,9 +449,17 @@ public class Main {
                                         System.out.print("Cantidad aportada hasta el momento: ");
                                         System.out.println(cantidadAportadaA+ "€");
                                         System.out.print("Fecha de apertura: ");
-                                        System.out.println(fechaAperturaA);
+                                        System.out.println(fechaAperturaA + "/12/2024");
                                         System.out.print("Fecha de cierre: ");
-                                        System.out.println(fechaCierreA);
+                                        System.out.println(fechaCierreA + "/12/2024");
+                                        grafico = (float) (cantidadAportadaC * 100) / cantidadC;
+                                        System.out.println("Gráfica de financiación");
+                                        System.out.print(grafico + "% \u2192 ");
+                                        for (int i = 0; i <= grafico; i++) {
+                                            System.out.print("\u001B[36m\u275A");
+                                            if (i == 100) break;
+                                        }
+                                        System.out.println();
                                         System.out.println("RECOMPENSA 1");
                                         System.out.println(nombreRecompensaA1);
                                         System.out.println(descripcionRecompensaA1);
@@ -474,14 +475,6 @@ public class Main {
                                         System.out.println(descripcionRecompensaA3);
                                         System.out.println(precioRecompensaA3 + "€");
 
-                                        grafico = (float) (cantidadAportadaA * 100) / cantidadA;
-                                        System.out.println("Gráfica de financiación");
-                                        System.out.print(grafico + "% \u2192 ");
-                                        for (int i = 0; i <= grafico; i++) {
-                                            System.out.print("\u001B[36m\u275A");
-                                            if (i == 100) break;
-                                        }
-                                        System.out.println();
                                     }
                                     break;
                                 case 2:
@@ -498,9 +491,17 @@ public class Main {
                                         System.out.print("Cantidad aportada hasta el momento: ");
                                         System.out.println(cantidadAportadaB+ "€");
                                         System.out.print("Fecha de apertura: ");
-                                        System.out.println(fechaAperturaB);
+                                        System.out.println(fechaAperturaB + "/12/2024");
                                         System.out.print("Fecha de cierre: ");
-                                        System.out.println(fechaCierreB);
+                                        System.out.println(fechaCierreB + "/12/2024");
+                                        grafico = (float) (cantidadAportadaC * 100) / cantidadC;
+                                        System.out.println("Gráfica de financiación");
+                                        System.out.print(grafico + "% \u2192 ");
+                                        for (int i = 0; i <= grafico; i++) {
+                                            System.out.print("\u001B[36m\u275A");
+                                            if (i == 100) break;
+                                        }
+                                        System.out.println();
                                         System.out.println("RECOMPENSA 1");
                                         System.out.println(nombreRecompensaB1);
                                         System.out.println(descripcionRecompensaB1);
@@ -516,14 +517,6 @@ public class Main {
                                         System.out.println(descripcionRecompensaB3);
                                         System.out.println(precioRecompensaB3 + "€");
 
-                                        grafico = (float) (cantidadAportadaB * 100) / cantidadB;
-                                        System.out.println("Gráfica de financiación");
-                                        System.out.print(grafico + "% \u2192 ");
-                                        for (int i = 0; i <= grafico; i++) {
-                                            System.out.print("\u001B[36m\u275A");
-                                            if (i == 100) break;
-                                        }
-                                        System.out.println();
                                     }
                                     break;
                                 case 3:
@@ -540,9 +533,17 @@ public class Main {
                                         System.out.print("Cantidad aportada hasta el momento: ");
                                         System.out.println(cantidadAportadaC+ "€");
                                         System.out.print("Fecha de apertura: ");
-                                        System.out.println(fechaAperturaC);
+                                        System.out.println(fechaAperturaC + "/12/2024");
                                         System.out.print("Fecha de cierre: ");
-                                        System.out.println(fechaCierreC);
+                                        System.out.println(fechaCierreC + "/12/2024");
+                                        grafico = (float) (cantidadAportadaC * 100) / cantidadC;
+                                        System.out.println("Gráfica de financiación");
+                                        System.out.print(grafico + "% \u2192 ");
+                                        for (int i = 0; i <= grafico; i++) {
+                                            System.out.print("\u001B[36m\u275A");
+                                            if (i == 100) break;
+                                        }
+                                        System.out.println();
                                         System.out.println("RECOMPENSA 1");
                                         System.out.println(nombreRecompensaC1);
                                         System.out.println(descripcionRecompensaC1);
@@ -558,14 +559,6 @@ public class Main {
                                         System.out.println(descripcionRecompensaC3);
                                         System.out.println(precioRecompensaC3 + "€");
 
-                                        grafico = (float) (cantidadAportadaC * 100) / cantidadC;
-                                        System.out.println("Gráfica de financiación");
-                                        System.out.print(grafico + "% \u2192 ");
-                                        for (int i = 0; i <= grafico; i++) {
-                                            System.out.print("\u001B[36m\u275A");
-                                            if (i == 100) break;
-                                        }
-                                        System.out.println();
                                     }
                                     break;
                                 default:
@@ -603,21 +596,31 @@ public class Main {
                                         break;
                                 }
                             } while (opcion != 3);
+
                             break;
                         case 4:
                             System.out.println("INVITAR A UN AMIGO");
                             do {
                                 System.out.println("1. Listado de amigos");
                                 System.out.println("2. Añadir a un amigo");
+                                System.out.println("3. Salir");
                                 opcion = Integer.parseInt(s.next());
                                 switch (opcion) {
                                     case 1:
                                         System.out.println("LISTADO DE AMIGOS");
                                         System.out.println(amigo);
+                                        break;
                                     case 2:
                                         System.out.println("AÑADIR A UN AMIGO: ");
-                                        correo = s.nextLine();
+                                        correo = s.next();
                                         amigo = amigo.concat(" " + correo);
+                                        break;
+                                    case 3:
+                                        System.out.println("Salir.");
+                                        break;
+                                    default:
+                                        System.out.println("Opción inválida.");
+                                        break;
                                 }
 
                             } while (opcion != 3);
@@ -678,10 +681,9 @@ public class Main {
                                 switch (opcion) {
                                     case 1:
                                         System.out.println("¿En qué proyecto desea invertir?");
-                                        System.out.println("1. " + nombreProyectoA);
-                                        System.out.println("2. " + nombreProyectoB);
-                                        System.out.println("3. " + nombreProyectoC);
-                                        System.out.println("4. Salir");
+                                        System.out.println("Proyecto 1: " + nombreProyectoA);
+                                        System.out.println("Proyecto 2: " + nombreProyectoB);
+                                        System.out.println("Proyecto 3: " + nombreProyectoC);
                                         aportacionI2 = Integer.parseInt(s.next());
                                         switch (aportacionI2) {
                                             case 1:
@@ -692,8 +694,6 @@ public class Main {
                                                     System.out.println("No dispone de saldo suficiente para realizar la aportación.");
                                                     System.out.println("Su saldo es de: "+saldoTotal2 + "€");
                                                     break;
-                                                } else if (cantidadAportadaA1<=0) {
-                                                    System.out.println("Por favor, introduzca un valor válido");
                                                 }else{
                                                     inversionA2 = true;
                                                     saldoTotal2-=cantidadAportadaA2;
@@ -734,8 +734,6 @@ public class Main {
                                                     System.out.println("¡¡¡Gracias por aportar su parte!!!");
                                                     break;
                                                 }
-                                            case 4:
-                                                break;
                                             default:
                                                 System.out.println("Debe de introducir la opción correspondiente correcta");
                                                 break;
@@ -754,11 +752,12 @@ public class Main {
                                                 respuesta2 = s.next();
                                             }
                                             if (respuesta2.equals("s")) {
-                                                    System.out.println("¿En qué proyecto desea invertir?");
-                                                    System.out.println("1. " + nombreProyectoA);
-                                                    System.out.println("2. " + nombreProyectoB);
-                                                    System.out.println("3. " + nombreProyectoC);
-                                                    System.out.println("4. Salir");
+                                                int opcion3 = 0;
+                                                while (opcion3 != 1 || opcion3 != 2 || opcion3 != 3) {
+                                                    System.out.println("¿En que proyecto desea invertir? Introduce el número correspondiente");
+                                                    System.out.println("Proyecto 1: " + nombreProyectoA);
+                                                    System.out.println("Proyecto 2: " + nombreProyectoB);
+                                                    System.out.println("Proyecto 3: " + nombreProyectoC);
                                                     aportacionI2 = Integer.parseInt(s.next());
                                                     switch (aportacionI2) {
                                                         case 1:
@@ -769,8 +768,6 @@ public class Main {
                                                                 System.out.println("No dispone de saldo suficiente para realizar la aportación.");
                                                                 System.out.println("Su saldo es de: "+saldoTotal2 + "€");
                                                                 break;
-                                                            } else if (cantidadAportadaA1<=0) {
-                                                                System.out.println("Por favor, introduzca un valor válido");
                                                             }else{
                                                                 inversionA2 = true;
                                                                 saldoTotal2-=cantidadAportadaA2;
@@ -811,11 +808,10 @@ public class Main {
                                                                 System.out.println("¡¡¡Gracias por aportar su parte!!!");
                                                                 break;
                                                             }
-                                                        case 4:
-                                                            break;
                                                         default:
                                                             System.out.println("Debe de introducir la opción correspondiente correcta");
                                                             break;
+                                                    }
                                                 }
                                             }
                                         } else if (inversiones2 > 0) {
@@ -975,8 +971,15 @@ public class Main {
                                         System.out.println("Categoría: "+categoriaA);
                                         System.out.println("Cantidad necesaria: "+cantidadA+ "€");
                                         System.out.println("Cantidad aportada hasta el momento: "+cantidadAportadaA+ "€");
-                                        System.out.println("Fecha de apertura: "+fechaAperturaA);
-                                        System.out.println("Fecha de cierre: "+fechaCierreA);
+                                        System.out.println("Fecha de apertura: "+fechaAperturaA + "/12/2024");
+                                        System.out.println("Fecha de cierre: "+fechaCierreA + "/12/2024");
+                                        grafico= (float) (cantidadAportadaC*100)/cantidadC;
+                                        System.out.println("Gráfica de financiación");
+                                        System.out.print(grafico + "% \u2192 ");
+                                        for(int i=0; i<=grafico; i++){
+                                            System.out.print("\u001B[36m\u275A");
+                                            if (i==100) break;
+                                        }
                                         System.out.println();
                                         System.out.println("RECOMPENSA 1");
                                         System.out.println(nombreRecompensaA1);
@@ -992,14 +995,7 @@ public class Main {
                                         System.out.println(nombreRecompensaA3);
                                         System.out.println("Descripción: "+descripcionRecompensaA3);
                                         System.out.println("Precio de la recompensa: "+precioRecompensaA3+ "€");
-                                        grafico= (float) (cantidadAportadaA*100)/cantidadA;
-                                        System.out.println("Gráfica de financiación");
-                                        System.out.print(grafico + "% \u2192 ");
-                                        for(int i=0; i<=grafico; i++){
-                                            System.out.print("\u001B[36m\u275A");
-                                            if (i==100) break;
-                                        }
-                                        System.out.println();
+
                                     }
                                     break;
                                 case 2:
@@ -1012,9 +1008,17 @@ public class Main {
                                         System.out.println("Cantidad necesaria: "+cantidadB+ "€");
                                         System.out.println("Cantidad aportada hasta el momento: "+cantidadAportadaB+ "€");
                                         System.out.print("Fecha de apertura: ");
-                                        System.out.println(fechaAperturaB);
+                                        System.out.println(fechaAperturaB + "/12/2024");
                                         System.out.print("Fecha de cierre: ");
-                                        System.out.println(fechaCierreB);
+                                        System.out.println(fechaCierreB + "/12/2024");
+                                        grafico= (float) (cantidadAportadaC*100)/cantidadC;
+                                        System.out.println("Gráfica de financiación");
+                                        System.out.print(grafico + "% \u2192 ");
+                                        for(int i=0; i<=grafico; i++){
+                                            System.out.print("\u001B[36m\u275A");
+                                            if (i==100) break;
+                                        }
+                                        System.out.println();
                                         System.out.println("RECOMPENSA 1");
                                         System.out.println(nombreRecompensaB1);
                                         System.out.println("Descripción: "  +descripcionRecompensaB1);
@@ -1029,15 +1033,7 @@ public class Main {
                                         System.out.println(nombreRecompensaB3);
                                         System.out.println(descripcionRecompensaB3);
                                         System.out.println(precioRecompensaB3 + "€");
-                                        grafico= (float) (cantidadAportadaB*100)/cantidadB;
 
-                                        System.out.println("Gráfica de financiación");
-                                        System.out.print(grafico + "% \u2192 ");
-                                        for(int i=0; i<=grafico; i++){
-                                            System.out.print("\u001B[36m\u275A");
-                                            if (i==100) break;
-                                        }
-                                        System.out.println();
                                     }
                                     break;
                                 case 3:
@@ -1050,9 +1046,17 @@ public class Main {
                                         System.out.println("Cantidad necesaria: "+cantidadC);
                                         System.out.println("Cantidad aportada hasta el momento: "+cantidadAportadaC2);
                                         System.out.print("Fecha de apertura: ");
-                                        System.out.println(fechaAperturaC);
+                                        System.out.println(fechaAperturaC + "/12/2024");
                                         System.out.print("Fecha de cierre: ");
-                                        System.out.println(fechaCierreC);
+                                        System.out.println(fechaCierreC + "/12/2024");
+                                        grafico= (float) (cantidadAportadaC*100)/cantidadC;
+                                        System.out.println("Gráfica de financiación");
+                                        System.out.print(grafico + "% \u2192 ");
+                                        for(int i=0; i<=grafico; i++){
+                                            System.out.print("\u001B[36m\u275A");
+                                            if (i==100) break;
+                                        }
+                                        System.out.println();
                                         System.out.println("RECOMPENSA 1");
                                         System.out.println(nombreRecompensaC1);
                                         System.out.println("Descripción: "+descripcionRecompensaC1);
@@ -1068,14 +1072,6 @@ public class Main {
                                         System.out.println("Descripción: "+descripcionRecompensaC3);
                                         System.out.println(precioRecompensaC3 + "€");
 
-                                        grafico= (float) (cantidadAportadaC*100)/cantidadC;
-                                        System.out.println("Gráfica de financiación");
-                                        System.out.print(grafico + "% \u2192 ");
-                                        for(int i=0; i<=grafico; i++){
-                                            System.out.print("\u001B[36m\u275A");
-                                            if (i==100) break;
-                                        }
-                                        System.out.println();
                                     }
                                     break;
                                 default:
@@ -1129,10 +1125,17 @@ public class Main {
                                         break;
                                     case 2:
                                         System.out.println("AÑADIR A UN AMIGO: ");
-                                        correo = s.nextLine();
+                                        correo = s.next();
                                         amigo = amigo.concat(" " + correo);
                                         break;
+                                    case 3:
+                                        System.out.println("Salir.");
+                                        break;
+                                    default:
+                                        System.out.println("Opción inválida.");
+                                        break;
                                 }
+
                             } while (opcion != 3);
                             break;
                         case 5:
@@ -1451,9 +1454,17 @@ public class Main {
                                                     System.out.print("Cantidad aportada hasta el momento: ");
                                                     System.out.println(cantidadAportadaA + "€");
                                                     System.out.print("Fecha de apertura: ");
-                                                    System.out.println(fechaAperturaA);
+                                                    System.out.println(fechaAperturaA + "/12/2024");
                                                     System.out.print("Fecha de cierre: ");
-                                                    System.out.println(fechaCierreA);
+                                                    System.out.println(fechaCierreA + "/12/2024");
+                                                    grafico= (float) (cantidadAportadaC*100)/cantidadC;
+                                                    System.out.println("Gráfica de financiación");
+                                                    System.out.print(grafico + "% \u2192 ");
+                                                    for(int i=0; i<=grafico; i++){
+                                                        System.out.print("\u001B[36m\u275A");
+                                                        if (i==100) break;
+                                                    }
+                                                    System.out.println();
                                                     System.out.println("RECOMPENSA 1");
                                                     System.out.println(nombreRecompensaA1);
                                                     System.out.println(descripcionRecompensaA1);
@@ -1469,14 +1480,6 @@ public class Main {
                                                     System.out.println(descripcionRecompensaA3);
                                                     System.out.println(precioRecompensaA3 + "€");
 
-                                                    grafico= (float) (cantidadAportadaA*100)/cantidadA;
-                                                    System.out.println("Gráfica de financiación");
-                                                    System.out.print(grafico + "% \u2192 ");
-                                                    for(int i=0; i<=grafico; i++){
-                                                        System.out.print("\u001B[36m\u275A");
-                                                        if (i==100) break;
-                                                    }
-                                                    System.out.println();
                                                 }
                                                 break;
                                             case 2:
@@ -1493,9 +1496,17 @@ public class Main {
                                                     System.out.print("Cantidad aportada hasta el momento: ");
                                                     System.out.println(cantidadAportadaB+ "€");
                                                     System.out.print("Fecha de apertura: ");
-                                                    System.out.println(fechaAperturaB);
+                                                    System.out.println(fechaAperturaB + "/12/2024");
                                                     System.out.print("Fecha de cierre: ");
-                                                    System.out.println(fechaCierreB);
+                                                    System.out.println(fechaCierreB + "/12/2024");
+                                                    grafico= (float) (cantidadAportadaC*100)/cantidadC;
+                                                    System.out.println("Gráfica de financiación");
+                                                    System.out.print(grafico + "% \u2192 ");
+                                                    for(int i=0; i<=grafico; i++){
+                                                        System.out.print("\u001B[36m\u275A");
+                                                        if (i==100) break;
+                                                    }
+                                                    System.out.println();
                                                     System.out.println("RECOMPENSA 1");
                                                     System.out.println(nombreRecompensaB1);
                                                     System.out.println(descripcionRecompensaB1);
@@ -1511,14 +1522,6 @@ public class Main {
                                                     System.out.println(descripcionRecompensaB3);
                                                     System.out.println(precioRecompensaB3 + "€");
 
-                                                    grafico= (float) (cantidadAportadaB*100)/cantidadB;
-                                                    System.out.println("Gráfica de financiación");
-                                                    System.out.print(grafico + "% \u2192 ");
-                                                    for(int i=0; i<=grafico; i++){
-                                                        System.out.print("\u001B[36m\u275A");
-                                                        if (i==100) break;
-                                                    }
-                                                    System.out.println();
                                                 }
                                                 break;
                                             case 3:
@@ -1535,9 +1538,18 @@ public class Main {
                                                     System.out.print("Cantidad aportada hasta el momento: ");
                                                     System.out.println(cantidadAportadaC+ "€");
                                                     System.out.print("Fecha de apertura: ");
-                                                    System.out.println(fechaAperturaC);
+                                                    System.out.println(fechaAperturaC + "/12/2024");
                                                     System.out.print("Fecha de cierre: ");
-                                                    System.out.println(fechaCierreC);
+                                                    System.out.println(fechaCierreC + "/12/2024");
+
+                                                    grafico= (float) (cantidadAportadaC*100)/cantidadC;
+                                                    System.out.println("Gráfica de financiación");
+                                                    System.out.print(grafico + "% \u2192 ");
+                                                    for(int i=0; i<=grafico; i++){
+                                                        System.out.print("\u001B[36m\u275A");
+                                                        if (i==100) break;
+                                                    }
+                                                    System.out.println();
                                                     System.out.println("RECOMPENSA 1");
                                                     System.out.println(nombreRecompensaC1);
                                                     System.out.println(descripcionRecompensaC1);
@@ -1553,14 +1565,6 @@ public class Main {
                                                     System.out.println(descripcionRecompensaC3);
                                                     System.out.println(precioRecompensaC3 + "€");
 
-                                                    grafico= (float) (cantidadAportadaC*100)/cantidadC;
-                                                    System.out.println("Gráfica de financiación");
-                                                    System.out.print(grafico + "% \u2192 ");
-                                                    for(int i=0; i<=grafico; i++){
-                                                        System.out.print("\u001B[36m\u275A");
-                                                        if (i==100) break;
-                                                    }
-                                                    System.out.println();
                                                 }
                                                 break;
                                             default:
@@ -2011,9 +2015,17 @@ public class Main {
                                                     System.out.print("Cantidad aportada hasta el momento: ");
                                                     System.out.println(cantidadAportadaA+ "€");
                                                     System.out.print("Fecha de apertura: ");
-                                                    System.out.println(fechaAperturaA);
+                                                    System.out.println(fechaAperturaA + "/12/2024");
                                                     System.out.print("Fecha de cierre: ");
-                                                    System.out.println(fechaCierreA);
+                                                    System.out.println(fechaCierreA + "/12/2024");
+                                                    grafico= (float) (cantidadAportadaA*100)/cantidadA;
+                                                    System.out.println("Gráfica de financiación");
+                                                    System.out.print(grafico + "% \u2192 ");
+                                                    for(int i=0; i<=grafico; i++){
+                                                        System.out.print("\u001B[36m\u275A");
+                                                        if (i==100) break;
+                                                    }
+                                                    System.out.println();
                                                     System.out.println("RECOMPENSA 1");
                                                     System.out.println(nombreRecompensaA1);
                                                     System.out.println(descripcionRecompensaA1);
@@ -2029,14 +2041,6 @@ public class Main {
                                                     System.out.println(descripcionRecompensaA3);
                                                     System.out.println(precioRecompensaA3 + "€");
 
-                                                    grafico= (float) (cantidadAportadaA*100)/cantidadA;
-                                                    System.out.println("Gráfica de financiación");
-                                                    System.out.print(grafico + "% \u2192 ");
-                                                    for(int i=0; i<=grafico; i++){
-                                                        System.out.print("\u001B[36m\u275A");
-                                                        if (i==100) break;
-                                                    }
-                                                    System.out.println();
                                                 }
                                                 break;
                                             case 2:
@@ -2053,9 +2057,17 @@ public class Main {
                                                     System.out.print("Cantidad aportada hasta el momento: ");
                                                     System.out.println(cantidadAportadaB+ "€");
                                                     System.out.print("Fecha de apertura: ");
-                                                    System.out.println(fechaAperturaB);
+                                                    System.out.println(fechaAperturaB + "/12/2024");
                                                     System.out.print("Fecha de cierre: ");
-                                                    System.out.println(fechaCierreB);
+                                                    System.out.println(fechaCierreB + "/12/2024");
+                                                    grafico= (float) (cantidadAportadaB*100)/cantidadB;
+                                                    System.out.println("Gráfica de financiación");
+                                                    System.out.print(grafico + "% \u2192 ");
+                                                    for(int i=0; i<=grafico; i++){
+                                                        System.out.print("\u001B[36m\u275A");
+                                                        if (i==100) break;
+                                                    }
+                                                    System.out.println();
                                                     System.out.println("RECOMPENSA 1");
                                                     System.out.println(nombreRecompensaB1);
                                                     System.out.println(descripcionRecompensaB1);
@@ -2071,14 +2083,6 @@ public class Main {
                                                     System.out.println(descripcionRecompensaB3);
                                                     System.out.println(precioRecompensaB3 + "€");
 
-                                                    grafico= (float) (cantidadAportadaB*100)/cantidadB;
-                                                    System.out.println("Gráfica de financiación");
-                                                    System.out.print(grafico + "% \u2192 ");
-                                                    for(int i=0; i<=grafico; i++){
-                                                        System.out.print("\u001B[36m\u275A");
-                                                        if (i==100) break;
-                                                    }
-                                                    System.out.println();
                                                 }
                                                 break;
                                             case 3:
@@ -2095,9 +2099,17 @@ public class Main {
                                                     System.out.print("Cantidad aportada hasta el momento: ");
                                                     System.out.println(cantidadAportadaC+ "€");
                                                     System.out.print("Fecha de apertura: ");
-                                                    System.out.println(fechaAperturaC);
+                                                    System.out.println(fechaAperturaC + "/12/2024");
                                                     System.out.print("Fecha de cierre: ");
-                                                    System.out.println(fechaCierreC);
+                                                    System.out.println(fechaCierreC + "/12/2024");
+                                                    grafico= (float) (cantidadAportadaC*100)/cantidadC;
+                                                    System.out.println("Gráfica de financiación");
+                                                    System.out.print(grafico + "% \u2192 ");
+                                                    for(int i=0; i<=grafico; i++){
+                                                        System.out.print("\u001B[36m\u275A");
+                                                        if (i==100) break;
+                                                    }
+                                                    System.out.println();
                                                     System.out.println("RECOMPENSA 1");
                                                     System.out.println(nombreRecompensaC1);
                                                     System.out.println(descripcionRecompensaC1);
@@ -2113,14 +2125,6 @@ public class Main {
                                                     System.out.println(descripcionRecompensaC3);
                                                     System.out.println(precioRecompensaC3 + "€");
 
-                                                    grafico= (float) (cantidadAportadaC*100)/cantidadC;
-                                                    System.out.println("Gráfica de financiación");
-                                                    System.out.print(grafico + "% \u2192 ");
-                                                    for(int i=0; i<=grafico; i++){
-                                                        System.out.print("\u001B[36m\u275A");
-                                                        if (i==100) break;
-                                                    }
-                                                    System.out.println();
                                                 }
                                                 break;
                                             default:
