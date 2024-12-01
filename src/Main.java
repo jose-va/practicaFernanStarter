@@ -31,7 +31,7 @@ public class Main {
         int recompensasA = 0, recompensasB = 0, recompensasC = 0;
         int categoriaA = 0, categoriaB = 0, categoriaC = 0;
         int cantidadAportadaA1 = 0, cantidadAportadaB1 = 0, cantidadAportadaC1 = 0, cantidadAportadaA2 = 0, cantidadAportadaB2 = 0, cantidadAportadaC2 = 0;
-        int cantidadAportadaA = cantidadAportadaA1 + cantidadAportadaA2, cantidadAportadaB = cantidadAportadaB1 + cantidadAportadaA1, cantidadAportadaC = cantidadAportadaC1 + cantidadAportadaC2;
+        int cantidadAportadaA=0, cantidadAportadaB=0, cantidadAportadaC=0;
         int cantidadA = 0, cantidadB = 0, cantidadC = 0;
         int proyectos = 0, saldo = 0, saldoTotal1 = 0, saldoTotal2 = 0, inversiones1 = 0, inversiones2 = 0, amigos = 0;
         int aportacionI1, aportacionI2 = 0;
@@ -164,6 +164,7 @@ public class Main {
                                                 }else{
                                                     inversionA1 = true;
                                                     saldoTotal1-=cantidadAportadaA1;
+                                                    cantidadAportadaA+=cantidadAportadaA1;
                                                     inversiones1++;
                                                     System.out.println("¡¡¡Gracias por aportar su parte!!!");
                                                     break;
@@ -179,6 +180,7 @@ public class Main {
                                                 }else{
                                                     inversionB1 = true;
                                                     saldoTotal1-=cantidadAportadaB1;
+                                                    cantidadAportadaB+=cantidadAportadaB1;
                                                     inversiones1++;
                                                     System.out.println("¡¡¡Gracias por aportar su parte!!!");
                                                     break;
@@ -194,6 +196,7 @@ public class Main {
                                                 }else{
                                                     inversionC1 = true;
                                                     saldoTotal1-=cantidadAportadaC1;
+                                                    cantidadAportadaC+=cantidadAportadaC1;
                                                     inversiones1++;
                                                     System.out.println("¡¡¡Gracias por aportar su parte!!!");
                                                     break;
@@ -235,6 +238,7 @@ public class Main {
                                                             }else{
                                                                 inversionA1 = true;
                                                                 saldoTotal1-=cantidadAportadaA1;
+                                                                cantidadAportadaA+=cantidadAportadaA1;
                                                                 inversiones1++;
                                                                 System.out.println("¡¡¡Gracias por aportar su parte!!!");
                                                                 break;
@@ -250,6 +254,7 @@ public class Main {
                                                             }else{
                                                                 inversionB1 = true;
                                                                 saldoTotal1-=cantidadAportadaB1;
+                                                                cantidadAportadaB+=cantidadAportadaB1;
                                                                 inversiones1++;
                                                                 System.out.println("¡¡¡Gracias por aportar su parte!!!");
                                                                 break;
@@ -265,6 +270,7 @@ public class Main {
                                                             }else{
                                                                 inversionC1 = true;
                                                                 saldoTotal1-=cantidadAportadaC1;
+                                                                cantidadAportadaC+=cantidadAportadaC1;
                                                                 inversiones1++;
                                                                 System.out.println("¡¡¡Gracias por aportar su parte!!!");
                                                                 break;
@@ -431,6 +437,7 @@ public class Main {
                                         System.out.print(grafico + "% \u2192 ");
                                         for(int i=0; i<=grafico; i++){
                                             System.out.print("\u001B[36m\u275A");
+                                            if (i==100) break;
                                         }
                                         System.out.println();
                                     }
@@ -466,6 +473,7 @@ public class Main {
                                         System.out.print(grafico + "% \u2192 ");
                                         for(int i=0; i<=grafico; i++){
                                             System.out.print("\u001B[36m\u275A");
+                                            if (i==100) break;
                                         }
                                         System.out.println();
                                     }
@@ -501,6 +509,7 @@ public class Main {
                                         System.out.print(grafico + "% \u2192 ");
                                         for(int i=0; i<=grafico; i++){
                                             System.out.print("\u001B[36m\u275A");
+                                            if (i==100) break;
                                         }
                                         System.out.println();
                                     }
@@ -629,6 +638,7 @@ public class Main {
                                                 }else{
                                                     inversionA2 = true;
                                                     saldoTotal2-=cantidadAportadaA2;
+                                                    cantidadAportadaA+=cantidadAportadaA2;
                                                     inversiones2++;
                                                     System.out.println("¡¡¡Gracias por aportar su parte!!!");
                                                     break;
@@ -644,6 +654,7 @@ public class Main {
                                                 }else{
                                                     inversionB2 = true;
                                                     saldoTotal2-=cantidadAportadaB2;
+                                                    cantidadAportadaB+=cantidadAportadaB2;
                                                     inversiones2++;
                                                     System.out.println("¡¡¡Gracias por aportar su parte!!!");
                                                     break;
@@ -659,6 +670,7 @@ public class Main {
                                                 }else{
                                                     inversionC2 = true;
                                                     saldoTotal2-=cantidadAportadaC2;
+                                                    cantidadAportadaC+=cantidadAportadaC2;
                                                     inversiones2++;
                                                     System.out.println("¡¡¡Gracias por aportar su parte!!!");
                                                     break;
@@ -700,6 +712,7 @@ public class Main {
                                                             }else{
                                                                 inversionA2 = true;
                                                                 saldoTotal2-=cantidadAportadaA2;
+                                                                cantidadAportadaA+=cantidadAportadaA2;
                                                                 inversiones2++;
                                                                 System.out.println("¡¡¡Gracias por aportar su parte!!!");
                                                                 break;
@@ -715,6 +728,7 @@ public class Main {
                                                             }else{
                                                                 inversionB2 = true;
                                                                 saldoTotal2-=cantidadAportadaB2;
+                                                                cantidadAportadaB+=cantidadAportadaB2;
                                                                 inversiones2++;
                                                                 System.out.println("¡¡¡Gracias por aportar su parte!!!");
                                                                 break;
@@ -730,6 +744,7 @@ public class Main {
                                                             }else{
                                                                 inversionC2 = true;
                                                                 saldoTotal2-=cantidadAportadaC2;
+                                                                cantidadAportadaC+=cantidadAportadaC2;
                                                                 inversiones2++;
                                                                 System.out.println("¡¡¡Gracias por aportar su parte!!!");
                                                                 break;
@@ -896,6 +911,7 @@ public class Main {
                                         System.out.print(grafico + "% \u2192 ");
                                         for(int i=0; i<=grafico; i++){
                                             System.out.print("\u001B[36m\u275A");
+                                            if (i==100) break;
                                         }
                                         System.out.println();
                                     }
@@ -926,10 +942,12 @@ public class Main {
                                         System.out.println(descripcionRecompensaB3);
                                         System.out.println(precioRecompensaB3);
                                         grafico= (float) (cantidadAportadaB*100)/cantidadB;
+
                                         System.out.println("Gráfica de financiación");
                                         System.out.print(grafico + "% \u2192 ");
                                         for(int i=0; i<=grafico; i++){
                                             System.out.print("\u001B[36m\u275A");
+                                            if (i==100) break;
                                         }
                                         System.out.println();
                                     }
@@ -965,6 +983,7 @@ public class Main {
                                         System.out.print(grafico + "% \u2192 ");
                                         for(int i=0; i<=grafico; i++){
                                             System.out.print("\u001B[36m\u275A");
+                                            if (i==100) break;
                                         }
                                         System.out.println();
                                     }
@@ -1344,6 +1363,7 @@ public class Main {
                                                     System.out.print(grafico + "% \u2192 ");
                                                     for(int i=0; i<=grafico; i++){
                                                         System.out.print("\u001B[36m\u275A");
+                                                        if (i==100) break;
                                                     }
                                                     System.out.println();
                                                 }
@@ -1379,6 +1399,7 @@ public class Main {
                                                     System.out.print(grafico + "% \u2192 ");
                                                     for(int i=0; i<=grafico; i++){
                                                         System.out.print("\u001B[36m\u275A");
+                                                        if (i==100) break;
                                                     }
                                                     System.out.println();
                                                 }
@@ -1414,6 +1435,7 @@ public class Main {
                                                     System.out.print(grafico + "% \u2192 ");
                                                     for(int i=0; i<=grafico; i++){
                                                         System.out.print("\u001B[36m\u275A");
+                                                        if (i==100) break;
                                                     }
                                                     System.out.println();
                                                 }
@@ -1862,6 +1884,7 @@ public class Main {
                                                     System.out.print(grafico + "% \u2192 ");
                                                     for(int i=0; i<=grafico; i++){
                                                         System.out.print("\u001B[36m\u275A");
+                                                        if (i==100) break;
                                                     }
                                                     System.out.println();
                                                 }
@@ -1897,6 +1920,7 @@ public class Main {
                                                     System.out.print(grafico + "% \u2192 ");
                                                     for(int i=0; i<=grafico; i++){
                                                         System.out.print("\u001B[36m\u275A");
+                                                        if (i==100) break;
                                                     }
                                                     System.out.println();
                                                 }
@@ -1932,6 +1956,7 @@ public class Main {
                                                     System.out.print(grafico + "% \u2192 ");
                                                     for(int i=0; i<=grafico; i++){
                                                         System.out.print("\u001B[36m\u275A");
+                                                        if (i==100) break;
                                                     }
                                                     System.out.println();
                                                 }
@@ -2141,6 +2166,6 @@ public class Main {
                 } while (menu!=3);
             }
         }while(sesion);
-        System.out.println("¡Que tenga un buen día!");
+        System.out.println("Que tenga un buen día!");
     }
 }
