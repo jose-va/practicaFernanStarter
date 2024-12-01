@@ -158,14 +158,14 @@ public class Main {
                                                 System.out.println("La cantidad necesaria de este proyecto es de " + cantidadA);
                                                 System.out.println("¿Que cantidad desea aportar?");
                                                 cantidadAportadaA1 = Integer.parseInt(s.next());
-                                                if (cantidadAportadaA1>saldoTotal1){
+                                                if (cantidadAportadaA1 > saldoTotal1) {
                                                     System.out.println("No dispone de saldo suficiente para realizar la aportación.");
-                                                    System.out.println("Su saldo es de: "+saldoTotal1);
+                                                    System.out.println("Su saldo es de: " + saldoTotal1);
                                                     break;
-                                                }else{
+                                                } else {
                                                     inversionA1 = true;
-                                                    saldoTotal1-=cantidadAportadaA1;
-                                                    cantidadAportadaA+=cantidadAportadaA1;
+                                                    saldoTotal1 -= cantidadAportadaA1;
+                                                    cantidadAportadaA += cantidadAportadaA1;
                                                     inversiones1++;
                                                     System.out.println("¡¡¡Gracias por aportar su parte!!!");
                                                     break;
@@ -174,14 +174,14 @@ public class Main {
                                                 System.out.println("La cantidad necesaria de este proyecto es de " + cantidadB);
                                                 System.out.println("¿Que cantidad desea aportar?");
                                                 cantidadAportadaB1 = Integer.parseInt(s.next());
-                                                if (cantidadAportadaB1>saldoTotal1){
+                                                if (cantidadAportadaB1 > saldoTotal1) {
                                                     System.out.println("No dispone de saldo suficiente para realizar la aportación.");
-                                                    System.out.println("Su saldo es de: "+saldoTotal1);
+                                                    System.out.println("Su saldo es de: " + saldoTotal1);
                                                     break;
-                                                }else{
+                                                } else {
                                                     inversionB1 = true;
-                                                    saldoTotal1-=cantidadAportadaB1;
-                                                    cantidadAportadaB+=cantidadAportadaB1;
+                                                    saldoTotal1 -= cantidadAportadaB1;
+                                                    cantidadAportadaB += cantidadAportadaB1;
                                                     inversiones1++;
                                                     System.out.println("¡¡¡Gracias por aportar su parte!!!");
                                                     break;
@@ -190,14 +190,14 @@ public class Main {
                                                 System.out.println("La cantidad necesaria de este proyecto es de " + cantidadC);
                                                 System.out.println("¿Que cantidad desea aportar?");
                                                 cantidadAportadaC1 = Integer.parseInt(s.next());
-                                                if (cantidadAportadaC1>saldoTotal1){
+                                                if (cantidadAportadaC1 > saldoTotal1) {
                                                     System.out.println("No dispone de saldo suficiente para realizar la aportación.");
-                                                    System.out.println("Su saldo es de: "+saldoTotal1);
+                                                    System.out.println("Su saldo es de: " + saldoTotal1);
                                                     break;
-                                                }else{
+                                                } else {
                                                     inversionC1 = true;
-                                                    saldoTotal1-=cantidadAportadaC1;
-                                                    cantidadAportadaC+=cantidadAportadaC1;
+                                                    saldoTotal1 -= cantidadAportadaC1;
+                                                    cantidadAportadaC += cantidadAportadaC1;
                                                     inversiones1++;
                                                     System.out.println("¡¡¡Gracias por aportar su parte!!!");
                                                     break;
@@ -205,7 +205,8 @@ public class Main {
                                             default:
                                                 System.out.println("Debe de introducir la opción correspondiente correcta");
                                                 break;
-                                        } break;
+                                        }
+                                        break;
                                     case 2:
                                         if (inversiones1 == 0) {
                                             System.out.println("Actualmente, no ha realizado ninguna inversión");
@@ -232,14 +233,14 @@ public class Main {
                                                             System.out.println("La cantidad necesaria de este proyecto es de " + cantidadA);
                                                             System.out.println("¿Que cantidad desea aportar?");
                                                             cantidadAportadaA1 = Integer.parseInt(s.next());
-                                                            if (cantidadAportadaA1>saldoTotal1){
+                                                            if (cantidadAportadaA1 > saldoTotal1) {
                                                                 System.out.println("No dispone de saldo suficiente para realizar la aportación.");
-                                                                System.out.println("Su saldo es de: "+saldoTotal1);
+                                                                System.out.println("Su saldo es de: " + saldoTotal1);
                                                                 break;
-                                                            }else{
+                                                            } else {
                                                                 inversionA1 = true;
-                                                                saldoTotal1-=cantidadAportadaA1;
-                                                                cantidadAportadaA+=cantidadAportadaA1;
+                                                                saldoTotal1 -= cantidadAportadaA1;
+                                                                cantidadAportadaA += cantidadAportadaA1;
                                                                 inversiones1++;
                                                                 System.out.println("¡¡¡Gracias por aportar su parte!!!");
                                                                 break;
@@ -248,14 +249,14 @@ public class Main {
                                                             System.out.println("La cantidad necesaria de este proyecto es de " + cantidadB);
                                                             System.out.println("¿Que cantidad desea aportar?");
                                                             cantidadAportadaB1 = Integer.parseInt(s.next());
-                                                            if (cantidadAportadaB1>saldoTotal1){
+                                                            if (cantidadAportadaB1 > saldoTotal1) {
                                                                 System.out.println("No dispone de saldo suficiente para realizar la aportación.");
-                                                                System.out.println("Su saldo es de: "+saldoTotal1);
+                                                                System.out.println("Su saldo es de: " + saldoTotal1);
                                                                 break;
-                                                            }else{
+                                                            } else {
                                                                 inversionB1 = true;
-                                                                saldoTotal1-=cantidadAportadaB1;
-                                                                cantidadAportadaB+=cantidadAportadaB1;
+                                                                saldoTotal1 -= cantidadAportadaB1;
+                                                                cantidadAportadaB += cantidadAportadaB1;
                                                                 inversiones1++;
                                                                 System.out.println("¡¡¡Gracias por aportar su parte!!!");
                                                                 break;
@@ -264,14 +265,14 @@ public class Main {
                                                             System.out.println("La cantidad necesaria de este proyecto es de " + cantidadC);
                                                             System.out.println("¿Que cantidad desea aportar?");
                                                             cantidadAportadaC1 = Integer.parseInt(s.next());
-                                                            if (cantidadAportadaC1>saldoTotal1){
+                                                            if (cantidadAportadaC1 > saldoTotal1) {
                                                                 System.out.println("No dispone de saldo suficiente para realizar la aportación.");
-                                                                System.out.println("Su saldo es de: "+saldoTotal1);
+                                                                System.out.println("Su saldo es de: " + saldoTotal1);
                                                                 break;
-                                                            }else{
+                                                            } else {
                                                                 inversionC1 = true;
-                                                                saldoTotal1-=cantidadAportadaC1;
-                                                                cantidadAportadaC+=cantidadAportadaC1;
+                                                                saldoTotal1 -= cantidadAportadaC1;
+                                                                cantidadAportadaC += cantidadAportadaC1;
                                                                 inversiones1++;
                                                                 System.out.println("¡¡¡Gracias por aportar su parte!!!");
                                                                 break;
@@ -288,8 +289,8 @@ public class Main {
                                                 if (inversionA1) {
                                                     System.out.println();
                                                     System.out.println(nombreProyectoA);
-                                                    System.out.println("Categoría: "+categoriaA);
-                                                    System.out.println("Cantidad aportada: "+cantidadAportadaA);
+                                                    System.out.println("Categoría: " + categoriaA);
+                                                    System.out.println("Cantidad aportada: " + cantidadAportadaA);
                                                     System.out.println();
                                                 }
                                                 if (inversionB1) {
@@ -378,7 +379,7 @@ public class Main {
                         case 2:
                             System.out.println("CONSULTA DE PROYECTOS");
                             System.out.println("=================================================");
-                            if (proyectos <= 0){
+                            if (proyectos <= 0) {
                                 System.out.println("****Actualmente no hay ningún proyecto****");
                                 break;
                             }
@@ -386,7 +387,7 @@ public class Main {
                             System.out.println(nombreProyectoA);
                             System.out.println("Categoría: " + categoriaA);
                             System.out.println("Cantidad necesaria: " + cantidadA);
-                            System.out.println("Cantidad financiada hasta el momento: "+  cantidadAportadaA);
+                            System.out.println("Cantidad financiada hasta el momento: " + cantidadAportadaA);
                             if (proyectos < 2) break;
                             System.out.println("=================================================");
                             System.out.println("PROYECTO 2");
@@ -437,12 +438,12 @@ public class Main {
                                         System.out.println(descripcionRecompensaA3);
                                         System.out.println(precioRecompensaA3);
 
-                                        grafico= (float) (cantidadAportadaA*100)/cantidadA;
+                                        grafico = (float) (cantidadAportadaA * 100) / cantidadA;
                                         System.out.println("Gráfica de financiación");
                                         System.out.print(grafico + "% \u2192 ");
-                                        for(int i=0; i<=grafico; i++){
+                                        for (int i = 0; i <= grafico; i++) {
                                             System.out.print("\u001B[36m\u275A");
-                                            if (i==100) break;
+                                            if (i == 100) break;
                                         }
                                         System.out.println();
                                     }
@@ -476,12 +477,12 @@ public class Main {
                                         System.out.println(descripcionRecompensaB3);
                                         System.out.println(precioRecompensaB3);
 
-                                        grafico= (float) (cantidadAportadaB*100)/cantidadB;
+                                        grafico = (float) (cantidadAportadaB * 100) / cantidadB;
                                         System.out.println("Gráfica de financiación");
                                         System.out.print(grafico + "% \u2192 ");
-                                        for(int i=0; i<=grafico; i++){
+                                        for (int i = 0; i <= grafico; i++) {
                                             System.out.print("\u001B[36m\u275A");
-                                            if (i==100) break;
+                                            if (i == 100) break;
                                         }
                                         System.out.println();
                                     }
@@ -516,12 +517,12 @@ public class Main {
                                         System.out.println(descripcionRecompensaC3);
                                         System.out.println(precioRecompensaC3);
 
-                                        grafico= (float) (cantidadAportadaC*100)/cantidadC;
+                                        grafico = (float) (cantidadAportadaC * 100) / cantidadC;
                                         System.out.println("Gráfica de financiación");
                                         System.out.print(grafico + "% \u2192 ");
-                                        for(int i=0; i<=grafico; i++){
+                                        for (int i = 0; i <= grafico; i++) {
                                             System.out.print("\u001B[36m\u275A");
-                                            if (i==100) break;
+                                            if (i == 100) break;
                                         }
                                         System.out.println();
                                     }
@@ -610,7 +611,7 @@ public class Main {
                     }
                 } while (menu != 6);
 
-                {if (contrasena.equals(contrasenaInversor2)) { //Menú inversor2-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+            }if (contrasena.equals(contrasenaInversor2)) { //Menú inversor2-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
                 System.out.println("Bienvenido. Cuenta de inversor.");
                 do {
                     System.out.println("========MENÚ========");
