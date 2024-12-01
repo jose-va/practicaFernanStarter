@@ -152,9 +152,10 @@ public class Main {
                                 switch (opcion) {
                                     case 1:
                                         System.out.println("¿En qué proyecto desea invertir?");
-                                        System.out.println("Proyecto 1: " + nombreProyectoA);
-                                        System.out.println("Proyecto 2: " + nombreProyectoB);
-                                        System.out.println("Proyecto 3: " + nombreProyectoC);
+                                        System.out.println("1. " + nombreProyectoA);
+                                        System.out.println("2. " + nombreProyectoB);
+                                        System.out.println("3. " + nombreProyectoC);
+                                        System.out.println("4. Salir");
                                         aportacionI1 = Integer.parseInt(s.next());
                                         switch (aportacionI1) {
                                             case 1:
@@ -165,7 +166,9 @@ public class Main {
                                                     System.out.println("No dispone de saldo suficiente para realizar la aportación.");
                                                     System.out.println("Su saldo es de: " + saldoTotal1 + "€");
                                                     break;
-                                                } else {
+                                                } else if (cantidadAportadaA1<=0) {
+                                                    System.out.println("Por favor, introduzca un valor válido");
+                                                }else{
                                                     inversionA1 = true;
                                                     saldoTotal1 -= cantidadAportadaA1;
                                                     cantidadAportadaA += cantidadAportadaA1;
@@ -205,6 +208,8 @@ public class Main {
                                                     System.out.println("¡¡¡Gracias por aportar su parte!!!");
                                                     break;
                                                 }
+                                            case 4:
+                                                break;
                                             default:
                                                 System.out.println("Debe de introducir la opción correspondiente correcta");
                                                 break;
@@ -224,12 +229,11 @@ public class Main {
                                                 respuesta2 = s.next();
                                             }
                                             if (respuesta2.equals("s")) {
-                                                int opcion3 = 0;
-                                                while (opcion3 != 1 || opcion3 != 2 || opcion3 != 3) {
-                                                    System.out.println("¿En que proyecto desea invertir? Introduce el número correspondiente");
-                                                    System.out.println("Proyecto 1: " + nombreProyectoA);
-                                                    System.out.println("Proyecto 2: " + nombreProyectoB);
-                                                    System.out.println("Proyecto 3: " + nombreProyectoC);
+                                                    System.out.println("¿En qué proyecto desea invertir?");
+                                                    System.out.println("1. " + nombreProyectoA);
+                                                    System.out.println("2. " + nombreProyectoB);
+                                                    System.out.println("3. " + nombreProyectoC);
+                                                    System.out.println("4. Salir");
                                                     aportacionI1 = Integer.parseInt(s.next());
                                                     switch (aportacionI1) {
                                                         case 1:
@@ -240,7 +244,9 @@ public class Main {
                                                                 System.out.println("No dispone de saldo suficiente para realizar la aportación.");
                                                                 System.out.println("Su saldo es de: " + saldoTotal1 + "€");
                                                                 break;
-                                                            } else {
+                                                            } else if (cantidadAportadaA1<=0) {
+                                                                System.out.println("Por favor, introduzca un valor válido");
+                                                            }else{
                                                                 inversionA1 = true;
                                                                 saldoTotal1 -= cantidadAportadaA1;
                                                                 cantidadAportadaA += cantidadAportadaA1;
@@ -280,10 +286,11 @@ public class Main {
                                                                 System.out.println("¡¡¡Gracias por aportar su parte!!!");
                                                                 break;
                                                             }
+                                                        case 4:
+                                                            break;
                                                         default:
                                                             System.out.println("Debe de introducir la opción correspondiente correcta");
                                                             break;
-                                                    }
                                                 }
                                             }
                                         } else if (inversiones1 > 0) {
@@ -587,13 +594,15 @@ public class Main {
                                         saldo = Integer.parseInt(s.next());
                                         saldoTotal1 += saldo;
                                         System.out.println("Su saldo ha sido añadido correctamente");
+                                        break;
                                     case 3:
                                         System.out.println("Usted ha seleccionado salir.");
+                                        break;
                                     default:
                                         System.out.println("Opcion seleccionada inválida.");
+                                        break;
                                 }
                             } while (opcion != 3);
-
                             break;
                         case 4:
                             System.out.println("INVITAR A UN AMIGO");
@@ -669,9 +678,10 @@ public class Main {
                                 switch (opcion) {
                                     case 1:
                                         System.out.println("¿En qué proyecto desea invertir?");
-                                        System.out.println("Proyecto 1: " + nombreProyectoA);
-                                        System.out.println("Proyecto 2: " + nombreProyectoB);
-                                        System.out.println("Proyecto 3: " + nombreProyectoC);
+                                        System.out.println("1. " + nombreProyectoA);
+                                        System.out.println("2. " + nombreProyectoB);
+                                        System.out.println("3. " + nombreProyectoC);
+                                        System.out.println("4. Salir");
                                         aportacionI2 = Integer.parseInt(s.next());
                                         switch (aportacionI2) {
                                             case 1:
@@ -682,6 +692,8 @@ public class Main {
                                                     System.out.println("No dispone de saldo suficiente para realizar la aportación.");
                                                     System.out.println("Su saldo es de: "+saldoTotal2 + "€");
                                                     break;
+                                                } else if (cantidadAportadaA1<=0) {
+                                                    System.out.println("Por favor, introduzca un valor válido");
                                                 }else{
                                                     inversionA2 = true;
                                                     saldoTotal2-=cantidadAportadaA2;
@@ -722,6 +734,8 @@ public class Main {
                                                     System.out.println("¡¡¡Gracias por aportar su parte!!!");
                                                     break;
                                                 }
+                                            case 4:
+                                                break;
                                             default:
                                                 System.out.println("Debe de introducir la opción correspondiente correcta");
                                                 break;
@@ -740,12 +754,11 @@ public class Main {
                                                 respuesta2 = s.next();
                                             }
                                             if (respuesta2.equals("s")) {
-                                                int opcion3 = 0;
-                                                while (opcion3 != 1 || opcion3 != 2 || opcion3 != 3) {
-                                                    System.out.println("¿En que proyecto desea invertir? Introduce el número correspondiente");
-                                                    System.out.println("Proyecto 1: " + nombreProyectoA);
-                                                    System.out.println("Proyecto 2: " + nombreProyectoB);
-                                                    System.out.println("Proyecto 3: " + nombreProyectoC);
+                                                    System.out.println("¿En qué proyecto desea invertir?");
+                                                    System.out.println("1. " + nombreProyectoA);
+                                                    System.out.println("2. " + nombreProyectoB);
+                                                    System.out.println("3. " + nombreProyectoC);
+                                                    System.out.println("4. Salir");
                                                     aportacionI2 = Integer.parseInt(s.next());
                                                     switch (aportacionI2) {
                                                         case 1:
@@ -756,6 +769,8 @@ public class Main {
                                                                 System.out.println("No dispone de saldo suficiente para realizar la aportación.");
                                                                 System.out.println("Su saldo es de: "+saldoTotal2 + "€");
                                                                 break;
+                                                            } else if (cantidadAportadaA1<=0) {
+                                                                System.out.println("Por favor, introduzca un valor válido");
                                                             }else{
                                                                 inversionA2 = true;
                                                                 saldoTotal2-=cantidadAportadaA2;
@@ -796,10 +811,11 @@ public class Main {
                                                                 System.out.println("¡¡¡Gracias por aportar su parte!!!");
                                                                 break;
                                                             }
+                                                        case 4:
+                                                            break;
                                                         default:
                                                             System.out.println("Debe de introducir la opción correspondiente correcta");
                                                             break;
-                                                    }
                                                 }
                                             }
                                         } else if (inversiones2 > 0) {
@@ -1088,10 +1104,13 @@ public class Main {
                                         saldo = Integer.parseInt(s.next());
                                         saldoTotal1 += saldo;
                                         System.out.println("Su saldo ha sido añadido correctamente");
+                                        break;
                                     case 3:
                                         System.out.println("Usted ha seleccionado salir.");
+                                        break;
                                     default:
                                         System.out.println("Opcion seleccionada inválida.");
+                                        break;
                                 }
                             } while (opcion != 3);
 
@@ -1101,17 +1120,19 @@ public class Main {
                             do {
                                 System.out.println("1. Listado de amigos");
                                 System.out.println("2. Añadir a un amigo");
+                                System.out.println("3. Salir");
                                 opcion = s.nextInt();
                                 switch (opcion) {
                                     case 1:
                                         System.out.println("LISTADO DE AMIGOS");
                                         System.out.println(amigo);
+                                        break;
                                     case 2:
                                         System.out.println("AÑADIR A UN AMIGO: ");
                                         correo = s.nextLine();
                                         amigo = amigo.concat(" " + correo);
+                                        break;
                                 }
-
                             } while (opcion != 3);
                             break;
                         case 5:
