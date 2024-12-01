@@ -37,7 +37,7 @@ public class ApartadoInversores2 {
 
         int intentos = 3, opcion, numpro = 0, menu;
         boolean bloqueoGestor = false, bloqueoInversor1 = false, bloqueoInversor2 = false, sesion = true;
-        //if (contrasena.equals(contrasenaInversor1)) { //Menú inversor1-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        //}if (contrasena.equals(contrasenaInversor1)) { //Menú inversor1-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
         System.out.println("Bienvenido. Cuenta de inversor 1.");
         do {
             System.out.println("========MENÚ========");
@@ -476,7 +476,7 @@ public class ApartadoInversores2 {
             }
         } while (menu != 6);
 
-        //if (contrasena.equals(contrasenaInversor2)) { //Menú inversor2-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        //}if (contrasena.equals(contrasenaInversor2)) { //Menú inversor2-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
         System.out.println("Bienvenido. Cuenta de inversor 2.");
         do {
             System.out.println("========MENÚ========");
