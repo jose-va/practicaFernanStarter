@@ -294,15 +294,15 @@ public class Main {
                                                 if (inversionB1) {
                                                     System.out.println();
                                                     System.out.println(nombreProyectoB);
-                                                    System.out.println(categoriaB);
-                                                    System.out.println(cantidadAportadaB);
+                                                    System.out.println("Categoría: "+categoriaB);
+                                                    System.out.println("Cantidad aportada: "+cantidadAportadaB);
                                                     System.out.println();
                                                 }
                                                 if (inversionC1) {
                                                     System.out.println();
                                                     System.out.println(nombreProyectoC);
-                                                    System.out.println(categoriaC);
-                                                    System.out.println(cantidadAportadaC);
+                                                    System.out.println("Categoría: "+categoriaC);
+                                                    System.out.println("Cantidad aportada: "+cantidadAportadaC);
                                                     System.out.println();
                                                 }
                                             }
@@ -311,39 +311,39 @@ public class Main {
                                                 if (inversionA1 && inversionB1) {
                                                     System.out.println();
                                                     System.out.println(nombreProyectoA);
-                                                    System.out.println(categoriaA);
-                                                    System.out.println(cantidadAportadaA);
+                                                    System.out.println("Categoría: "+categoriaA);
+                                                    System.out.println("Cantidad aportada: "+cantidadAportadaA);
                                                     System.out.println();
                                                     System.out.println("******************************");
                                                     System.out.println();
                                                     System.out.println(nombreProyectoB);
-                                                    System.out.println(categoriaB);
-                                                    System.out.println(cantidadAportadaB);
+                                                    System.out.println("Categoría: "+categoriaB);
+                                                    System.out.println("Cantidad aportada: "+cantidadAportadaB);
                                                     System.out.println();
                                                 }
                                                 if (inversionA1 && inversionC1) {
                                                     System.out.println();
                                                     System.out.println(nombreProyectoA);
-                                                    System.out.println(categoriaA);
-                                                    System.out.println(cantidadAportadaA);
+                                                    System.out.println("Categoría: "+categoriaA);
+                                                    System.out.println("Cantidad aportada: "+cantidadAportadaA);
                                                     System.out.println();
                                                     System.out.println("******************************");
                                                     System.out.println();
                                                     System.out.println(nombreProyectoC);
-                                                    System.out.println(categoriaC);
-                                                    System.out.println(cantidadAportadaC);
+                                                    System.out.println("Categoría: "+categoriaC);
+                                                    System.out.println("Cantidad aportada: "+cantidadAportadaC);
                                                     System.out.println();
                                                 }
                                                 if (inversionB1 && inversionC1) {
                                                     System.out.println();
                                                     System.out.println(nombreProyectoB);
-                                                    System.out.println(categoriaB);
-                                                    System.out.println(cantidadAportadaB);
+                                                    System.out.println("Categoría: "+categoriaB);
+                                                    System.out.println("Cantidad aportada: "+cantidadAportadaB);
                                                     System.out.println();
                                                     System.out.println("******************************");
                                                     System.out.println();
                                                     System.out.println(nombreProyectoC);
-                                                    System.out.println(categoriaC);
+                                                    System.out.println("Categoría: "+categoriaC);
                                                     System.out.println(cantidadAportadaC);
                                                     System.out.println();
                                                 }
@@ -352,20 +352,20 @@ public class Main {
                                                 System.out.println("Lista de todaas sus inversiones: ");
                                                 System.out.println();
                                                 System.out.println(nombreProyectoA);
-                                                System.out.println(categoriaA);
-                                                System.out.println(cantidadAportadaA);
+                                                System.out.println("Categoría: "+categoriaA);
+                                                System.out.println("Cantidad aportada: "+cantidadAportadaA);
                                                 System.out.println();
                                                 System.out.println("******************************");
                                                 System.out.println();
                                                 System.out.println(nombreProyectoB);
-                                                System.out.println(categoriaB);
-                                                System.out.println(cantidadAportadaB);
+                                                System.out.println("Categoría: "+categoriaB);
+                                                System.out.println("Cantidad aportada: "+cantidadAportadaB);
                                                 System.out.println();
                                                 System.out.println("******************************");
                                                 System.out.println();
                                                 System.out.println(nombreProyectoC);
-                                                System.out.println(categoriaC);
-                                                System.out.println(cantidadAportadaC);
+                                                System.out.println("Categoría: "+categoriaC);
+                                                System.out.println("Cantidad aportada: "+cantidadAportadaC);
                                                 System.out.println();
                                             }
                                         }
@@ -411,25 +411,25 @@ public class Main {
                                         System.out.println("No existe el proyecto");
                                     } else {
                                         System.out.println(nombreProyectoA);
-                                        System.out.println(descripcionProyectoA);
-                                        System.out.println(categoriaA);
-                                        System.out.println(cantidadA);
-                                        System.out.println(cantidadAportadaA);
-                                        System.out.println(fechaAperturaA);
-                                        System.out.println(fechaCierreA);
+                                        System.out.println("Descripción del proyecto: "+descripcionProyectoA);
+                                        System.out.println("Categoría: "+categoriaA);
+                                        System.out.println("Cantidad necesaria: " +cantidadA);
+                                        System.out.println("Cantidad financiada hasta el momento: "+cantidadAportadaA);
+                                        System.out.println("Fecha de apertura: "+fechaAperturaA);
+                                        System.out.println("Fecha de cierre: "+fechaCierreA);
                                         System.out.println("RECOMPENSA 1");
-                                        System.out.println(nombreRecompensaA1);
+                                        System.out.println("Descripción de la recompensa: "+nombreRecompensaA1);
                                         System.out.println(descripcionRecompensaA1);
-                                        System.out.println(precioRecompensaA1);
+                                        System.out.println("Precio de la recompensa: "+precioRecompensaA1);
                                         if (recompensasA == 1) break;
                                         System.out.println("RECOMPENSA 2");
                                         System.out.println(nombreRecompensaA2);
-                                        System.out.println(descripcionRecompensaA2);
-                                        System.out.println(precioRecompensaA2);
+                                        System.out.println("Descripción de la recompensa: "+descripcionRecompensaA2);
+                                        System.out.println("Precio de la recompensa: "+precioRecompensaA2);
                                         if (recompensasA == 2) break;
                                         System.out.println("RECOMPENSA 2");
                                         System.out.println(nombreRecompensaA3);
-                                        System.out.println(descripcionRecompensaA3);
+                                        System.out.println("Descripción de la recompensa: "+descripcionRecompensaA3);
                                         System.out.println(precioRecompensaA3);
 
                                         grafico= (float) (cantidadAportadaA*100)/cantidadA;
@@ -447,26 +447,26 @@ public class Main {
                                         System.out.println("No existe el proyecto.");
                                     } else {
                                         System.out.println(nombreProyectoB);
-                                        System.out.println(descripcionProyectoB);
-                                        System.out.println(categoriaB);
-                                        System.out.println(cantidadB);
-                                        System.out.println(cantidadAportadaB);
-                                        System.out.println(fechaAperturaB);
-                                        System.out.println(fechaCierreB);
+                                        System.out.println("Descripción del proyecto: "+descripcionProyectoB);
+                                        System.out.println("Categoría: "+categoriaB);
+                                        System.out.println("Cantidad necesaria: " +cantidadB);
+                                        System.out.println("Cantidad financiada hasta el momento: "+cantidadAportadaB);
+                                        System.out.println("Fecha de apertura: "+fechaAperturaB);
+                                        System.out.println("Fecha de cierre: "+fechaCierreB);
                                         System.out.println("RECOMPENSA 1");
                                         System.out.println(nombreRecompensaB1);
-                                        System.out.println(descripcionRecompensaB1);
-                                        System.out.println(precioRecompensaB1);
+                                        System.out.println("Descripción de la recompensa: "+descripcionRecompensaB1);
+                                        System.out.println("Precio de la recompensa: "+precioRecompensaB1);
                                         if (recompensasB == 1) break;
                                         System.out.println("RECOMPENSA 2");
                                         System.out.println(nombreRecompensaB2);
-                                        System.out.println(descripcionRecompensaB2);
-                                        System.out.println(precioRecompensaB2);
+                                        System.out.println("Descripción de la recompensa: "+descripcionRecompensaB2);
+                                        System.out.println("Precio de la recompensa: "+precioRecompensaB2);
                                         if (recompensasB == 2) break;
                                         System.out.println("RECOMPENSA 3");
                                         System.out.println(nombreRecompensaB3);
-                                        System.out.println(descripcionRecompensaB3);
-                                        System.out.println(precioRecompensaB3);
+                                        System.out.println("Descripción de la recompensa: "+descripcionRecompensaB3);
+                                        System.out.println("Precio de la recompensa: "+precioRecompensaB3);
 
                                         grafico= (float) (cantidadAportadaB*100)/cantidadB;
                                         System.out.println("Gráfica de financiación");
@@ -484,25 +484,25 @@ public class Main {
                                     } else {
                                         System.out.println(nombreProyectoC);
                                         System.out.println(descripcionProyectoC);
-                                        System.out.println(categoriaC);
-                                        System.out.println(cantidadC);
-                                        System.out.println(cantidadAportadaC);
-                                        System.out.println(fechaAperturaC);
-                                        System.out.println(fechaCierreC);
+                                        System.out.println("Categoría: "+categoriaC);
+                                        System.out.println("Cantidad necesaria: " +cantidadC);
+                                        System.out.println("Cantidad financiada hasta el momento: "+cantidadAportadaC);
+                                        System.out.println("Fecha de apertura: "+fechaAperturaC);
+                                        System.out.println("Fecha de cierre: "+fechaCierreC);
                                         System.out.println("RECOMPENSA 1");
                                         System.out.println(nombreRecompensaC1);
-                                        System.out.println(descripcionRecompensaC1);
-                                        System.out.println(precioRecompensaC1);
+                                        System.out.println("Descripción de la recompensa: "+descripcionRecompensaC1);
+                                        System.out.println("Precio de la recompensa: "+precioRecompensaC1);
                                         if (recompensasB == 1) break;
                                         System.out.println("RECOMPENSA 2");
                                         System.out.println(nombreRecompensaC2);
-                                        System.out.println(descripcionRecompensaC2);
-                                        System.out.println(precioRecompensaC2);
+                                        System.out.println("Descripción de la recompensa: "+descripcionRecompensaC2);
+                                        System.out.println("Precio de la recompensa: "+precioRecompensaC2);
                                         if (recompensasB == 2) break;
                                         System.out.println("RECOMPENSA 3");
                                         System.out.println(nombreRecompensaC3);
-                                        System.out.println(descripcionRecompensaC3);
-                                        System.out.println(precioRecompensaC3);
+                                        System.out.println("Descripción de la recompensa: "+descripcionRecompensaC3);
+                                        System.out.println("Precio de la recompensa: "+precioRecompensaC3);
 
                                         grafico= (float) (cantidadAportadaC*100)/cantidadC;
                                         System.out.println("Gráfica de financiación");
