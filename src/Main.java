@@ -126,7 +126,7 @@ public class Main {
 
             if (contrasena.equals(contrasenaInversor1)) { //Menú inversor1----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-                System.out.println("Bienvenido. Cuenta de inversor 1.");
+                System.out.println("Bienvenido. Cuenta de inversor.");
                 do {
                     System.out.println("========MENÚ========");
                     System.out.println("1. Mis inversiones");
@@ -610,8 +610,8 @@ public class Main {
                     }
                 } while (menu != 6);
 
-                //if (contrasena.equals(contrasenaInversor2)) { //Menú inversor2-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
-                System.out.println("Bienvenido. Cuenta de inversor 2.");
+                {if (contrasena.equals(contrasenaInversor2)) { //Menú inversor2-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                System.out.println("Bienvenido. Cuenta de inversor.");
                 do {
                     System.out.println("========MENÚ========");
                     System.out.println("1. Mis inversiones");
