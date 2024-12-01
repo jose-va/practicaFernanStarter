@@ -123,6 +123,7 @@ public class Main {
                     System.out.println("Se ha superado el máximo de intentos. Usuario bloqueado.");
                 }
             }
+
             if (contrasena.equals(contrasenaInversor1)) { //Menú inversor1----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
                 System.out.println("Bienvenido. Cuenta de inversor 1.");
