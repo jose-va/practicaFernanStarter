@@ -75,9 +75,9 @@ public class Main {
                 contrasena = s.next();
                 intentos=2;
                 while (!contrasena.equals(contrasenaGestor) && intentos > 0) {
-                    intentos--;
                     System.out.printf("Contraseña incorrecta. Por favor, introduzca su contraseña (%d intentos restantes):\n", intentos);
                     contrasena = s.next();
+                    intentos--;
                 }
 
                 if (intentos == 0) {
@@ -96,9 +96,9 @@ public class Main {
                 contrasena = s.next();
                 intentos=2;
                 while (!contrasena.equals(contrasenaInversor1) && intentos > 0) {
-                    intentos--;
                     System.out.printf("Contraseña incorrecta. Por favor, introduzca su contraseña (%d intentos restantes):\n", intentos);
                     contrasena = s.next();
+                    intentos--;
                 }
 
                 if (intentos == 0) {
@@ -116,9 +116,9 @@ public class Main {
                 System.out.println("Inversor. Introduzca su contraseña (3 intentos):  ");
                 contrasena = s.next();
                 while (!contrasena.equals(contrasenaInversor2) && intentos > 0) {
-                    intentos--;
                     System.out.printf("Contraseña incorrecta. Por favor, introduzca su contraseña (%d intentos restantes):\n", intentos);
                     contrasena = s.next();
+                    intentos--;
                 }
 
                 if (intentos == 0) {
