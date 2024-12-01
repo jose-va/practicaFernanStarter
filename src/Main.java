@@ -645,7 +645,8 @@ public class Main {
                                         break;
                                 }
                             } while (opcion != 3);
-
+                            System.out.println("Los cambios se han guardado correctamente");
+                            System.out.println("Redirigiendo al menú principal");
                             break;
                         case 6:
                             System.out.println("Salir. Usted volverá al login.");
@@ -1158,7 +1159,8 @@ public class Main {
                                         break;
                                 }
                             } while (opcion != 3);
-
+                            System.out.println("Los cambios se han guardado correctamente");
+                            System.out.println("Redirigiendo al menú principal");
                             break;
                         case 6:
                             System.out.println("Salir. Usted volverá al login.");
