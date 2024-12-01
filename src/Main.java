@@ -38,7 +38,7 @@ public class Main {
 
         boolean inversionA1 = false, inversionB1 = false, inversionC1 = false, inversionA2 = false, inversionB2 = false, inversionC2 = false;
 
-        int intentos=3, opcion, numpro=0, menu;
+        int intentos=2, opcion, numpro=0, menu; //Intentos queda a 2, así los usuarios tendran hasta 3 oportunidades para entrar al sistema (hasta 0)
         boolean bloqueoGestor=false, bloqueoInversor1=false, bloqueoInversor2=false,sesion=true;
 
         do {
@@ -73,6 +73,7 @@ public class Main {
                 }
                 System.out.println("Gestor. Introduzca su contraseña (3 intentos):  ");
                 contrasena = s.next();
+                intentos=2;
                 while (!contrasena.equals(contrasenaGestor) && intentos > 0) {
                     intentos--;
                     System.out.printf("Contraseña incorrecta. Por favor, introduzca su contraseña (%d intentos restantes):\n", intentos);
@@ -93,6 +94,7 @@ public class Main {
 
                 System.out.println("Inversor. Introduzca su contraseña (3 intentos):  ");
                 contrasena = s.next();
+                intentos=2;
                 while (!contrasena.equals(contrasenaInversor1) && intentos > 0) {
                     intentos--;
                     System.out.printf("Contraseña incorrecta. Por favor, introduzca su contraseña (%d intentos restantes):\n", intentos);
@@ -110,6 +112,7 @@ public class Main {
                     System.out.println("Este usuario está bloqueado.");
                     break;
                 }
+                intentos=2;
                 System.out.println("Inversor. Introduzca su contraseña (3 intentos):  ");
                 contrasena = s.next();
                 while (!contrasena.equals(contrasenaInversor2) && intentos > 0) {
