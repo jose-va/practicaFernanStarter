@@ -587,10 +587,13 @@ public class Main {
                                         saldo = Integer.parseInt(s.next());
                                         saldoTotal1 += saldo;
                                         System.out.println("Su saldo ha sido añadido correctamente");
+                                        break;
                                     case 3:
                                         System.out.println("Usted ha seleccionado salir.");
+                                        break;
                                     default:
                                         System.out.println("Opcion seleccionada inválida.");
+                                        break;
                                 }
                             } while (opcion != 3);
 
@@ -605,10 +608,15 @@ public class Main {
                                     case 1:
                                         System.out.println("LISTADO DE AMIGOS");
                                         System.out.println(amigo);
+                                        break;
                                     case 2:
                                         System.out.println("AÑADIR A UN AMIGO: ");
                                         correo = s.nextLine();
                                         amigo = amigo.concat(" " + correo);
+                                        break;
+                                    default:
+                                        System.out.println("Opción inválida");
+                                        break;
                                 }
 
                             } while (opcion != 3);
@@ -1088,10 +1096,13 @@ public class Main {
                                         saldo = Integer.parseInt(s.next());
                                         saldoTotal1 += saldo;
                                         System.out.println("Su saldo ha sido añadido correctamente");
+                                        break;
                                     case 3:
                                         System.out.println("Usted ha seleccionado salir.");
+                                        break;
                                     default:
                                         System.out.println("Opcion seleccionada inválida.");
+                                        break;
                                 }
                             } while (opcion != 3);
 
@@ -1106,10 +1117,15 @@ public class Main {
                                     case 1:
                                         System.out.println("LISTADO DE AMIGOS");
                                         System.out.println(amigo);
+                                        break;
                                     case 2:
                                         System.out.println("AÑADIR A UN AMIGO: ");
                                         correo = s.nextLine();
                                         amigo = amigo.concat(" " + correo);
+                                        break;
+                                    default:
+                                        System.out.println("Opción inválida");
+                                        break;
                                 }
 
                             } while (opcion != 3);
