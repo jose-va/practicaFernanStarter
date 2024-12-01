@@ -449,9 +449,17 @@ public class Main {
                                         System.out.print("Cantidad aportada hasta el momento: ");
                                         System.out.println(cantidadAportadaA+ "€");
                                         System.out.print("Fecha de apertura: ");
-                                        System.out.println(fechaAperturaA);
+                                        System.out.println(fechaAperturaA + "/12/2024");
                                         System.out.print("Fecha de cierre: ");
-                                        System.out.println(fechaCierreA);
+                                        System.out.println(fechaCierreA + "/12/2024");
+                                        grafico = (float) (cantidadAportadaC * 100) / cantidadC;
+                                        System.out.println("Gráfica de financiación");
+                                        System.out.print(grafico + "% \u2192 ");
+                                        for (int i = 0; i <= grafico; i++) {
+                                            System.out.print("\u001B[36m\u275A");
+                                            if (i == 100) break;
+                                        }
+                                        System.out.println();
                                         System.out.println("RECOMPENSA 1");
                                         System.out.println(nombreRecompensaA1);
                                         System.out.println(descripcionRecompensaA1);
@@ -467,14 +475,6 @@ public class Main {
                                         System.out.println(descripcionRecompensaA3);
                                         System.out.println(precioRecompensaA3 + "€");
 
-                                        grafico = (float) (cantidadAportadaA * 100) / cantidadA;
-                                        System.out.println("Gráfica de financiación");
-                                        System.out.print(grafico + "% \u2192 ");
-                                        for (int i = 0; i <= grafico; i++) {
-                                            System.out.print("\u001B[36m\u275A");
-                                            if (i == 100) break;
-                                        }
-                                        System.out.println();
                                     }
                                     break;
                                 case 2:
@@ -491,9 +491,17 @@ public class Main {
                                         System.out.print("Cantidad aportada hasta el momento: ");
                                         System.out.println(cantidadAportadaB+ "€");
                                         System.out.print("Fecha de apertura: ");
-                                        System.out.println(fechaAperturaB);
+                                        System.out.println(fechaAperturaB + "/12/2024");
                                         System.out.print("Fecha de cierre: ");
-                                        System.out.println(fechaCierreB);
+                                        System.out.println(fechaCierreB + "/12/2024");
+                                        grafico = (float) (cantidadAportadaC * 100) / cantidadC;
+                                        System.out.println("Gráfica de financiación");
+                                        System.out.print(grafico + "% \u2192 ");
+                                        for (int i = 0; i <= grafico; i++) {
+                                            System.out.print("\u001B[36m\u275A");
+                                            if (i == 100) break;
+                                        }
+                                        System.out.println();
                                         System.out.println("RECOMPENSA 1");
                                         System.out.println(nombreRecompensaB1);
                                         System.out.println(descripcionRecompensaB1);
@@ -509,14 +517,6 @@ public class Main {
                                         System.out.println(descripcionRecompensaB3);
                                         System.out.println(precioRecompensaB3 + "€");
 
-                                        grafico = (float) (cantidadAportadaB * 100) / cantidadB;
-                                        System.out.println("Gráfica de financiación");
-                                        System.out.print(grafico + "% \u2192 ");
-                                        for (int i = 0; i <= grafico; i++) {
-                                            System.out.print("\u001B[36m\u275A");
-                                            if (i == 100) break;
-                                        }
-                                        System.out.println();
                                     }
                                     break;
                                 case 3:
@@ -533,9 +533,17 @@ public class Main {
                                         System.out.print("Cantidad aportada hasta el momento: ");
                                         System.out.println(cantidadAportadaC+ "€");
                                         System.out.print("Fecha de apertura: ");
-                                        System.out.println(fechaAperturaC);
+                                        System.out.println(fechaAperturaC + "/12/2024");
                                         System.out.print("Fecha de cierre: ");
-                                        System.out.println(fechaCierreC);
+                                        System.out.println(fechaCierreC + "/12/2024");
+                                        grafico = (float) (cantidadAportadaC * 100) / cantidadC;
+                                        System.out.println("Gráfica de financiación");
+                                        System.out.print(grafico + "% \u2192 ");
+                                        for (int i = 0; i <= grafico; i++) {
+                                            System.out.print("\u001B[36m\u275A");
+                                            if (i == 100) break;
+                                        }
+                                        System.out.println();
                                         System.out.println("RECOMPENSA 1");
                                         System.out.println(nombreRecompensaC1);
                                         System.out.println(descripcionRecompensaC1);
@@ -551,14 +559,6 @@ public class Main {
                                         System.out.println(descripcionRecompensaC3);
                                         System.out.println(precioRecompensaC3 + "€");
 
-                                        grafico = (float) (cantidadAportadaC * 100) / cantidadC;
-                                        System.out.println("Gráfica de financiación");
-                                        System.out.print(grafico + "% \u2192 ");
-                                        for (int i = 0; i <= grafico; i++) {
-                                            System.out.print("\u001B[36m\u275A");
-                                            if (i == 100) break;
-                                        }
-                                        System.out.println();
                                     }
                                     break;
                                 default:
@@ -967,8 +967,15 @@ public class Main {
                                         System.out.println("Categoría: "+categoriaA);
                                         System.out.println("Cantidad necesaria: "+cantidadA+ "€");
                                         System.out.println("Cantidad aportada hasta el momento: "+cantidadAportadaA+ "€");
-                                        System.out.println("Fecha de apertura: "+fechaAperturaA);
-                                        System.out.println("Fecha de cierre: "+fechaCierreA);
+                                        System.out.println("Fecha de apertura: "+fechaAperturaA + "/12/2024");
+                                        System.out.println("Fecha de cierre: "+fechaCierreA + "/12/2024");
+                                        grafico= (float) (cantidadAportadaC*100)/cantidadC;
+                                        System.out.println("Gráfica de financiación");
+                                        System.out.print(grafico + "% \u2192 ");
+                                        for(int i=0; i<=grafico; i++){
+                                            System.out.print("\u001B[36m\u275A");
+                                            if (i==100) break;
+                                        }
                                         System.out.println();
                                         System.out.println("RECOMPENSA 1");
                                         System.out.println(nombreRecompensaA1);
@@ -984,14 +991,7 @@ public class Main {
                                         System.out.println(nombreRecompensaA3);
                                         System.out.println("Descripción: "+descripcionRecompensaA3);
                                         System.out.println("Precio de la recompensa: "+precioRecompensaA3+ "€");
-                                        grafico= (float) (cantidadAportadaA*100)/cantidadA;
-                                        System.out.println("Gráfica de financiación");
-                                        System.out.print(grafico + "% \u2192 ");
-                                        for(int i=0; i<=grafico; i++){
-                                            System.out.print("\u001B[36m\u275A");
-                                            if (i==100) break;
-                                        }
-                                        System.out.println();
+
                                     }
                                     break;
                                 case 2:
@@ -1004,9 +1004,17 @@ public class Main {
                                         System.out.println("Cantidad necesaria: "+cantidadB+ "€");
                                         System.out.println("Cantidad aportada hasta el momento: "+cantidadAportadaB+ "€");
                                         System.out.print("Fecha de apertura: ");
-                                        System.out.println(fechaAperturaB);
+                                        System.out.println(fechaAperturaB + "/12/2024");
                                         System.out.print("Fecha de cierre: ");
-                                        System.out.println(fechaCierreB);
+                                        System.out.println(fechaCierreB + "/12/2024");
+                                        grafico= (float) (cantidadAportadaC*100)/cantidadC;
+                                        System.out.println("Gráfica de financiación");
+                                        System.out.print(grafico + "% \u2192 ");
+                                        for(int i=0; i<=grafico; i++){
+                                            System.out.print("\u001B[36m\u275A");
+                                            if (i==100) break;
+                                        }
+                                        System.out.println();
                                         System.out.println("RECOMPENSA 1");
                                         System.out.println(nombreRecompensaB1);
                                         System.out.println("Descripción: "  +descripcionRecompensaB1);
@@ -1021,15 +1029,7 @@ public class Main {
                                         System.out.println(nombreRecompensaB3);
                                         System.out.println(descripcionRecompensaB3);
                                         System.out.println(precioRecompensaB3 + "€");
-                                        grafico= (float) (cantidadAportadaB*100)/cantidadB;
 
-                                        System.out.println("Gráfica de financiación");
-                                        System.out.print(grafico + "% \u2192 ");
-                                        for(int i=0; i<=grafico; i++){
-                                            System.out.print("\u001B[36m\u275A");
-                                            if (i==100) break;
-                                        }
-                                        System.out.println();
                                     }
                                     break;
                                 case 3:
@@ -1042,9 +1042,17 @@ public class Main {
                                         System.out.println("Cantidad necesaria: "+cantidadC);
                                         System.out.println("Cantidad aportada hasta el momento: "+cantidadAportadaC2);
                                         System.out.print("Fecha de apertura: ");
-                                        System.out.println(fechaAperturaC);
+                                        System.out.println(fechaAperturaC + "/12/2024");
                                         System.out.print("Fecha de cierre: ");
-                                        System.out.println(fechaCierreC);
+                                        System.out.println(fechaCierreC + "/12/2024");
+                                        grafico= (float) (cantidadAportadaC*100)/cantidadC;
+                                        System.out.println("Gráfica de financiación");
+                                        System.out.print(grafico + "% \u2192 ");
+                                        for(int i=0; i<=grafico; i++){
+                                            System.out.print("\u001B[36m\u275A");
+                                            if (i==100) break;
+                                        }
+                                        System.out.println();
                                         System.out.println("RECOMPENSA 1");
                                         System.out.println(nombreRecompensaC1);
                                         System.out.println("Descripción: "+descripcionRecompensaC1);
@@ -1060,14 +1068,6 @@ public class Main {
                                         System.out.println("Descripción: "+descripcionRecompensaC3);
                                         System.out.println(precioRecompensaC3 + "€");
 
-                                        grafico= (float) (cantidadAportadaC*100)/cantidadC;
-                                        System.out.println("Gráfica de financiación");
-                                        System.out.print(grafico + "% \u2192 ");
-                                        for(int i=0; i<=grafico; i++){
-                                            System.out.print("\u001B[36m\u275A");
-                                            if (i==100) break;
-                                        }
-                                        System.out.println();
                                     }
                                     break;
                                 default:
@@ -1446,9 +1446,17 @@ public class Main {
                                                     System.out.print("Cantidad aportada hasta el momento: ");
                                                     System.out.println(cantidadAportadaA + "€");
                                                     System.out.print("Fecha de apertura: ");
-                                                    System.out.println(fechaAperturaA);
+                                                    System.out.println(fechaAperturaA + "/12/2024");
                                                     System.out.print("Fecha de cierre: ");
-                                                    System.out.println(fechaCierreA);
+                                                    System.out.println(fechaCierreA + "/12/2024");
+                                                    grafico= (float) (cantidadAportadaC*100)/cantidadC;
+                                                    System.out.println("Gráfica de financiación");
+                                                    System.out.print(grafico + "% \u2192 ");
+                                                    for(int i=0; i<=grafico; i++){
+                                                        System.out.print("\u001B[36m\u275A");
+                                                        if (i==100) break;
+                                                    }
+                                                    System.out.println();
                                                     System.out.println("RECOMPENSA 1");
                                                     System.out.println(nombreRecompensaA1);
                                                     System.out.println(descripcionRecompensaA1);
@@ -1464,14 +1472,6 @@ public class Main {
                                                     System.out.println(descripcionRecompensaA3);
                                                     System.out.println(precioRecompensaA3 + "€");
 
-                                                    grafico= (float) (cantidadAportadaA*100)/cantidadA;
-                                                    System.out.println("Gráfica de financiación");
-                                                    System.out.print(grafico + "% \u2192 ");
-                                                    for(int i=0; i<=grafico; i++){
-                                                        System.out.print("\u001B[36m\u275A");
-                                                        if (i==100) break;
-                                                    }
-                                                    System.out.println();
                                                 }
                                                 break;
                                             case 2:
@@ -1488,9 +1488,17 @@ public class Main {
                                                     System.out.print("Cantidad aportada hasta el momento: ");
                                                     System.out.println(cantidadAportadaB+ "€");
                                                     System.out.print("Fecha de apertura: ");
-                                                    System.out.println(fechaAperturaB);
+                                                    System.out.println(fechaAperturaB + "/12/2024");
                                                     System.out.print("Fecha de cierre: ");
-                                                    System.out.println(fechaCierreB);
+                                                    System.out.println(fechaCierreB + "/12/2024");
+                                                    grafico= (float) (cantidadAportadaC*100)/cantidadC;
+                                                    System.out.println("Gráfica de financiación");
+                                                    System.out.print(grafico + "% \u2192 ");
+                                                    for(int i=0; i<=grafico; i++){
+                                                        System.out.print("\u001B[36m\u275A");
+                                                        if (i==100) break;
+                                                    }
+                                                    System.out.println();
                                                     System.out.println("RECOMPENSA 1");
                                                     System.out.println(nombreRecompensaB1);
                                                     System.out.println(descripcionRecompensaB1);
@@ -1506,14 +1514,6 @@ public class Main {
                                                     System.out.println(descripcionRecompensaB3);
                                                     System.out.println(precioRecompensaB3 + "€");
 
-                                                    grafico= (float) (cantidadAportadaB*100)/cantidadB;
-                                                    System.out.println("Gráfica de financiación");
-                                                    System.out.print(grafico + "% \u2192 ");
-                                                    for(int i=0; i<=grafico; i++){
-                                                        System.out.print("\u001B[36m\u275A");
-                                                        if (i==100) break;
-                                                    }
-                                                    System.out.println();
                                                 }
                                                 break;
                                             case 3:
@@ -1530,9 +1530,18 @@ public class Main {
                                                     System.out.print("Cantidad aportada hasta el momento: ");
                                                     System.out.println(cantidadAportadaC+ "€");
                                                     System.out.print("Fecha de apertura: ");
-                                                    System.out.println(fechaAperturaC);
+                                                    System.out.println(fechaAperturaC + "/12/2024");
                                                     System.out.print("Fecha de cierre: ");
-                                                    System.out.println(fechaCierreC);
+                                                    System.out.println(fechaCierreC + "/12/2024");
+
+                                                    grafico= (float) (cantidadAportadaC*100)/cantidadC;
+                                                    System.out.println("Gráfica de financiación");
+                                                    System.out.print(grafico + "% \u2192 ");
+                                                    for(int i=0; i<=grafico; i++){
+                                                        System.out.print("\u001B[36m\u275A");
+                                                        if (i==100) break;
+                                                    }
+                                                    System.out.println();
                                                     System.out.println("RECOMPENSA 1");
                                                     System.out.println(nombreRecompensaC1);
                                                     System.out.println(descripcionRecompensaC1);
@@ -1548,14 +1557,6 @@ public class Main {
                                                     System.out.println(descripcionRecompensaC3);
                                                     System.out.println(precioRecompensaC3 + "€");
 
-                                                    grafico= (float) (cantidadAportadaC*100)/cantidadC;
-                                                    System.out.println("Gráfica de financiación");
-                                                    System.out.print(grafico + "% \u2192 ");
-                                                    for(int i=0; i<=grafico; i++){
-                                                        System.out.print("\u001B[36m\u275A");
-                                                        if (i==100) break;
-                                                    }
-                                                    System.out.println();
                                                 }
                                                 break;
                                             default:
@@ -2006,9 +2007,17 @@ public class Main {
                                                     System.out.print("Cantidad aportada hasta el momento: ");
                                                     System.out.println(cantidadAportadaA+ "€");
                                                     System.out.print("Fecha de apertura: ");
-                                                    System.out.println(fechaAperturaA);
+                                                    System.out.println(fechaAperturaA + "/12/2024");
                                                     System.out.print("Fecha de cierre: ");
-                                                    System.out.println(fechaCierreA);
+                                                    System.out.println(fechaCierreA + "/12/2024");
+                                                    grafico= (float) (cantidadAportadaA*100)/cantidadA;
+                                                    System.out.println("Gráfica de financiación");
+                                                    System.out.print(grafico + "% \u2192 ");
+                                                    for(int i=0; i<=grafico; i++){
+                                                        System.out.print("\u001B[36m\u275A");
+                                                        if (i==100) break;
+                                                    }
+                                                    System.out.println();
                                                     System.out.println("RECOMPENSA 1");
                                                     System.out.println(nombreRecompensaA1);
                                                     System.out.println(descripcionRecompensaA1);
@@ -2024,14 +2033,6 @@ public class Main {
                                                     System.out.println(descripcionRecompensaA3);
                                                     System.out.println(precioRecompensaA3 + "€");
 
-                                                    grafico= (float) (cantidadAportadaA*100)/cantidadA;
-                                                    System.out.println("Gráfica de financiación");
-                                                    System.out.print(grafico + "% \u2192 ");
-                                                    for(int i=0; i<=grafico; i++){
-                                                        System.out.print("\u001B[36m\u275A");
-                                                        if (i==100) break;
-                                                    }
-                                                    System.out.println();
                                                 }
                                                 break;
                                             case 2:
@@ -2048,9 +2049,17 @@ public class Main {
                                                     System.out.print("Cantidad aportada hasta el momento: ");
                                                     System.out.println(cantidadAportadaB+ "€");
                                                     System.out.print("Fecha de apertura: ");
-                                                    System.out.println(fechaAperturaB);
+                                                    System.out.println(fechaAperturaB + "/12/2024");
                                                     System.out.print("Fecha de cierre: ");
-                                                    System.out.println(fechaCierreB);
+                                                    System.out.println(fechaCierreB + "/12/2024");
+                                                    grafico= (float) (cantidadAportadaB*100)/cantidadB;
+                                                    System.out.println("Gráfica de financiación");
+                                                    System.out.print(grafico + "% \u2192 ");
+                                                    for(int i=0; i<=grafico; i++){
+                                                        System.out.print("\u001B[36m\u275A");
+                                                        if (i==100) break;
+                                                    }
+                                                    System.out.println();
                                                     System.out.println("RECOMPENSA 1");
                                                     System.out.println(nombreRecompensaB1);
                                                     System.out.println(descripcionRecompensaB1);
@@ -2066,14 +2075,6 @@ public class Main {
                                                     System.out.println(descripcionRecompensaB3);
                                                     System.out.println(precioRecompensaB3 + "€");
 
-                                                    grafico= (float) (cantidadAportadaB*100)/cantidadB;
-                                                    System.out.println("Gráfica de financiación");
-                                                    System.out.print(grafico + "% \u2192 ");
-                                                    for(int i=0; i<=grafico; i++){
-                                                        System.out.print("\u001B[36m\u275A");
-                                                        if (i==100) break;
-                                                    }
-                                                    System.out.println();
                                                 }
                                                 break;
                                             case 3:
@@ -2090,9 +2091,17 @@ public class Main {
                                                     System.out.print("Cantidad aportada hasta el momento: ");
                                                     System.out.println(cantidadAportadaC+ "€");
                                                     System.out.print("Fecha de apertura: ");
-                                                    System.out.println(fechaAperturaC);
+                                                    System.out.println(fechaAperturaC + "/12/2024");
                                                     System.out.print("Fecha de cierre: ");
-                                                    System.out.println(fechaCierreC);
+                                                    System.out.println(fechaCierreC + "/12/2024");
+                                                    grafico= (float) (cantidadAportadaC*100)/cantidadC;
+                                                    System.out.println("Gráfica de financiación");
+                                                    System.out.print(grafico + "% \u2192 ");
+                                                    for(int i=0; i<=grafico; i++){
+                                                        System.out.print("\u001B[36m\u275A");
+                                                        if (i==100) break;
+                                                    }
+                                                    System.out.println();
                                                     System.out.println("RECOMPENSA 1");
                                                     System.out.println(nombreRecompensaC1);
                                                     System.out.println(descripcionRecompensaC1);
@@ -2108,14 +2117,6 @@ public class Main {
                                                     System.out.println(descripcionRecompensaC3);
                                                     System.out.println(precioRecompensaC3 + "€");
 
-                                                    grafico= (float) (cantidadAportadaC*100)/cantidadC;
-                                                    System.out.println("Gráfica de financiación");
-                                                    System.out.print(grafico + "% \u2192 ");
-                                                    for(int i=0; i<=grafico; i++){
-                                                        System.out.print("\u001B[36m\u275A");
-                                                        if (i==100) break;
-                                                    }
-                                                    System.out.println();
                                                 }
                                                 break;
                                             default:
