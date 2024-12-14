@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import static biblioteca.Funciones.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -44,8 +45,8 @@ public class Main {
         do {
             System.out.println("============Bienvenido============");
             System.out.println("Introduzca su nombre de usuario: ");
-            System.out.println("(pulse * para salir)");
             System.out.println("==================================");
+            System.out.println("(* para salir)");
             String usuario = s.next().toLowerCase();
             if (usuario.equals("*")) return;
 
@@ -126,6 +127,7 @@ public class Main {
                     System.out.println("Se ha superado el máximo de intentos. Usuario bloqueado.");
                 }
             }
+            autentificacion(usuario);
 
             if (contrasena.equals(contrasenaInversor1)) { //Menú inversor1----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -475,7 +477,7 @@ public class Main {
                                             if (i == 100) break;
                                         }
                                         System.out.println();
-                                        System.out.println("\u001B[37mRECOMPENSA 1");
+                                        System.out.println("\u001B[0mRECOMPENSA 1");
                                         System.out.println(nombreRecompensaA1);
                                         System.out.println(descripcionRecompensaA1);
                                         System.out.println(precioRecompensaA1 + "€");
@@ -517,7 +519,7 @@ public class Main {
                                             if (i == 100) break;
                                         }
                                         System.out.println();
-                                        System.out.println("\u001B[37mRECOMPENSA 1");
+                                        System.out.println("\u001B[0mRECOMPENSA 1");
                                         System.out.println(nombreRecompensaB1);
                                         System.out.println(descripcionRecompensaB1);
                                         System.out.println(precioRecompensaB1 + "€");
@@ -559,7 +561,7 @@ public class Main {
                                             if (i == 100) break;
                                         }
                                         System.out.println();
-                                        System.out.println("\u001B[37mRECOMPENSA 1");
+                                        System.out.println("\u001B[0mRECOMPENSA 1");
                                         System.out.println(nombreRecompensaC1);
                                         System.out.println(descripcionRecompensaC1);
                                         System.out.println(precioRecompensaC1 + "€");
@@ -1009,7 +1011,7 @@ public class Main {
                                             if (i==100) break;
                                         }
                                         System.out.println();
-                                        System.out.println("\u001B[37mRECOMPENSA 1");
+                                        System.out.println("\u001B[0mRECOMPENSA 1");
                                         System.out.println(nombreRecompensaA1);
                                         System.out.println("Descripción: "+descripcionRecompensaA1);
                                         System.out.println("Precio de la recompensa: "+precioRecompensaA1+ "€");
@@ -1047,7 +1049,7 @@ public class Main {
                                             if (i==100) break;
                                         }
                                         System.out.println();
-                                        System.out.println("\u001B[37mRECOMPENSA 1");
+                                        System.out.println("\u001B[0mRECOMPENSA 1");
                                         System.out.println(nombreRecompensaB1);
                                         System.out.println("Descripción: "  +descripcionRecompensaB1);
                                         System.out.println(precioRecompensaB1 + "€");
@@ -1085,7 +1087,7 @@ public class Main {
                                             if (i==100) break;
                                         }
                                         System.out.println();
-                                        System.out.println("\u001B[37mRECOMPENSA 1");
+                                        System.out.println("\u001B[0mRECOMPENSA 1");
                                         System.out.println(nombreRecompensaC1);
                                         System.out.println("Descripción: "+descripcionRecompensaC1);
                                         System.out.println(precioRecompensaC1 + "€");
@@ -1499,7 +1501,7 @@ public class Main {
                                                         if (i==100) break;
                                                     }
                                                     System.out.println();
-                                                    System.out.println("\u001B[37mRECOMPENSA 1");
+                                                    System.out.println("\u001B[0mRECOMPENSA 1");
                                                     System.out.println(nombreRecompensaA1);
                                                     System.out.println(descripcionRecompensaA1);
                                                     System.out.println(precioRecompensaA1 + "€");
@@ -1541,7 +1543,7 @@ public class Main {
                                                         if (i==100) break;
                                                     }
                                                     System.out.println();
-                                                    System.out.println("\u001B[37mRECOMPENSA 1");
+                                                    System.out.println("\u001B[0mRECOMPENSA 1");
                                                     System.out.println(nombreRecompensaB1);
                                                     System.out.println(descripcionRecompensaB1);
                                                     System.out.println(precioRecompensaB1 + "€");
@@ -1584,7 +1586,7 @@ public class Main {
                                                         if (i==100) break;
                                                     }
                                                     System.out.println();
-                                                    System.out.println("\u001B[37mRECOMPENSA 1");
+                                                    System.out.println("\u001B[0mRECOMPENSA 1");
                                                     System.out.println(nombreRecompensaC1);
                                                     System.out.println(descripcionRecompensaC1);
                                                     System.out.println(precioRecompensaC1 + "€");
@@ -2063,7 +2065,7 @@ public class Main {
                                                         if (i==100) break;
                                                     }
                                                     System.out.println();
-                                                    System.out.println("\u001B[37mRECOMPENSA 1");
+                                                    System.out.println("\u001B[0mRECOMPENSA 1");
                                                     System.out.println(nombreRecompensaA1);
                                                     System.out.println(descripcionRecompensaA1);
                                                     System.out.println(precioRecompensaA1 + "€");
@@ -2105,7 +2107,7 @@ public class Main {
                                                         if (i==100) break;
                                                     }
                                                     System.out.println();
-                                                    System.out.println("\u001B[37mRECOMPENSA 1");
+                                                    System.out.println("\u001B[0mRECOMPENSA 1");
                                                     System.out.println(nombreRecompensaB1);
                                                     System.out.println(descripcionRecompensaB1);
                                                     System.out.println(precioRecompensaB1 + "€");
@@ -2147,7 +2149,7 @@ public class Main {
                                                         if (i==100) break;
                                                     }
                                                     System.out.println();
-                                                    System.out.println("\u001B[37mRECOMPENSA 1");
+                                                    System.out.println("\u001B[0mRECOMPENSA 1");
                                                     System.out.println(nombreRecompensaC1);
                                                     System.out.println(descripcionRecompensaC1);
                                                     System.out.println(precioRecompensaC1 + "€");
