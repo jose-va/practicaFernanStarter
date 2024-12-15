@@ -1,5 +1,4 @@
-package biblioteca;
-
+package utilidades;
 import javax.mail.Message;
 import javax.mail.Session;
 import javax.mail.Transport;
@@ -39,7 +38,6 @@ public class EnvioGMail {
             me.printStackTrace();
         }
     }
-
     public static void main(String[] args) {
         String destinatario = "trijostyt@gmail.com"; // Destinatario del mensaje
         String asunto = "Correo de prueba enviado desde Java";
