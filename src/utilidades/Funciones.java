@@ -5,11 +5,11 @@ import static utilidades.EnvioGMail.*;
 public class Funciones {
     /**
      * Autentificación mediante código
-     * Esta función genera un código aleatorio de 4 dígitos que se enviará al correo introducido por el usuario.
+     * Esta función genera un código aleatorio de 4 dígitos que se enviará a un correo introducido por el usuario.
      *
      * @author Jose Manuel Vilchez Arenas
-     * @param correo será introducido como una cadena de carácteres por el usuario
-     * Se enviará el código generado al correo
+     * @param correo será introducido por el usuario como una cadena de carácteres
+     * Se enviará el código generado al correo electrónico
      * Si el usuario introduce correctamente el código, será verificado correctamente
      */
     public static void autentificacion(String correo) {
@@ -35,7 +35,8 @@ public class Funciones {
     }
 
     /**
-     * Muestra el gráfico con la cantidad invertida hasta el momento.
+     * Gráfico de inversiones
+     * Esta función devuelve un gráfico con lo que se ha invertido
      *
      * @author Jose Manuel Vilchez Arenas
      * @param cantidad como la cantidad que se necesita aportar en un proyecto
@@ -53,11 +54,11 @@ public class Funciones {
 
     /**
      * Apartado de consulta de proyectos para inversores
-     * Dvuelve toda la información en lo relativo a proyectos
+     * Devuelve toda la información en lo relativo a proyectos
      *
      * @author Jose Manuel Vilchez Arenas
      * Esta función se encarga de actualizar nuestros arrays previamente declarados
-     * Nos muestra una salida con la información de cada uno de los proyectos que hemos creado.
+     * Nos muestra una salida con la información de cada uno de los proyectos que hemos creado
      */
     public static void consultaProyectos (int proyectos, String[] nombreProyecto, String[] categoria, int[] cantidad, int[] cantidadAportada, String[] descripcionProyecto,
                                          String[] fechaApertura, String[] fechaCierre, String[] nombreRecompensaA, String[] descripcionRecompensaA, float[] precioRecompensaA,
@@ -219,8 +220,8 @@ public class Funciones {
      * Devuelve toda la información en lo relativo a los proyectos
      *
      * @author Jose Manuel Vilchez Arenas
-     * Esta función se encarga de actualizar nuestros arrays previamente declarados
-     * Nos muestra una salida con la información de cada uno de los proyectos creados.
+     * Esta función se encarga de crear proyectos y de actualizar nuestros arrays previamente declarado
+     * Nos muestra una salida con la información de cada uno de los proyectos que hemos creado
      */
     public static void misProyectos(int proyectos, String[] nombreProyecto, String[] categoria, int[] cantidad, int[] cantidadAportada, String[] descripcionProyecto,
                                     String[] fechaApertura, String[] fechaCierre, String[] nombreRecompensaA, String[] descripcionRecompensaA, float[] precioRecompensaA,
