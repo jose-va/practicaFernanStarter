@@ -159,11 +159,12 @@ public class Main {
                                 opcion = Integer.parseInt(s.next());
                                 switch (opcion) {
                                     case 1:
-                                        System.out.println("¿En qué proyecto desea invertir?");
+                                        /* System.out.println("¿En qué proyecto desea invertir?");
                                         System.out.println("1. Proyecto 1: " + nombreProyecto[0]);
                                         System.out.println("2. Proyecto 2: " + nombreProyecto[1]);
                                         System.out.println("3. Proyecto 3 " + nombreProyecto[2]);
-                                        System.out.println("4. Salir");
+                                        System.out.println("4. Salir");*/
+
                                         aportacionI1 = Integer.parseInt(s.next());
                                         switch (aportacionI1) {
                                             case 1:

@@ -6,6 +6,14 @@ public class FuncionesInversiones {
 
     //Apartado de Invertir
 
+    public static void MenuProyectoInversion(){
+        System.out.println("¿En qué proyecto desea invertir?");
+        System.out.println("1. Proyecto 1: " + nombreProyecto[0]);
+        System.out.println("2. Proyecto 2: " + nombreProyecto[1]);
+        System.out.println("3. Proyecto 3 " + nombreProyecto[2]);
+        System.out.println("4. Salir");
+    }
+
     public static int cantidadAportadaA1 (int cantidadAportadaA1){
         System.out.println("La cantidad necesaria de este proyecto es de " + cantidadA + "€");
         System.out.println("¿Que cantidad desea aportar?");
