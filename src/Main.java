@@ -160,15 +160,15 @@ public class Main {
                                 opcion = Integer.parseInt(s.next());
                                 switch (opcion) {
                                     case 1:
-                                        MenuProyectoInversion();
+                                        MenuProyectoInversion(nombreProyecto);
                                         aportacionI1 = Integer.parseInt(s.next());
                                         switch (aportacionI1) {
                                             case 1:
-                                                cantidadAportadaA1();
+                                                crearInversionA1(cantidad, cantidadAportada1, saldoTotal1, inversion1, cantidadAportada, inversiones1);
                                             case 2:
-                                                cantidadAportadaB1();
+                                                crearInversionB1(cantidad, cantidadAportada1, saldoTotal1, inversion1, cantidadAportada, inversiones1);
                                             case 3:
-                                                cantidadAportadaC1();
+                                                crearInversionC1(cantidad, cantidadAportada1, saldoTotal1, inversion1, cantidadAportada, inversiones1);
                                             case 4:
                                                 System.out.println("Salir.");
                                                 break;
@@ -193,15 +193,18 @@ public class Main {
                                             if (respuesta2.equals("s")) {
                                                 int opcion3 = 0;
                                                 while (opcion3 != 1 || opcion3 != 2 || opcion3 != 3) {
-                                                    MenuProyectoInversion();
+                                                    MenuProyectoInversion(nombreProyecto);
                                                     aportacionI1 = Integer.parseInt(s.next());
                                                     switch (aportacionI1) {
                                                         case 1:
-                                                            cantidadAportadaA1();
+                                                            crearInversionA1(cantidad, cantidadAportada1, saldoTotal1, inversion1, cantidadAportada, inversiones1);
+                                                            break;
                                                         case 2:
-                                                            cantidadAportadaB1();
+                                                            crearInversionB1(cantidad, cantidadAportada1, saldoTotal1, inversion1, cantidadAportada, inversiones1);
+                                                            break;
                                                         case 3:
-                                                            cantidadAportadaC1();
+                                                            crearInversionC1(cantidad, cantidadAportada1, saldoTotal1, inversion1, cantidadAportada, inversiones1);
+                                                            break;
                                                         case 4:
                                                             System.out.println("Salir.");
                                                             break;
@@ -215,39 +218,39 @@ public class Main {
                                             System.out.println("*****Consulta de inversiones*****");
                                             if (inversiones1 == 1) {
                                                 if (inversion1[0]) {
-                                                    inversionA1();
+                                                    inversionA1(nombreProyecto, categoria, cantidadAportada);
                                                 }
                                                 if (inversion1[1]) {
-                                                    inversionB1();
+                                                    inversionB1(nombreProyecto, categoria, cantidadAportada);
                                                 }
                                                 if (inversion1[2]) {
-                                                    inversionC1();
+                                                    inversionC1(nombreProyecto, categoria, cantidadAportada);
                                                 }
                                             }
                                             if (inversiones1 == 2) {
                                                 System.out.println("¿Que inversión desea consultar?");
                                                 if (inversion1[0] && inversion1[1]) {
-                                                    inversionA1();
+                                                    inversionA1(nombreProyecto, categoria, cantidadAportada);
                                                     System.out.println("******************************");
-                                                    inversionB1();
+                                                    inversionB1(nombreProyecto, categoria, cantidadAportada);
                                                 }
                                                 if (inversion1[0] && inversion1[2]) {
-                                                    inversionA1();
+                                                    inversionA1(nombreProyecto, categoria, cantidadAportada);
                                                     System.out.println("******************************");
-                                                    inversionC1();
+                                                    inversionC1(nombreProyecto, categoria, cantidadAportada);
                                                 }
                                                 if (inversion1[1] && inversion1[2]) {
-                                                    inversionB1();
+                                                    inversionB1(nombreProyecto, categoria, cantidadAportada);
                                                     System.out.println("******************************");
-                                                    inversionC1();
+                                                    inversionC1(nombreProyecto, categoria, cantidadAportada);
                                                 }
                                             }
                                             if (inversiones1 == 3) {
-                                                inversionA1();
+                                                inversionA1(nombreProyecto, categoria, cantidadAportada);
                                                 System.out.println("******************************");
-                                                inversionB1();
+                                                inversionB1(nombreProyecto, categoria, cantidadAportada);
                                                 System.out.println("******************************");
-                                                inversionC1();
+                                                inversionC1(nombreProyecto, categoria, cantidadAportada);
                                             }
                                         }
                                         break;
@@ -265,6 +268,7 @@ public class Main {
                             break;
                         case 3:
                             System.out.println("CARTERA DIGITAL");
+                            /*
                             do {
                                 System.out.println("1. Saldo actual");
                                 System.out.println("2. Añadir saldo");
@@ -295,6 +299,8 @@ public class Main {
                             } while (opcion != 3);
 
                             break;
+                                 */
+                            anadirSaldo1(opcion =0, saldoTotal1, saldo);
                         case 4:
                             System.out.println("INVITAR A UN AMIGO");
                             do {
@@ -378,15 +384,15 @@ public class Main {
                                 opcion = Integer.parseInt(s.next());
                                 switch (opcion) {
                                     case 1:
-                                        MenuProyectoInversion();
+                                        MenuProyectoInversion(nombreProyecto);
                                         aportacionI2 = Integer.parseInt(s.next());
                                         switch (aportacionI2) {
                                             case 1:
-                                                cantidadAportadaA2();
+                                                crearInversionA2(cantidad, cantidadAportada2, saldoTotal2, inversion2, cantidadAportada, inversiones2);
                                             case 2:
-                                                cantidadAportadaB2();
+                                                crearInversionB2(cantidad, cantidadAportada2, saldoTotal2, inversion2, cantidadAportada, inversiones2);
                                             case 3:
-                                                cantidadAportadaC2();
+                                                crearInversionC2(cantidad, cantidadAportada2, saldoTotal2, inversion2, cantidadAportada, inversiones2);
                                             case 4:
                                                 System.out.println("Salir.");
                                                 break;
@@ -411,15 +417,18 @@ public class Main {
                                             if (respuesta2.equals("s")) {
                                                 int opcion3 = 0;
                                                 while (opcion3 != 1 || opcion3 != 2 || opcion3 != 3) {
-                                                    MenuProyectoInversion();
+                                                    MenuProyectoInversion(nombreProyecto);
                                                     aportacionI2 = Integer.parseInt(s.next());
                                                     switch (aportacionI2) {
                                                         case 1:
-                                                            cantidadAportadaA2();
+                                                            crearInversionA2(cantidad, cantidadAportada2, saldoTotal2, inversion2, cantidadAportada, inversiones2);
+                                                            break;
                                                         case 2:
-                                                            cantidadAportadaB2();
+                                                            crearInversionB2(cantidad, cantidadAportada2, saldoTotal2, inversion2, cantidadAportada, inversiones2);
+                                                            break;
                                                         case 3:
-                                                            cantidadAportadaC2();
+                                                            crearInversionC2(cantidad, cantidadAportada2, saldoTotal2, inversion2, cantidadAportada, inversiones2);
+                                                            break;
                                                         case 4:
                                                             System.out.println("Salir.");
                                                             break;
@@ -433,39 +442,39 @@ public class Main {
                                             System.out.println("*****Consulta de inversiones*****");
                                             if (inversiones2 == 1) {
                                                 if (inversion2[0]) {
-                                                    inversionA2();
+                                                    inversionA2(nombreProyecto, categoria, cantidadAportada);
                                                 }
                                                 if (inversion2[1]) {
-                                                    inversionB2();
+                                                    inversionB2(nombreProyecto, categoria, cantidadAportada);
                                                 }
                                                 if (inversion2[2]) {
-                                                    inversionC2();
+                                                    inversionC2(nombreProyecto, categoria, cantidadAportada);
                                                 }
                                             }
                                             if (inversiones2 == 2) {
                                                 System.out.println("¿Que inversión desea consultar?");
                                                 if (inversion2[0] && inversion2[1]) {
-                                                    inversionA2();
+                                                    inversionA2(nombreProyecto, categoria, cantidadAportada);
                                                     System.out.println("******************************");
-                                                    inversionB2();
+                                                    inversionB2(nombreProyecto, categoria, cantidadAportada);
                                                 }
                                                 if (inversion2[0] && inversion2[2]) {
-                                                    inversionA2();
+                                                    inversionA2(nombreProyecto, categoria, cantidadAportada);
                                                     System.out.println("******************************");
-                                                    inversionC2();
+                                                    inversionC2(nombreProyecto, categoria, cantidadAportada);
                                                 }
                                                 if (inversion2[1] && inversion2[2]) {
-                                                    inversionB2();
+                                                    inversionB2(nombreProyecto, categoria, cantidadAportada);
                                                     System.out.println("******************************");
-                                                    inversionC2();
+                                                    inversionC2(nombreProyecto, categoria, cantidadAportada);
                                                 }
                                             }
                                             if (inversiones2 == 3) {
-                                                inversionA2();
+                                                inversionA2(nombreProyecto, categoria, cantidadAportada);
                                                 System.out.println("******************************");
-                                                inversionB2();
+                                                inversionB2(nombreProyecto, categoria, cantidadAportada);
                                                 System.out.println("******************************");
-                                                inversionC2();
+                                                inversionC2(nombreProyecto, categoria, cantidadAportada);
                                             }
                                         }
                                         break;
@@ -482,24 +491,24 @@ public class Main {
                             break;
                         case 3:
                             System.out.println("CARTERA DIGITAL");
-                            do {
+                            /*do {
                                 System.out.println("1. Saldo actual");
                                 System.out.println("2. Añadir saldo");
                                 System.out.println("3. Salir");
                                 opcion = Integer.parseInt(s.next());
                                 switch (opcion) {
                                     case 1:
-                                        if (saldoTotal1 == 0) {
+                                        if (saldoTotal2 == 0) {
                                             System.out.println("Usted no dispone de saldo.");
                                             break;
                                         } else {
-                                            System.out.printf("Saldo %d€", saldoTotal1);
+                                            System.out.printf("Saldo %d€", saldoTotal2);
                                         }
                                         break;
                                     case 2:
                                         System.out.println("¿Cuánto dinero desea ingresar?");
                                         saldo = Integer.parseInt(s.next());
-                                        saldoTotal1 += saldo;
+                                        saldoTotal2 += saldo;
                                         System.out.println("Su saldo ha sido añadido correctamente");
                                         break;
                                     case 3:
@@ -510,8 +519,9 @@ public class Main {
                                         break;
                                 }
                             } while (opcion != 3);
-
                             break;
+                             */
+                            anadirSaldo2(opcion=0, saldoTotal1, saldo);
                         case 4:
                             System.out.println("INVITAR A UN AMIGO");
                             do {
