@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="cc537db6-7396-4103-989d-dedd91a3ee91" name="Changes" comment="version 9.0">
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Jose Vilchez &lt;jose.vilchez.1106@fernando3martos.com&gt;" />
+      </list>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Povaldev&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/jose-va/practicaFernanStarter.git&quot;,
+    &quot;accountId&quot;: &quot;8895ceec-fdb2-4087-8f3e-b43044ffdbd4&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="2p6oSplQNAd33HuvMWbvAp7zsh7" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.ApartadoInversiones.executor": "Run",
+    "Application.ApartadoInversor.executor": "Run",
+    "Application.ApartadoInversores2.executor": "Run",
+    "Application.Main.executor": "Run",
+    "Application.MenúGestor.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "Rebasing master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/pablo/OneDrive/Módulos/Programación/Tema 2/practicaFernanStarter",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "editor.preferences.completion",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="ApartadoInversiones" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ApartadoInversiones" />
+      <module name="practicaFernanStarter" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ApartadoInversores2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ApartadoInversores2" />
+      <module name="practicaFernanStarter" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="practicaFernanStarter" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MenúGestor" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="MenúGestor" />
+      <module name="practicaFernanStarter" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.ApartadoInversores2" />
+        <item itemvalue="Application.ApartadoInversiones" />
+        <item itemvalue="Application.MenúGestor" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23726.103" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23726.103" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="cc537db6-7396-4103-989d-dedd91a3ee91" name="Changes" comment="" />
+      <created>1732095888854</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1732095888854</updated>
+      <workItem from="1732095889961" duration="130000" />
+      <workItem from="1732096224239" duration="1602000" />
+      <workItem from="1732109027175" duration="131000" />
+      <workItem from="1732190663546" duration="2596000" />
+      <workItem from="1732196035702" duration="623000" />
+      <workItem from="1732227371213" duration="1858000" />
+      <workItem from="1732381105551" duration="520000" />
+      <workItem from="1732535918033" duration="453000" />
+      <workItem from="1732537174971" duration="10000" />
+      <workItem from="1732562506424" duration="9685000" />
+      <workItem from="1732612961460" duration="7665000" />
+      <workItem from="1732627400980" duration="1157000" />
+      <workItem from="1732639548997" duration="7188000" />
+      <workItem from="1732783705452" duration="8359000" />
+      <workItem from="1732819128091" duration="5827000" />
+      <workItem from="1732833645745" duration="70000" />
+      <workItem from="1732834090716" duration="137000" />
+      <workItem from="1732865253281" duration="7591000" />
+      <workItem from="1732977178141" duration="14962000" />
+      <workItem from="1733045686142" duration="10795000" />
+      <workItem from="1733074872700" duration="6609000" />
+      <workItem from="1733131474680" duration="1621000" />
+      <workItem from="1733266608508" duration="7000" />
+      <workItem from="1734006959553" duration="3401000" />
+      <workItem from="1734197352934" duration="562000" />
+      <workItem from="1734197957484" duration="1849000" />
+      <workItem from="1734199901888" duration="334000" />
+      <workItem from="1734267803292" duration="341000" />
+      <workItem from="1734280789383" duration="2226000" />
+      <workItem from="1734284401856" duration="7637000" />
+      <workItem from="1734297650867" duration="5000" />
+      <workItem from="1734333974387" duration="4274000" />
+      <workItem from="1734341707247" duration="706000" />
+      <workItem from="1734363029096" duration="506000" />
+    </task>
+    <task id="LOCAL-00001" summary="primer commit">
+      <option name="closed" value="true" />
+      <created>1732097550519</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1732097550519</updated>
+    </task>
+    <task id="LOCAL-00002" summary="tercer commit">
+      <option name="closed" value="true" />
+      <created>1732191394399</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1732191394399</updated>
+    </task>
+    <task id="LOCAL-00003" summary="tercer commit">
+      <option name="closed" value="true" />
+      <created>1732227444660</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1732227444660</updated>
+    </task>
+    <task id="LOCAL-00004" summary="4">
+      <option name="closed" value="true" />
+      <created>1732536220415</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1732536220415</updated>
+    </task>
+    <task id="LOCAL-00005" summary="4">
+      <option name="closed" value="true" />
+      <created>1732536313342</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1732536313342</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;src/Main.java">
+      <option name="closed" value="true" />
+      <created>1732583375520</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1732583375520</updated>
+    </task>
+    <task id="LOCAL-00007" summary="quinto commit">
+      <option name="closed" value="true" />
+      <created>1732628450783</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1732628450783</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Merge remote-tracking branch 'origin/master'">
+      <option name="closed" value="true" />
+      <created>1732795980655</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1732795980655</updated>
+    </task>
+    <task id="LOCAL-00009" summary="versión 5.0">
+      <option name="closed" value="true" />
+      <created>1732801290895</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1732801290895</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;src/Main.java">
+      <option name="closed" value="true" />
+      <created>1732801375651</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1732801375651</updated>
+    </task>
+    <task id="LOCAL-00011" summary="version 6.0">
+      <option name="closed" value="true" />
+      <created>1732868576352</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1732868576352</updated>
+    </task>
+    <task id="LOCAL-00012" summary="version 6.1">
+      <option name="closed" value="true" />
+      <created>1732874254527</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1732874254527</updated>
+    </task>
+    <task id="LOCAL-00013" summary="version 6.2">
+      <option name="closed" value="true" />
+      <created>1732977373382</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1732977373382</updated>
+    </task>
+    <task id="LOCAL-00014" summary="version 7.0">
+      <option name="closed" value="true" />
+      <created>1733045768074</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1733045768074</updated>
+    </task>
+    <task id="LOCAL-00015" summary="version 7.1">
+      <option name="closed" value="true" />
+      <created>1733046699181</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1733046699181</updated>
+    </task>
+    <task id="LOCAL-00016" summary="version 7.2">
+      <option name="closed" value="true" />
+      <created>1733056531920</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1733056531920</updated>
+    </task>
+    <task id="LOCAL-00017" summary="version 7.3">
+      <option name="closed" value="true" />
+      <created>1733060162311</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1733060162311</updated>
+    </task>
+    <task id="LOCAL-00018" summary="version 8.0">
+      <option name="closed" value="true" />
+      <created>1733062728516</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1733062728516</updated>
+    </task>
+    <task id="LOCAL-00019" summary="version 8.1">
+      <option name="closed" value="true" />
+      <created>1733062916779</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1733062916779</updated>
+    </task>
+    <task id="LOCAL-00020" summary="version 8.1">
+      <option name="closed" value="true" />
+      <created>1733063035138</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1733063035138</updated>
+    </task>
+    <task id="LOCAL-00021" summary="version 8.2">
+      <option name="closed" value="true" />
+      <created>1733079856674</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1733079856674</updated>
+    </task>
+    <task id="LOCAL-00022" summary="version 8.3">
+      <option name="closed" value="true" />
+      <created>1733081461018</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1733081461018</updated>
+    </task>
+    <task id="LOCAL-00023" summary="version 9.0">
+      <option name="closed" value="true" />
+      <created>1734291214599</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1734291214599</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="primer commit" />
+    <MESSAGE value="segundo commit" />
+    <MESSAGE value="tercer commit" />
+    <MESSAGE value="4" />
+    <MESSAGE value="5" />
+    <MESSAGE value="quinto commit" />
+    <MESSAGE value="Merge remote-tracking branch 'origin/master'" />
+    <MESSAGE value="versión 5.0" />
+    <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;src/Main.java" />
+    <MESSAGE value="version 6.0" />
+    <MESSAGE value="version 6.1" />
+    <MESSAGE value="version 6.2" />
+    <MESSAGE value="version 7.0" />
+    <MESSAGE value="version 7.1" />
+    <MESSAGE value="version 7.2" />
+    <MESSAGE value="version 7.3" />
+    <MESSAGE value="version 8.0" />
+    <MESSAGE value="version 8.1" />
+    <MESSAGE value="version 8.2" />
+    <MESSAGE value="version 8.3" />
+    <MESSAGE value="version 9.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="version 9.0" />
+  </component>
+</project>

@@ -1,6 +1,6 @@
 import java.util.Scanner;
 import static utilidades.Funciones.*;
-import static utilidades.FuncionesInversiones.*;
+
 
 public class Main {
     public static void main(String[] args) {
@@ -160,15 +160,15 @@ public class Main {
                                 opcion = Integer.parseInt(s.next());
                                 switch (opcion) {
                                     case 1:
-                                        MenuProyectoInversion();
+                                        MenuProyectoInversion(nombreProyecto);
                                         aportacionI1 = Integer.parseInt(s.next());
                                         switch (aportacionI1) {
                                             case 1:
-                                                cantidadAportadaA1();
+                                                crearInversionA1(cantidad, cantidadAportada1, saldoTotal1, inversion1, cantidadAportada, inversiones1);
                                             case 2:
-                                                cantidadAportadaB1();
+                                                crearInversionB1(cantidad, cantidadAportada1, saldoTotal1, inversion1, cantidadAportada, inversiones1);
                                             case 3:
-                                                cantidadAportadaC1();
+                                                crearInversionC1(cantidad, cantidadAportada1, saldoTotal1, inversion1, cantidadAportada, inversiones1);
                                             case 4:
                                                 System.out.println("Salir.");
                                                 break;
@@ -193,15 +193,18 @@ public class Main {
                                             if (respuesta2.equals("s")) {
                                                 int opcion3 = 0;
                                                 while (opcion3 != 1 || opcion3 != 2 || opcion3 != 3) {
-                                                    MenuProyectoInversion();
+                                                    MenuProyectoInversion(nombreProyecto);
                                                     aportacionI1 = Integer.parseInt(s.next());
                                                     switch (aportacionI1) {
                                                         case 1:
-                                                            cantidadAportadaA1();
+                                                            crearInversionA1(cantidad, cantidadAportada1, saldoTotal1, inversion1, cantidadAportada, inversiones1);
+                                                            break;
                                                         case 2:
-                                                            cantidadAportadaB1();
+                                                            crearInversionB1(cantidad, cantidadAportada1, saldoTotal1, inversion1, cantidadAportada, inversiones1);
+                                                            break;
                                                         case 3:
-                                                            cantidadAportadaC1();
+                                                            crearInversionC1(cantidad, cantidadAportada1, saldoTotal1, inversion1, cantidadAportada, inversiones1);
+                                                            break;
                                                         case 4:
                                                             System.out.println("Salir.");
                                                             break;
@@ -215,39 +218,39 @@ public class Main {
                                             System.out.println("*****Consulta de inversiones*****");
                                             if (inversiones1 == 1) {
                                                 if (inversion1[0]) {
-                                                    inversionA1();
+                                                    inversionA1(nombreProyecto, categoria, cantidadAportada);
                                                 }
                                                 if (inversion1[1]) {
-                                                    inversionB1();
+                                                    inversionB1(nombreProyecto, categoria, cantidadAportada);
                                                 }
                                                 if (inversion1[2]) {
-                                                    inversionC1();
+                                                    inversionC1(nombreProyecto, categoria, cantidadAportada);
                                                 }
                                             }
                                             if (inversiones1 == 2) {
                                                 System.out.println("¿Que inversión desea consultar?");
                                                 if (inversion1[0] && inversion1[1]) {
-                                                    inversionA1();
+                                                    inversionA1(nombreProyecto, categoria, cantidadAportada);
                                                     System.out.println("******************************");
-                                                    inversionB1();
+                                                    inversionB1(nombreProyecto, categoria, cantidadAportada);
                                                 }
                                                 if (inversion1[0] && inversion1[2]) {
-                                                    inversionA1();
+                                                    inversionA1(nombreProyecto, categoria, cantidadAportada);
                                                     System.out.println("******************************");
-                                                    inversionC1();
+                                                    inversionC1(nombreProyecto, categoria, cantidadAportada);
                                                 }
                                                 if (inversion1[1] && inversion1[2]) {
-                                                    inversionB1();
+                                                    inversionB1(nombreProyecto, categoria, cantidadAportada);
                                                     System.out.println("******************************");
-                                                    inversionC1();
+                                                    inversionC1(nombreProyecto, categoria, cantidadAportada);
                                                 }
                                             }
                                             if (inversiones1 == 3) {
-                                                inversionA1();
+                                                inversionA1(nombreProyecto, categoria, cantidadAportada);
                                                 System.out.println("******************************");
-                                                inversionB1();
+                                                inversionB1(nombreProyecto, categoria, cantidadAportada);
                                                 System.out.println("******************************");
-                                                inversionC1();
+                                                inversionC1(nombreProyecto, categoria, cantidadAportada);
                                             }
                                         }
                                         break;
@@ -264,86 +267,13 @@ public class Main {
                                     nombreRecompensaC, descripcionRecompensaC, precioRecompensaC, recompensas);
                             break;
                         case 3:
-                            System.out.println("CARTERA DIGITAL");
-                            do {
-                                System.out.println("1. Saldo actual");
-                                System.out.println("2. Añadir saldo");
-                                System.out.println("3. Salir");
-                                opcion = Integer.parseInt(s.next());
-                                switch (opcion) {
-                                    case 1:
-                                        if (saldoTotal1 == 0) {
-                                            System.out.println("Usted no dispone de saldo.");
-                                        } else {
-                                            System.out.printf("Saldo: %d€", saldoTotal1);
-                                            System.out.println();
-                                        }
-                                        break;
-                                    case 2:
-                                        System.out.println("¿Cuánto dinero desea ingresar?");
-                                        saldo = Integer.parseInt(s.next());
-                                        saldoTotal1 += saldo;
-                                        System.out.println("Su saldo ha sido añadido correctamente");
-                                        break;
-                                    case 3:
-                                        System.out.println("Usted ha seleccionado salir.");
-                                        break;
-                                    default:
-                                        System.out.println("Opcion seleccionada inválida.");
-                                        break;
-                                }
-                            } while (opcion != 3);
-
+                            cartera1(opcion =0, saldoTotal1, saldo);
                             break;
                         case 4:
-                            System.out.println("INVITAR A UN AMIGO");
-                            do {
-                                System.out.println("1. Listado de amigos");
-                                System.out.println("2. Añadir a un amigo");
-                                System.out.println("3. Salir");
-                                opcion = Integer.parseInt(s.next());
-                                switch (opcion) {
-                                    case 1:
-                                        System.out.println("LISTADO DE AMIGOS");
-                                        System.out.println(amigo);
-                                        break;
-                                    case 2:
-                                        System.out.println("AÑADIR A UN AMIGO: ");
-                                        correo = s.next();
-                                        amigo = amigo.concat(" " + correo);
-                                        break;
-                                    case 3:
-                                        System.out.println("Salir.");
-                                        break;
-                                    default:
-                                        System.out.println("Opción inválida.");
-                                        break;
-                                }
-
-                            } while (opcion != 3);
+                            anadeamigo1(opcion=0, amigo, correo);
                             break;
                         case 5:
-                            System.out.println("CONFIGURACION. Seleccione una opción: ");
-                            do {
-                                System.out.println("1. Cambiar usuario");
-                                System.out.println("2. Cambiar contraseña");
-                                System.out.println("3. Guardar cambios");
-                                opcion = Integer.parseInt(s.next());
-                                switch (opcion) {
-                                    case 1:
-                                        System.out.printf("Usuario actual -> %s\n", inversor1);
-                                        System.out.println("Introduzca su nuevo usuario: ");
-                                        inversor1 = s.next();
-                                        break;
-                                    case 2:
-                                        System.out.printf("Contraseña actual -> %s\n", contrasenaInversor1);
-                                        System.out.println("Introduzca su nueva contraseña: ");
-                                        contrasenaInversor1 = s.next();
-                                        break;
-                                }
-                            } while (opcion != 3);
-                            System.out.println("Los cambios se han guardado correctamente");
-                            System.out.println("Redirigiendo al menú principal");
+                            config1(opcion=0, inversor1, contrasenaInversor1);
                             break;
                         case 6:
                             System.out.println("Salir. Usted volverá al login.");
@@ -354,6 +284,7 @@ public class Main {
                             break;
                     }
                 } while (menu != 6);
+                break;
 
             }if (contrasena.equals(contrasenaInversor2)) { //Menú inversor2-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
                 System.out.println("Bienvenido. Cuenta de inversor.");
@@ -378,15 +309,15 @@ public class Main {
                                 opcion = Integer.parseInt(s.next());
                                 switch (opcion) {
                                     case 1:
-                                        MenuProyectoInversion();
+                                        MenuProyectoInversion(nombreProyecto);
                                         aportacionI2 = Integer.parseInt(s.next());
                                         switch (aportacionI2) {
                                             case 1:
-                                                cantidadAportadaA2();
+                                                crearInversionA2(cantidad, cantidadAportada2, saldoTotal2, inversion2, cantidadAportada, inversiones2);
                                             case 2:
-                                                cantidadAportadaB2();
+                                                crearInversionB2(cantidad, cantidadAportada2, saldoTotal2, inversion2, cantidadAportada, inversiones2);
                                             case 3:
-                                                cantidadAportadaC2();
+                                                crearInversionC2(cantidad, cantidadAportada2, saldoTotal2, inversion2, cantidadAportada, inversiones2);
                                             case 4:
                                                 System.out.println("Salir.");
                                                 break;
@@ -411,15 +342,18 @@ public class Main {
                                             if (respuesta2.equals("s")) {
                                                 int opcion3 = 0;
                                                 while (opcion3 != 1 || opcion3 != 2 || opcion3 != 3) {
-                                                    MenuProyectoInversion();
+                                                    MenuProyectoInversion(nombreProyecto);
                                                     aportacionI2 = Integer.parseInt(s.next());
                                                     switch (aportacionI2) {
                                                         case 1:
-                                                            cantidadAportadaA2();
+                                                            crearInversionA2(cantidad, cantidadAportada2, saldoTotal2, inversion2, cantidadAportada, inversiones2);
+                                                            break;
                                                         case 2:
-                                                            cantidadAportadaB2();
+                                                            crearInversionB2(cantidad, cantidadAportada2, saldoTotal2, inversion2, cantidadAportada, inversiones2);
+                                                            break;
                                                         case 3:
-                                                            cantidadAportadaC2();
+                                                            crearInversionC2(cantidad, cantidadAportada2, saldoTotal2, inversion2, cantidadAportada, inversiones2);
+                                                            break;
                                                         case 4:
                                                             System.out.println("Salir.");
                                                             break;
@@ -433,39 +367,39 @@ public class Main {
                                             System.out.println("*****Consulta de inversiones*****");
                                             if (inversiones2 == 1) {
                                                 if (inversion2[0]) {
-                                                    inversionA2();
+                                                    inversionA2(nombreProyecto, categoria, cantidadAportada);
                                                 }
                                                 if (inversion2[1]) {
-                                                    inversionB2();
+                                                    inversionB2(nombreProyecto, categoria, cantidadAportada);
                                                 }
                                                 if (inversion2[2]) {
-                                                    inversionC2();
+                                                    inversionC2(nombreProyecto, categoria, cantidadAportada);
                                                 }
                                             }
                                             if (inversiones2 == 2) {
                                                 System.out.println("¿Que inversión desea consultar?");
                                                 if (inversion2[0] && inversion2[1]) {
-                                                    inversionA2();
+                                                    inversionA2(nombreProyecto, categoria, cantidadAportada);
                                                     System.out.println("******************************");
-                                                    inversionB2();
+                                                    inversionB2(nombreProyecto, categoria, cantidadAportada);
                                                 }
                                                 if (inversion2[0] && inversion2[2]) {
-                                                    inversionA2();
+                                                    inversionA2(nombreProyecto, categoria, cantidadAportada);
                                                     System.out.println("******************************");
-                                                    inversionC2();
+                                                    inversionC2(nombreProyecto, categoria, cantidadAportada);
                                                 }
                                                 if (inversion2[1] && inversion2[2]) {
-                                                    inversionB2();
+                                                    inversionB2(nombreProyecto, categoria, cantidadAportada);
                                                     System.out.println("******************************");
-                                                    inversionC2();
+                                                    inversionC2(nombreProyecto, categoria, cantidadAportada);
                                                 }
                                             }
                                             if (inversiones2 == 3) {
-                                                inversionA2();
+                                                inversionA2(nombreProyecto, categoria, cantidadAportada);
                                                 System.out.println("******************************");
-                                                inversionB2();
+                                                inversionB2(nombreProyecto, categoria, cantidadAportada);
                                                 System.out.println("******************************");
-                                                inversionC2();
+                                                inversionC2(nombreProyecto, categoria, cantidadAportada);
                                             }
                                         }
                                         break;
@@ -481,86 +415,17 @@ public class Main {
                                     nombreRecompensaC, descripcionRecompensaC, precioRecompensaC, recompensas);
                             break;
                         case 3:
-                            System.out.println("CARTERA DIGITAL");
-                            do {
-                                System.out.println("1. Saldo actual");
-                                System.out.println("2. Añadir saldo");
-                                System.out.println("3. Salir");
-                                opcion = Integer.parseInt(s.next());
-                                switch (opcion) {
-                                    case 1:
-                                        if (saldoTotal1 == 0) {
-                                            System.out.println("Usted no dispone de saldo.");
-                                            break;
-                                        } else {
-                                            System.out.printf("Saldo %d€", saldoTotal1);
-                                        }
-                                        break;
-                                    case 2:
-                                        System.out.println("¿Cuánto dinero desea ingresar?");
-                                        saldo = Integer.parseInt(s.next());
-                                        saldoTotal1 += saldo;
-                                        System.out.println("Su saldo ha sido añadido correctamente");
-                                        break;
-                                    case 3:
-                                        System.out.println("Usted ha seleccionado salir.");
-                                        break;
-                                    default:
-                                        System.out.println("Opcion seleccionada inválida.");
-                                        break;
-                                }
-                            } while (opcion != 3);
-
+                            cartera2(opcion=0, saldoTotal1, saldo);
                             break;
                         case 4:
-                            System.out.println("INVITAR A UN AMIGO");
-                            do {
-                                System.out.println("1. Listado de amigos");
-                                System.out.println("2. Añadir a un amigo");
-                                System.out.println("3. Salir");
-                                opcion = s.nextInt();
-                                switch (opcion) {
-                                    case 1:
-                                        System.out.println("LISTADO DE AMIGOS");
-                                        System.out.println(amigo);
-                                        break;
-                                    case 2:
-                                        System.out.println("AÑADIR A UN AMIGO: ");
-                                        correo = s.next();
-                                        amigo = amigo.concat(" " + correo);
-                                        break;
-                                    case 3:
-                                        System.out.println("Salir.");
-                                        break;
-                                    default:
-                                        System.out.println("Opción inválida.");
-                                        break;
-                                }
 
-                            } while (opcion != 3);
+                            anadeamigo2(opcion=0, amigo, correo);
                             break;
+
+
+
                         case 5:
-                            System.out.println("CONFIGURACIÓN. Seleccione una opción: ");
-                            do {
-                                System.out.println("1. Cambiar usuario");
-                                System.out.println("2. Cambiar contraseña");
-                                System.out.println("3. Guardar cambios");
-                                opcion = s.nextInt();
-                                switch (opcion) {
-                                    case 1:
-                                        System.out.printf("Usuario actual -> %s\n", inversor1);
-                                        System.out.println("Introduzca su nuevo usuario: ");
-                                        inversor1 = s.nextLine();
-                                        break;
-                                    case 2:
-                                        System.out.printf("Contraseña actual -> %s\n", contrasenaInversor1);
-                                        System.out.println("Introduzca su nueva contraseña: ");
-                                        contrasenaInversor1 = s.nextLine();
-                                        break;
-                                }
-                            } while (opcion != 3);
-                            System.out.println("Los cambios se han guardado correctamente");
-                            System.out.println("Redirigiendo al menú principal");
+                            config2(opcion=0, inversor2, contrasenaInversor2);
                             break;
                         case 6:
                             System.out.println("Salir. Usted volverá al login.");
@@ -571,7 +436,7 @@ public class Main {
                             break;
                     }
                 } while (menu != 6);
-
+                break;
             }else if(contrasena.equals(contrasenaAdministrador)){ //Menú Administrador
                 System.out.println("Bienvenido. Cuenta de administrador");
                 do {
