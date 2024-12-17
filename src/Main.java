@@ -1,6 +1,6 @@
 import java.util.Scanner;
 import static utilidades.Funciones.*;
-import static utilidades.FuncionesInversiones.*;
+
 
 public class Main {
     public static void main(String[] args) {
@@ -267,89 +267,13 @@ public class Main {
                                     nombreRecompensaC, descripcionRecompensaC, precioRecompensaC, recompensas);
                             break;
                         case 3:
-                            System.out.println("CARTERA DIGITAL");
-                            /*
-                            do {
-                                System.out.println("1. Saldo actual");
-                                System.out.println("2. Añadir saldo");
-                                System.out.println("3. Salir");
-                                opcion = Integer.parseInt(s.next());
-                                switch (opcion) {
-                                    case 1:
-                                        if (saldoTotal1 == 0) {
-                                            System.out.println("Usted no dispone de saldo.");
-                                        } else {
-                                            System.out.printf("Saldo: %d€", saldoTotal1);
-                                            System.out.println();
-                                        }
-                                        break;
-                                    case 2:
-                                        System.out.println("¿Cuánto dinero desea ingresar?");
-                                        saldo = Integer.parseInt(s.next());
-                                        saldoTotal1 += saldo;
-                                        System.out.println("Su saldo ha sido añadido correctamente");
-                                        break;
-                                    case 3:
-                                        System.out.println("Usted ha seleccionado salir.");
-                                        break;
-                                    default:
-                                        System.out.println("Opcion seleccionada inválida.");
-                                        break;
-                                }
-                            } while (opcion != 3);
-
+                            cartera1(opcion =0, saldoTotal1, saldo);
                             break;
-                                 */
-                            anadirSaldo1(opcion =0, saldoTotal1, saldo);
                         case 4:
-                            System.out.println("INVITAR A UN AMIGO");
-                            do {
-                                System.out.println("1. Listado de amigos");
-                                System.out.println("2. Añadir a un amigo");
-                                System.out.println("3. Salir");
-                                opcion = Integer.parseInt(s.next());
-                                switch (opcion) {
-                                    case 1:
-                                        System.out.println("LISTADO DE AMIGOS");
-                                        System.out.println(amigo);
-                                        break;
-                                    case 2:
-                                        System.out.println("AÑADIR A UN AMIGO: ");
-                                        correo = s.next();
-                                        amigo = amigo.concat(" " + correo);
-                                        break;
-                                    case 3:
-                                        System.out.println("Salir.");
-                                        break;
-                                    default:
-                                        System.out.println("Opción inválida.");
-                                        break;
-                                }
-
-                            } while (opcion != 3);
+                            anadeamigo1(opcion=0, amigo, correo);
                             break;
                         case 5:
-                            System.out.println("CONFIGURACION. Seleccione una opción: ");
-                            do {
-                                System.out.println("1. Cambiar usuario");
-                                System.out.println("2. Cambiar contraseña");
-                                System.out.println("3. Guardar cambios");
-                                opcion = Integer.parseInt(s.next());
-                                switch (opcion) {
-                                    case 1:
-                                        System.out.printf("Usuario actual -> %s\n", inversor1);
-                                        System.out.println("Introduzca su nuevo usuario: ");
-                                        inversor1 = s.next();
-                                        break;
-                                    case 2:
-                                        System.out.printf("Contraseña actual -> %s\n", contrasenaInversor1);
-                                        System.out.println("Introduzca su nueva contraseña: ");
-                                        contrasenaInversor1 = s.next();
-                                        break;
-                                }
-                            } while (opcion != 3);
-                            System.out.println("Los cambios se han guardado correctamente");
-                            System.out.println("Redirigiendo al menú principal");
+                            config1(opcion=0, inversor1, contrasenaInversor1);
                             break;
                         case 6:
                             System.out.println("Salir. Usted volverá al login.");
@@ -360,6 +284,7 @@ public class Main {
                             break;
                     }
                 } while (menu != 6);
+                break;
 
             }if (contrasena.equals(contrasenaInversor2)) { //Menú inversor2-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
                 System.out.println("Bienvenido. Cuenta de inversor.");
@@ -490,87 +415,17 @@ public class Main {
                                     nombreRecompensaC, descripcionRecompensaC, precioRecompensaC, recompensas);
                             break;
                         case 3:
-                            System.out.println("CARTERA DIGITAL");
-                            /*do {
-                                System.out.println("1. Saldo actual");
-                                System.out.println("2. Añadir saldo");
-                                System.out.println("3. Salir");
-                                opcion = Integer.parseInt(s.next());
-                                switch (opcion) {
-                                    case 1:
-                                        if (saldoTotal2 == 0) {
-                                            System.out.println("Usted no dispone de saldo.");
-                                            break;
-                                        } else {
-                                            System.out.printf("Saldo %d€", saldoTotal2);
-                                        }
-                                        break;
-                                    case 2:
-                                        System.out.println("¿Cuánto dinero desea ingresar?");
-                                        saldo = Integer.parseInt(s.next());
-                                        saldoTotal2 += saldo;
-                                        System.out.println("Su saldo ha sido añadido correctamente");
-                                        break;
-                                    case 3:
-                                        System.out.println("Usted ha seleccionado salir.");
-                                        break;
-                                    default:
-                                        System.out.println("Opcion seleccionada inválida.");
-                                        break;
-                                }
-                            } while (opcion != 3);
+                            cartera2(opcion=0, saldoTotal1, saldo);
                             break;
-                             */
-                            anadirSaldo2(opcion=0, saldoTotal1, saldo);
                         case 4:
-                            System.out.println("INVITAR A UN AMIGO");
-                            do {
-                                System.out.println("1. Listado de amigos");
-                                System.out.println("2. Añadir a un amigo");
-                                System.out.println("3. Salir");
-                                opcion = s.nextInt();
-                                switch (opcion) {
-                                    case 1:
-                                        System.out.println("LISTADO DE AMIGOS");
-                                        System.out.println(amigo);
-                                        break;
-                                    case 2:
-                                        System.out.println("AÑADIR A UN AMIGO: ");
-                                        correo = s.next();
-                                        amigo = amigo.concat(" " + correo);
-                                        break;
-                                    case 3:
-                                        System.out.println("Salir.");
-                                        break;
-                                    default:
-                                        System.out.println("Opción inválida.");
-                                        break;
-                                }
 
-                            } while (opcion != 3);
+                            anadeamigo2(opcion=0, amigo, correo);
                             break;
+
+
+
                         case 5:
-                            System.out.println("CONFIGURACIÓN. Seleccione una opción: ");
-                            do {
-                                System.out.println("1. Cambiar usuario");
-                                System.out.println("2. Cambiar contraseña");
-                                System.out.println("3. Guardar cambios");
-                                opcion = s.nextInt();
-                                switch (opcion) {
-                                    case 1:
-                                        System.out.printf("Usuario actual -> %s\n", inversor1);
-                                        System.out.println("Introduzca su nuevo usuario: ");
-                                        inversor1 = s.nextLine();
-                                        break;
-                                    case 2:
-                                        System.out.printf("Contraseña actual -> %s\n", contrasenaInversor1);
-                                        System.out.println("Introduzca su nueva contraseña: ");
-                                        contrasenaInversor1 = s.nextLine();
-                                        break;
-                                }
-                            } while (opcion != 3);
-                            System.out.println("Los cambios se han guardado correctamente");
-                            System.out.println("Redirigiendo al menú principal");
+                            config2(opcion=0, inversor2, contrasenaInversor2);
                             break;
                         case 6:
                             System.out.println("Salir. Usted volverá al login.");
@@ -581,7 +436,7 @@ public class Main {
                             break;
                     }
                 } while (menu != 6);
-
+                break;
             }else if(contrasena.equals(contrasenaAdministrador)){ //Menú Administrador
                 System.out.println("Bienvenido. Cuenta de administrador");
                 do {
