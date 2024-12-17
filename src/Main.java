@@ -1,5 +1,6 @@
 import java.util.Scanner;
 import static utilidades.Funciones.*;
+import static utilidades.FuncionesInversiones.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -159,62 +160,15 @@ public class Main {
                                 opcion = Integer.parseInt(s.next());
                                 switch (opcion) {
                                     case 1:
-                                        /* System.out.println("¿En qué proyecto desea invertir?");
-                                        System.out.println("1. Proyecto 1: " + nombreProyecto[0]);
-                                        System.out.println("2. Proyecto 2: " + nombreProyecto[1]);
-                                        System.out.println("3. Proyecto 3 " + nombreProyecto[2]);
-                                        System.out.println("4. Salir");*/
-
+                                        MenuProyectoInversion();
                                         aportacionI1 = Integer.parseInt(s.next());
                                         switch (aportacionI1) {
                                             case 1:
-                                                System.out.println("La cantidad necesaria de este proyecto es de " + cantidad[0] + "€");
-                                                System.out.println("¿Que cantidad desea aportar?");
-                                                cantidadAportada1[0] = Integer.parseInt(s.next());
-                                                if (cantidadAportada1[0] > saldoTotal1) {
-                                                    System.out.println("No dispone de saldo suficiente para realizar la aportación.");
-                                                    System.out.println("Su saldo es de: " + saldoTotal1 + "€");
-                                                    break;
-                                                } else {
-                                                    inversion1[0] = true;
-                                                    saldoTotal1 -= cantidadAportada1[0];
-                                                    cantidadAportada[0] += cantidadAportada1[0];
-                                                    inversiones1++;
-                                                    System.out.println("¡¡¡Gracias por aportar su parte!!!");
-                                                    break;
-                                                }
+                                                cantidadAportadaA1();
                                             case 2:
-                                                System.out.println("La cantidad necesaria de este proyecto es de " + cantidad[1] + "€");
-                                                System.out.println("¿Que cantidad desea aportar?");
-                                                cantidadAportada1[1] = Integer.parseInt(s.next());
-                                                if (cantidadAportada1[1] > saldoTotal1) {
-                                                    System.out.println("No dispone de saldo suficiente para realizar la aportación.");
-                                                    System.out.println("Su saldo es de: " + saldoTotal1 + "€");
-                                                    break;
-                                                } else {
-                                                    inversion1[1] = true;
-                                                    saldoTotal1 -= cantidadAportada1[0];
-                                                    cantidadAportada[1] += cantidadAportada1[1];
-                                                    inversiones1++;
-                                                    System.out.println("¡¡¡Gracias por aportar su parte!!!");
-                                                    break;
-                                                }
+                                                cantidadAportadaB1();
                                             case 3:
-                                                System.out.println("La cantidad necesaria de este proyecto es de " + cantidad[2] + "€");
-                                                System.out.println("¿Que cantidad desea aportar?");
-                                                cantidadAportada1[2] = Integer.parseInt(s.next());
-                                                if (cantidadAportada1[2] > saldoTotal1) {
-                                                    System.out.println("No dispone de saldo suficiente para realizar la aportación.");
-                                                    System.out.println("Su saldo es de: " + saldoTotal1 + "€");
-                                                    break;
-                                                } else {
-                                                    inversion1[2] = true;
-                                                    saldoTotal1 -= cantidadAportada1[2];
-                                                    cantidadAportada[2] += cantidadAportada1[2];
-                                                    inversiones1++;
-                                                    System.out.println("¡¡¡Gracias por aportar su parte!!!");
-                                                    break;
-                                                }
+                                                cantidadAportadaC1();
                                             case 4:
                                                 System.out.println("Salir.");
                                                 break;
@@ -239,61 +193,15 @@ public class Main {
                                             if (respuesta2.equals("s")) {
                                                 int opcion3 = 0;
                                                 while (opcion3 != 1 || opcion3 != 2 || opcion3 != 3) {
-                                                    System.out.println("¿En que proyecto desea invertir? Introduce el número correspondiente");
-                                                    System.out.println("1. Proyecto 1: " + nombreProyecto[0]);
-                                                    System.out.println("2. Proyecto 2: " + nombreProyecto[1]);
-                                                    System.out.println("3. Proyecto 3 " + nombreProyecto[2]);
-                                                    System.out.println("4. Salir");
+                                                    MenuProyectoInversion();
                                                     aportacionI1 = Integer.parseInt(s.next());
                                                     switch (aportacionI1) {
                                                         case 1:
-                                                            System.out.println("La cantidad necesaria de este proyecto es de " + cantidad[0] + "€");
-                                                            System.out.println("¿Que cantidad desea aportar?");
-                                                            cantidadAportada1[0] = Integer.parseInt(s.next());
-                                                            if (cantidadAportada1[0] > saldoTotal1) {
-                                                                System.out.println("No dispone de saldo suficiente para realizar la aportación.");
-                                                                System.out.println("Su saldo es de: " + saldoTotal1 + "€");
-                                                                break;
-                                                            } else {
-                                                                inversion1[0] = true;
-                                                                saldoTotal1 -= cantidadAportada1[0];
-                                                                cantidadAportada[0] += cantidadAportada1[0];
-                                                                inversiones1++;
-                                                                System.out.println("¡¡¡Gracias por aportar su parte!!!");
-                                                                break;
-                                                            }
+                                                            cantidadAportadaA1();
                                                         case 2:
-                                                            System.out.println("La cantidad necesaria de este proyecto es de " + cantidad[1] + "€");
-                                                            System.out.println("¿Que cantidad desea aportar?");
-                                                            cantidadAportada1[0] = Integer.parseInt(s.next());
-                                                            if (cantidadAportada1[0] > saldoTotal1) {
-                                                                System.out.println("No dispone de saldo suficiente para realizar la aportación.");
-                                                                System.out.println("Su saldo es de: " + saldoTotal1 + "€");
-                                                                break;
-                                                            } else {
-                                                                inversion1[1] = true;
-                                                                saldoTotal1 -= cantidadAportada1[0];
-                                                                cantidadAportada[1] += cantidadAportada1[0];
-                                                                inversiones1++;
-                                                                System.out.println("¡¡¡Gracias por aportar su parte!!!");
-                                                                break;
-                                                            }
+                                                            cantidadAportadaB1();
                                                         case 3:
-                                                            System.out.println("La cantidad necesaria de este proyecto es de " + cantidad[2] + "€");
-                                                            System.out.println("¿Que cantidad desea aportar?");
-                                                            cantidadAportada1[2] = Integer.parseInt(s.next());
-                                                            if (cantidadAportada1[2] > saldoTotal1) {
-                                                                System.out.println("No dispone de saldo suficiente para realizar la aportación.");
-                                                                System.out.println("Su saldo es de: " + saldoTotal1 + "€");
-                                                                break;
-                                                            } else {
-                                                                inversion1[2] = true;
-                                                                saldoTotal1 -= cantidadAportada1[2];
-                                                                cantidadAportada[2] += cantidadAportada1[2];
-                                                                inversiones1++;
-                                                                System.out.println("¡¡¡Gracias por aportar su parte!!!");
-                                                                break;
-                                                            }
+                                                            cantidadAportadaC1();
                                                         case 4:
                                                             System.out.println("Salir.");
                                                             break;
@@ -307,112 +215,39 @@ public class Main {
                                             System.out.println("*****Consulta de inversiones*****");
                                             if (inversiones1 == 1) {
                                                 if (inversion1[0]) {
-                                                    System.out.println();
-                                                    System.out.println(nombreProyecto[0]);
-                                                    System.out.print("Categoría: ");
-                                                    System.out.println(categoria[0]);
-                                                    System.out.print("Cantidad aportada: ");
-                                                    System.out.println(cantidadAportada[0]+ "€");
-                                                    System.out.println();
+                                                    inversionA1();
                                                 }
                                                 if (inversion1[1]) {
-                                                    System.out.println();
-                                                    System.out.println(nombreProyecto[1]);
-                                                    System.out.print("Categoría: ");
-                                                    System.out.println(categoria[1]);
-                                                    System.out.print("Cantidad aportada: ");
-                                                    System.out.println(cantidadAportada[1]+ "€");
-                                                    System.out.println();
+                                                    inversionB1();
                                                 }
                                                 if (inversion1[2]) {
-                                                    System.out.println();
-                                                    System.out.println(nombreProyecto[2]);
-                                                    System.out.print("Categoría: ");
-                                                    System.out.println(categoria[2]);
-                                                    System.out.print("Cantidad aportada: ");
-                                                    System.out.println(cantidadAportada[2]+ "€");
-                                                    System.out.println();
+                                                    inversionC1();
                                                 }
                                             }
                                             if (inversiones1 == 2) {
                                                 System.out.println("¿Que inversión desea consultar?");
                                                 if (inversion1[0] && inversion1[1]) {
-                                                    System.out.println();
-                                                    System.out.println(nombreProyecto[0]);
-                                                    System.out.print("Categoría: ");
-                                                    System.out.println(categoria[0]);
-                                                    System.out.print("Cantidad aportada: ");
-                                                    System.out.println(cantidadAportada[0]+ "€");
-                                                    System.out.println();
+                                                    inversionA1();
                                                     System.out.println("******************************");
-                                                    System.out.println();
-                                                    System.out.println(nombreProyecto[1]);
-                                                    System.out.print("Categoría: ");
-                                                    System.out.println(categoria[1]);
-                                                    System.out.print("Cantidad aportada: ");
-                                                    System.out.println(cantidadAportada[1]+ "€");
-                                                    System.out.println();
+                                                    inversionB1();
                                                 }
                                                 if (inversion1[0] && inversion1[2]) {
-                                                    System.out.println();
-                                                    System.out.println(nombreProyecto[0]);
-                                                    System.out.print("Categoría: ");
-                                                    System.out.println(categoria[0]);
-                                                    System.out.print("Cantidad aportada: ");
-                                                    System.out.println(cantidadAportada[0]+ "€");
-                                                    System.out.println();
+                                                    inversionA1();
                                                     System.out.println("******************************");
-                                                    System.out.println();
-                                                    System.out.println(nombreProyecto[2]);
-                                                    System.out.print("Categoría: ");
-                                                    System.out.println(categoria[2]);
-                                                    System.out.print("Cantidad aportada: ");
-                                                    System.out.println(cantidadAportada[2]+ "€");
-                                                    System.out.println();
+                                                    inversionC1();
                                                 }
                                                 if (inversion1[1] && inversion1[2]) {
-                                                    System.out.println();
-                                                    System.out.println(nombreProyecto[1]);
-                                                    System.out.print("Categoría: ");
-                                                    System.out.println(categoria[1]);
-                                                    System.out.print("Cantidad aportada: ");
-                                                    System.out.println(cantidadAportada[1]+ "€");
-                                                    System.out.println();
+                                                    inversionB1();
                                                     System.out.println("******************************");
-                                                    System.out.println();
-                                                    System.out.println(nombreProyecto[2]);
-                                                    System.out.print("Categoría: ");
-                                                    System.out.println(categoria[2]);
-                                                    System.out.print("Cantidad aportada: ");
-                                                    System.out.println(cantidadAportada[2]+ "€");
-                                                    System.out.println();
+                                                    inversionC1();
                                                 }
                                             }
                                             if (inversiones1 == 3) {
-                                                System.out.println("Lista de todas sus inversiones: ");
-                                                System.out.println();
-                                                System.out.println(nombreProyecto[0]);
-                                                System.out.print("Categoría: ");
-                                                System.out.println(categoria[0]);
-                                                System.out.print("Cantidad aportada: ");
-                                                System.out.println(cantidadAportada[0]+ "€");
-                                                System.out.println();
+                                                inversionA1();
                                                 System.out.println("******************************");
-                                                System.out.println();
-                                                System.out.println(nombreProyecto[1]);
-                                                System.out.print("Categoría: ");
-                                                System.out.println(categoria[1]);
-                                                System.out.print("Cantidad aportada: ");
-                                                System.out.println(cantidadAportada[1]+ "€");
-                                                System.out.println();
+                                                inversionB1();
                                                 System.out.println("******************************");
-                                                System.out.println();
-                                                System.out.println(nombreProyecto[2]);
-                                                System.out.print("Categoría: ");
-                                                System.out.println(categoria[2]);
-                                                System.out.print("Cantidad aportada: ");
-                                                System.out.println(cantidadAportada[2]+ "€");
-                                                System.out.println();
+                                                inversionC1();
                                             }
                                         }
                                         break;
@@ -543,61 +378,18 @@ public class Main {
                                 opcion = Integer.parseInt(s.next());
                                 switch (opcion) {
                                     case 1:
-                                        System.out.println("¿En qué proyecto desea invertir?");
-                                        System.out.println("1. Proyecto 1: " + nombreProyecto[0]);
-                                        System.out.println("2. Proyecto 2: " + nombreProyecto[1]);
-                                        System.out.println("3. Proyecto 3 " + nombreProyecto[2]);
-                                        System.out.println("4. Salir");
+                                        MenuProyectoInversion();
                                         aportacionI2 = Integer.parseInt(s.next());
                                         switch (aportacionI2) {
                                             case 1:
-                                                System.out.println("La cantidad necesaria de este proyecto es de " + cantidad[0] + "€");
-                                                System.out.println("¿Que cantidad desea aportar?");
-                                                cantidadAportada2[0] = Integer.parseInt(s.next());
-                                                if (cantidadAportada2[0]>saldoTotal1){
-                                                    System.out.println("No dispone de saldo suficiente para realizar la aportación.");
-                                                    System.out.println("Su saldo es de: "+saldoTotal2 + "€");
-                                                    break;
-                                                }else{
-                                                    inversion2[0] = true;
-                                                    saldoTotal2-=cantidadAportada2[0];
-                                                    cantidadAportada[0]+=cantidadAportada2[0];
-                                                    inversiones2++;
-                                                    System.out.println("¡¡¡Gracias por aportar su parte!!!");
-                                                    break;
-                                                }
+                                                cantidadAportadaA2();
                                             case 2:
-                                                System.out.println("La cantidad necesaria de este proyecto es de " + cantidad[1] + "€");
-                                                System.out.println("¿Que cantidad desea aportar?");
-                                                cantidadAportada2[1] = Integer.parseInt(s.next());
-                                                if (cantidadAportada2[1]>saldoTotal2){
-                                                    System.out.println("No dispone de saldo suficiente para realizar la aportación.");
-                                                    System.out.println("Su saldo es de: "+saldoTotal2 + "€");
-                                                    break;
-                                                }else{
-                                                    inversion2[1] = true;
-                                                    saldoTotal2-=cantidadAportada2[1];
-                                                    cantidadAportada[1]+=cantidadAportada2[1];
-                                                    inversiones2++;
-                                                    System.out.println("¡¡¡Gracias por aportar su parte!!!");
-                                                    break;
-                                                }
+                                                cantidadAportadaB2();
                                             case 3:
-                                                System.out.println("La cantidad necesaria de este proyecto es de " + cantidad[2] + "€");
-                                                System.out.println("¿Que cantidad desea aportar?");
-                                                cantidadAportada2[2] = Integer.parseInt(s.next());
-                                                if (cantidadAportada2[2]>saldoTotal2){
-                                                    System.out.println("No dispone de saldo suficiente para realizar la aportación.");
-                                                    System.out.println("Su saldo es de: "+saldoTotal2 + "€");
-                                                    break;
-                                                }else{
-                                                    inversion2[2] = true;
-                                                    saldoTotal2-=cantidadAportada2[2];
-                                                    cantidadAportada[2]+=cantidadAportada2[2];
-                                                    inversiones2++;
-                                                    System.out.println("¡¡¡Gracias por aportar su parte!!!");
-                                                    break;
-                                                }
+                                                cantidadAportadaC2();
+                                            case 4:
+                                                System.out.println("Salir.");
+                                                break;
                                             default:
                                                 System.out.println("Debe de introducir la opción correspondiente correcta");
                                                 break;
@@ -619,61 +411,15 @@ public class Main {
                                             if (respuesta2.equals("s")) {
                                                 int opcion3 = 0;
                                                 while (opcion3 != 1 || opcion3 != 2 || opcion3 != 3) {
-                                                    System.out.println("¿En que proyecto desea invertir? Introduce el número correspondiente");
-                                                    System.out.println("1. Proyecto 1: " + nombreProyecto[0]);
-                                                    System.out.println("2. Proyecto 2: " + nombreProyecto[1]);
-                                                    System.out.println("3. Proyecto 3 " + nombreProyecto[2]);
-                                                    System.out.println("4. Salir");
+                                                    MenuProyectoInversion();
                                                     aportacionI2 = Integer.parseInt(s.next());
                                                     switch (aportacionI2) {
                                                         case 1:
-                                                            System.out.println("La cantidad necesaria de este proyecto es de " + cantidad[0] + "€");
-                                                            System.out.println("¿Que cantidad desea aportar?");
-                                                            cantidadAportada2[0] = Integer.parseInt(s.next());
-                                                            if (cantidadAportada2[0]>saldoTotal2){
-                                                                System.out.println("No dispone de saldo suficiente para realizar la aportación.");
-                                                                System.out.println("Su saldo es de: "+saldoTotal2 + "€");
-                                                                break;
-                                                            }else{
-                                                                inversion2[0] = true;
-                                                                saldoTotal2-=cantidadAportada2[0];
-                                                                cantidadAportada[0]+=cantidadAportada2[0];
-                                                                inversiones2++;
-                                                                System.out.println("¡¡¡Gracias por aportar su parte!!!");
-                                                                break;
-                                                            }
+                                                            cantidadAportadaA2();
                                                         case 2:
-                                                            System.out.println("La cantidad necesaria de este proyecto es de " + cantidad[1] + "€");
-                                                            System.out.println("¿Que cantidad desea aportar?");
-                                                            cantidadAportada2[1] = Integer.parseInt(s.next());
-                                                            if (cantidadAportada2[1]>saldoTotal2){
-                                                                System.out.println("No dispone de saldo suficiente para realizar la aportación.");
-                                                                System.out.println("Su saldo es de: "+saldoTotal2 + "€");
-                                                                break;
-                                                            }else{
-                                                                inversion2[1] = true;
-                                                                saldoTotal2-=cantidadAportada2[1];
-                                                                cantidadAportada[1]+=cantidadAportada2[1];
-                                                                inversiones2++;
-                                                                System.out.println("¡¡¡Gracias por aportar su parte!!!");
-                                                                break;
-                                                            }
+                                                            cantidadAportadaB2();
                                                         case 3:
-                                                            System.out.println("La cantidad necesaria de este proyecto es de " + cantidad[2]);
-                                                            System.out.println("¿Que cantidad desea aportar?");
-                                                            cantidadAportada2[2] = Integer.parseInt(s.next());
-                                                            if (cantidadAportada2[2]>saldoTotal2){
-                                                                System.out.println("No dispone de saldo suficiente para realizar la aportación.");
-                                                                System.out.println("Su saldo es de: "+saldoTotal2);
-                                                                break;
-                                                            }else{
-                                                                inversion2[2] = true;
-                                                                saldoTotal2-=cantidadAportada2[2];
-                                                                cantidadAportada[2]+=cantidadAportada2[2];
-                                                                inversiones2++;
-                                                                System.out.println("¡¡¡Gracias por aportar su parte!!!");
-                                                                break;
-                                                            }
+                                                            cantidadAportadaC2();
                                                         case 4:
                                                             System.out.println("Salir.");
                                                             break;
@@ -687,112 +433,39 @@ public class Main {
                                             System.out.println("*****Consulta de inversiones*****");
                                             if (inversiones2 == 1) {
                                                 if (inversion2[0]) {
-                                                    System.out.println();
-                                                    System.out.println(nombreProyecto[0]);
-                                                    System.out.print("Categoría: ");
-                                                    System.out.println(categoria[0]);
-                                                    System.out.print("Cantidad aportada: ");
-                                                    System.out.println(cantidadAportada[0]+ "€");
-                                                    System.out.println();
+                                                    inversionA2();
                                                 }
                                                 if (inversion2[1]) {
-                                                    System.out.println();
-                                                    System.out.println(nombreProyecto[1]);
-                                                    System.out.print("Categoría: ");
-                                                    System.out.println(categoria[1]);
-                                                    System.out.print("Cantidad aportada: ");
-                                                    System.out.println(cantidadAportada[1]+ "€");
-                                                    System.out.println();
+                                                    inversionB2();
                                                 }
                                                 if (inversion2[2]) {
-                                                    System.out.println();
-                                                    System.out.println(nombreProyecto[2]);
-                                                    System.out.print("Categoría: ");
-                                                    System.out.println(categoria[2]);
-                                                    System.out.print("Cantidad aportada: ");
-                                                    System.out.println(cantidadAportada[2]+ "€");
-                                                    System.out.println();
+                                                    inversionC2();
                                                 }
                                             }
                                             if (inversiones2 == 2) {
                                                 System.out.println("¿Que inversión desea consultar?");
                                                 if (inversion2[0] && inversion2[1]) {
-                                                    System.out.println();
-                                                    System.out.println(nombreProyecto[0]);
-                                                    System.out.print("Categoría: ");
-                                                    System.out.println(categoria[0]);
-                                                    System.out.print("Cantidad aportada: ");
-                                                    System.out.println(cantidadAportada[0]+ "€");
-                                                    System.out.println();
+                                                    inversionA2();
                                                     System.out.println("******************************");
-                                                    System.out.println();
-                                                    System.out.println(nombreProyecto[1]);
-                                                    System.out.print("Categoría: ");
-                                                    System.out.println(categoria[1]);
-                                                    System.out.print("Cantidad aportada: ");
-                                                    System.out.println(cantidadAportada[1]+ "€");
-                                                    System.out.println();
+                                                    inversionB2();
                                                 }
                                                 if (inversion2[0] && inversion2[2]) {
-                                                    System.out.println();
-                                                    System.out.println(nombreProyecto[0]);
-                                                    System.out.print("Categoría: ");
-                                                    System.out.println(categoria[0]);
-                                                    System.out.print("Cantidad aportada: ");
-                                                    System.out.println(cantidadAportada[0]+ "€");
-                                                    System.out.println();
+                                                    inversionA2();
                                                     System.out.println("******************************");
-                                                    System.out.println();
-                                                    System.out.println(nombreProyecto[2]);
-                                                    System.out.print("Categoría: ");
-                                                    System.out.println(categoria[2]);
-                                                    System.out.print("Cantidad aportada: ");
-                                                    System.out.println(cantidadAportada[2]+ "€");
-                                                    System.out.println();
+                                                    inversionC2();
                                                 }
                                                 if (inversion2[1] && inversion2[2]) {
-                                                    System.out.println();
-                                                    System.out.println(nombreProyecto[1]);
-                                                    System.out.print("Categoría: ");
-                                                    System.out.println(categoria[1]);
-                                                    System.out.print("Cantidad aportada: ");
-                                                    System.out.println(cantidadAportada[1]+ "€");
-                                                    System.out.println();
+                                                    inversionB2();
                                                     System.out.println("******************************");
-                                                    System.out.println();
-                                                    System.out.println(nombreProyecto[2]);
-                                                    System.out.print("Categoría: ");
-                                                    System.out.println(categoria[2]);
-                                                    System.out.print("Cantidad aportada: ");
-                                                    System.out.println(cantidadAportada[2]+ "€");
-                                                    System.out.println();
+                                                    inversionC2();
                                                 }
                                             }
                                             if (inversiones2 == 3) {
-                                                System.out.println("Lista de todas sus inversiones: ");
-                                                System.out.println();
-                                                System.out.println(nombreProyecto[0]);
-                                                System.out.print("Categoría: ");
-                                                System.out.println(categoria[0]);
-                                                System.out.print("Cantidad aportada: ");
-                                                System.out.println(cantidadAportada[0]+ "€");
-                                                System.out.println();
+                                                inversionA2();
                                                 System.out.println("******************************");
-                                                System.out.println();
-                                                System.out.println(nombreProyecto[1]);
-                                                System.out.print("Categoría: ");
-                                                System.out.println(categoria[1]);
-                                                System.out.print("Cantidad aportada: ");
-                                                System.out.println(cantidadAportada[1]+ "€");
-                                                System.out.println();
+                                                inversionB2();
                                                 System.out.println("******************************");
-                                                System.out.println();
-                                                System.out.println(nombreProyecto[2]);
-                                                System.out.print("Categoría: ");
-                                                System.out.println(categoria[2]);
-                                                System.out.print("Cantidad aportada: ");
-                                                System.out.println(cantidadAportada[2]+ "€");
-                                                System.out.println();
+                                                inversionC2();
                                             }
                                         }
                                         break;
