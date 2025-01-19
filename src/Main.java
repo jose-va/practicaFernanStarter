@@ -1,16 +1,21 @@
 import java.util.Scanner;
 import static utilidades.Funciones.*;
+import static utilidades.FuncionesCadenas.*;
 
 
 public class Main {
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
 
-        String administrador= "jose", contrasenaAdministrador="1234jose";
-        String gestor= "pablo", contrasenaGestor="1234pablo";
-        String inversor1= "eladio", contrasenaInversor1="1234eladio";
-        String inversor2= "toranzo", contrasenaInversor2="1234toranzo";
-        String amigo="",contrasena="", correo;
+        String[] administrador= {"jose"} ;
+        String[] contrasenaAdministrador={"1234jose"};
+        String[] gestor= {""};
+        String[] contrasenaGestor= {""};
+        String[] correoGestor={""};
+        String[] inversor={"",""};
+        String[] contrasenaInversor={"", ""};
+        String[] correoInversor={"",""};
+        String amigo="",contrasena="", correo="";
 
         String [] nombreProyecto={"","",""};
         String [] descripcionProyecto= {"","",""};
@@ -46,31 +51,34 @@ public class Main {
         boolean bloqueoGestor=false, bloqueoInversor1=false, bloqueoInversor2=false, sesion=true;
 
         do {
-            System.out.println("============Bienvenido============");
+            do{
+                System.out.println("============Bienvenido============");
+                System.out.println("1. Iniciar sesión en su cuenta");
+                System.out.println("2. Registrarse");
+                System.out.println("==================================");
+                opcion = Integer.parseInt(s.nextLine());
+                if (opcion == 2) registroUsuarios(inversor,contrasenaInversor, gestor, contrasenaGestor);
+            }while (opcion!=1);
+
+            System.out.println("==================================");
             System.out.println("Introduzca su nombre de usuario: ");
             System.out.println("==================================");
             System.out.println("(* para salir)");
             String usuario = s.next().toLowerCase();
             if (usuario.equals("*")) return;
 
-            while (!usuario.equals(administrador) && !usuario.equals(gestor)
-                    && !usuario.equals(inversor1) && !usuario.equals(inversor2)) {
-                System.out.println("El usuario no existe.");
-                System.out.println("Por favor, introduzca un nombre de usuario válido: ");
-                usuario = s.next().toLowerCase();
-            }
 
-            if (usuario.equals(administrador)){
+            if (compararUsuario(usuario, administrador[0])){
                 System.out.println("Administrador. Introduzca su contraseña: ");
                 contrasena = s.next();
-                while (!contrasena.equals(contrasenaAdministrador)) {
+                while (!compararContrasena(contrasena, contrasenaAdministrador[0])) {
                     System.out.println("Contraseña incorrecta.");
                     System.out.println("Por favor, introduzca su contraseña: ");
                     contrasena = s.next();
                 }
             }
 
-            if (usuario.equals(gestor)) {
+            if (compararUsuario(usuario, gestor[0])) {
                 if (bloqueoGestor) {
                     System.out.println("Este usuario está bloqueado.");
                     break;
@@ -78,7 +86,7 @@ public class Main {
                 System.out.println("Gestor. Introduzca su contraseña (3 intentos):  ");
                 contrasena = s.next();
                 intentos=2;
-                while (!contrasena.equals(contrasenaGestor) && intentos > 0) {
+                while (!compararContrasena(contrasena, contrasenaGestor[0]) && intentos > 0) {
                     System.out.printf("Contraseña incorrecta. Por favor, introduzca su contraseña (%d intentos restantes):\n", intentos);
                     contrasena = s.next();
                     intentos--;
@@ -90,7 +98,7 @@ public class Main {
                 }
             }
 
-            if (usuario.equals(inversor1)){
+            if (compararUsuario(usuario, inversor[0])){
                 if (bloqueoInversor1) {
                     System.out.println("Este usuario está bloqueado.");
                     break;
@@ -99,7 +107,7 @@ public class Main {
                 System.out.println("Inversor. Introduzca su contraseña (3 intentos):  ");
                 contrasena = s.next();
                 intentos=2;
-                while (!contrasena.equals(contrasenaInversor1) && intentos > 0) {
+                while (!compararContrasena(contrasena, contrasenaInversor[0]) && intentos > 0) {
                     System.out.printf("Contraseña incorrecta. Por favor, introduzca su contraseña (%d intentos restantes):\n", intentos);
                     contrasena = s.next();
                     intentos--;
@@ -111,7 +119,7 @@ public class Main {
                 }
             }
 
-            if (usuario.equals(inversor2)){
+            if (compararUsuario(usuario, inversor[1])){
                 if (bloqueoInversor2) {
                     System.out.println("Este usuario está bloqueado.");
                     break;
@@ -119,7 +127,7 @@ public class Main {
                 intentos=2;
                 System.out.println("Inversor. Introduzca su contraseña (3 intentos):  ");
                 contrasena = s.next();
-                while (!contrasena.equals(contrasenaInversor2) && intentos > 0) {
+                while (!compararContrasena(contrasena, contrasenaInversor[1]) && intentos > 0) {
                     System.out.printf("Contraseña incorrecta. Por favor, introduzca su contraseña (%d intentos restantes):\n", intentos);
                     contrasena = s.next();
                     intentos--;
@@ -131,12 +139,7 @@ public class Main {
                 }
             }
 
-            System.out.printf("%s, verificación necesaria.\n", usuario);
-            System.out.println("Introduzca su correo electrónico para recibir un código de un solo uso: ");
-            correo= s.nextLine();
-            autentificacion(correo);
-
-            if (contrasena.equals(contrasenaInversor1)) { //Menú inversor1----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+            if (compararContrasena(contrasena,contrasenaInversor[0])){ //Menú inversor1----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
                 System.out.println("Bienvenido. Cuenta de inversor.");
                 do {
@@ -273,7 +276,7 @@ public class Main {
                             anadeamigo1(opcion=0, amigo, correo);
                             break;
                         case 5:
-                            config1(opcion=0, inversor1, contrasenaInversor1);
+                            config1(opcion=0, inversor[0], contrasenaInversor[0]);
                             break;
                         case 6:
                             System.out.println("Salir. Usted volverá al login.");
@@ -286,7 +289,7 @@ public class Main {
                 } while (menu != 6);
                 break;
 
-            }if (contrasena.equals(contrasenaInversor2)) { //Menú inversor2-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+            }if (contrasena.equals(contrasenaInversor[1])) { //Menú inversor2-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
                 System.out.println("Bienvenido. Cuenta de inversor.");
                 do {
                     System.out.println("========MENÚ========");
@@ -418,14 +421,11 @@ public class Main {
                             cartera2(opcion=0, saldoTotal1, saldo);
                             break;
                         case 4:
-
                             anadeamigo2(opcion=0, amigo, correo);
                             break;
 
-
-
                         case 5:
-                            config2(opcion=0, inversor2, contrasenaInversor2);
+                            config2(opcion=0, inversor[1], contrasenaInversor[1]);
                             break;
                         case 6:
                             System.out.println("Salir. Usted volverá al login.");
@@ -437,7 +437,7 @@ public class Main {
                     }
                 } while (menu != 6);
                 break;
-            }else if(contrasena.equals(contrasenaAdministrador)){ //Menú Administrador
+            }else if(contrasena.equals(contrasenaAdministrador[0])){ //Menú Administrador
                 System.out.println("Bienvenido. Cuenta de administrador");
                 do {
                     System.out.println("=======MENÚ========");
@@ -452,45 +452,45 @@ public class Main {
                             System.out.println("PANEL DE CONTROL");
                             System.out.println("Listado de usuarios");
                             if (bloqueoInversor1){
-                                System.out.printf("Inversor %s- Bloqueado\n", inversor1);
-                                System.out.printf("¿Desea desbloquear a %s? (s/n)\n", inversor1);
+                                System.out.printf("Inversor %s- Bloqueado\n", inversor[0]);
+                                System.out.printf("¿Desea desbloquear a %s? (s/n)\n", inversor[0]);
                                 char b= s.next().toLowerCase().charAt(0);
                                 if(b=='s'){
                                     bloqueoInversor1=false;
                                 }
                             }else{
-                                System.out.printf("Inversor %s - Desbloqueado\n", inversor1);
-                                System.out.printf("¿Desea bloquear a %s? (s/n)\n", inversor1);
+                                System.out.printf("Inversor %s - Desbloqueado\n", inversor[0]);
+                                System.out.printf("¿Desea bloquear a %s? (s/n)\n", inversor[0]);
                                 char b= s.next().toLowerCase().charAt(0);
                                 if(b=='s'){
                                     bloqueoInversor1=true;
                                 }
                             }
                             if (bloqueoInversor2){
-                                System.out.printf("Inversor %s- Bloqueado\n", inversor2);
-                                System.out.printf("¿Desea desbloquear a %s? (s/n)\n", inversor2);
+                                System.out.printf("Inversor %s- Bloqueado\n", inversor[1]);
+                                System.out.printf("¿Desea desbloquear a %s? (s/n)\n", inversor[1]);
                                 char b= s.next().toLowerCase().charAt(0);
                                 if(b=='s'){
                                     bloqueoInversor2=false;
                                 }
                             }else{
-                                System.out.printf("Inversor %s- Desbloqueado\n", inversor2);
-                                System.out.printf("¿Desea bloquear a %s? (s/n)\n", inversor2);
+                                System.out.printf("Inversor %s- Desbloqueado\n", inversor[1]);
+                                System.out.printf("¿Desea bloquear a %s? (s/n)\n", inversor[1]);
                                 char b= s.next().toLowerCase().charAt(0);
                                 if(b=='s'){
                                     bloqueoInversor2=true;
                                 }
                             }
                             if (bloqueoGestor){
-                                System.out.printf("Gestor %s- Bloqueado\n", gestor);
-                                System.out.printf("¿Desea desbloquear a %s? (s/n)\n", inversor1);
+                                System.out.printf("Gestor %s- Bloqueado\n", gestor[0]);
+                                System.out.printf("¿Desea desbloquear a %s? (s/n)\n", inversor[0]);
                                 char b= s.next().toLowerCase().charAt(0);
                                 if(b=='s'){
                                     bloqueoGestor=false;
                                 }
                             }else{
-                                System.out.printf("Gestor %s - Desbloqueado\n", gestor);
-                                System.out.printf("¿Desea bloquear a %s? (s/n)\n", gestor);
+                                System.out.printf("Gestor %s - Desbloqueado\n",gestor[0]);
+                                System.out.printf("¿Desea bloquear a %s? (s/n)\n", gestor[0]);
                                 char b= s.next().toLowerCase().charAt(0);
                                 if(b=='s'){
                                     bloqueoGestor=true;
@@ -499,10 +499,10 @@ public class Main {
                             break;
 
                         case 2:
-                           misProyectos(proyectos, nombreProyecto, categoria, cantidad, cantidadAportada, descripcionProyecto, fechaApertura, fechaCierre,
-                                   nombreRecompensaA, descripcionRecompensaA, precioRecompensaA, nombreRecompensaB, descripcionRecompensaB, precioRecompensaB,
-                                   nombreRecompensaC, descripcionRecompensaC, precioRecompensaC, recompensas);
-                           break;
+                            misProyectos(proyectos, nombreProyecto, categoria, cantidad, cantidadAportada, descripcionProyecto, fechaApertura, fechaCierre,
+                                    nombreRecompensaA, descripcionRecompensaA, precioRecompensaA, nombreRecompensaB, descripcionRecompensaB, precioRecompensaB,
+                                    nombreRecompensaC, descripcionRecompensaC, precioRecompensaC, recompensas);
+                            break;
                         case 3:
                             System.out.println("CONFIGURACION. Seleccione una opción: ");
                             do{
@@ -512,14 +512,14 @@ public class Main {
                                 opcion = Integer.parseInt(s.next());
                                 switch (opcion) {
                                     case 1:
-                                        System.out.printf("Usuario actual -> %s\n", administrador);
+                                        System.out.printf("Usuario actual -> %s\n", administrador[0]);
                                         System.out.println("Introduzca su nuevo usuario: ");
-                                        administrador = s.next();
+                                        administrador[0] = s.next();
                                         break;
                                     case 2:
-                                        System.out.printf("Contraseña actual -> %s\n", contrasenaAdministrador);
+                                        System.out.printf("Contraseña actual -> %s\n", contrasenaAdministrador[0]);
                                         System.out.println("Introduzca su nueva contraseña: ");
-                                        contrasenaAdministrador = s.next();
+                                        contrasenaAdministrador[0] = s.next();
                                         break;
                                     case 3:
                                         System.out.println("Cambios guardados.");
@@ -541,7 +541,7 @@ public class Main {
                     }
                 } while (menu != 4);
 
-            }else if(contrasena.equals(contrasenaGestor)){
+            }else if(contrasena.equals(contrasenaGestor[0])){
                 System.out.println("Bienvenido. Cuenta de gestor");
                 do {
                     System.out.println("1. Mis proyectos");
@@ -563,14 +563,14 @@ public class Main {
                                 opcion = Integer.parseInt(s.next());
                                 switch (opcion) {
                                     case 1:
-                                        System.out.printf("Usuario actual -> %s\n", gestor);
+                                        System.out.printf("Usuario actual -> %s\n", gestor[0]);
                                         System.out.println("Introduzca su nuevo usuario: ");
-                                        gestor = s.next();
+                                        gestor[0] = s.next();
                                         break;
                                     case 2:
-                                        System.out.printf("Contraseña actual -> %s\n", contrasenaGestor);
+                                        System.out.printf("Contraseña actual -> %s\n", contrasenaGestor[0]);
                                         System.out.println("Introduzca su nueva contraseña: ");
-                                        contrasenaGestor = s.next();
+                                        contrasenaGestor[0] = s.next();
                                         break;
                                     case 3:
                                         System.out.println("Cambios guardados");

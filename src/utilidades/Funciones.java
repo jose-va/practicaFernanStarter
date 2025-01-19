@@ -1,6 +1,7 @@
 package utilidades;
 import java.util.Scanner;
 import static utilidades.EnvioGMail.enviarConGMail;
+import static utilidades.FuncionesCadenas.*;
 public class Funciones {
 
     /**
@@ -8,12 +9,13 @@ public class Funciones {
      * Esta función genera un código aleatorio de 4 dígitos que se enviará a un correo introducido por el usuario.
      *
      * @author Jose Manuel Vilchez Arenas
-     * @param correo será introducido por el usuario como una cadena de carácteres
-     * Se enviará el código generado al correo electrónico
+     * El correo será introducido por el usuario como una cadena de carácteres
      * Si el usuario introduce correctamente el código, será verificado correctamente
      */
-    public static void autentificacion(String correo) {
+    public static void autentificacion() {
         Scanner s = new Scanner(System.in);
+        System.out.println("Verificación necesaria. Introduzca su correo electrónico");
+        String correo=s.nextLine();
 
         int codigo= (int) (Math.random()*8999+1000);
         String asunto = "Código de autentificación";
@@ -30,9 +32,22 @@ public class Funciones {
             }else{
                 System.out.println("Código incorrecto. Por favor, introduzca el código recibido.");
                 System.out.printf("Correo electrónico -> %s", correo);
+                codigoUsuario= Integer.parseInt(s.nextLine());
             }
         } while(codigoUsuario!=codigo);
     }
+
+    /**
+     * Vista previa de los proyectos
+     *
+     * @author Jose Manuel Vilchez Arenas
+     *
+     * @param proyectos
+     * @param nombreProyecto
+     * @param categoria
+     * @param cantidad
+     * @param cantidadAportada
+     */
 
     public static void vistaPreviaProyectos(int proyectos, String[] nombreProyecto, String[] categoria,
                                             int[] cantidad, int[] cantidadAportada){
@@ -69,7 +84,6 @@ public class Funciones {
 
     /**
      * Gráfico de inversiones
-     * Esta función devuelve un gráfico con lo que se ha invertido
      *
      * @author Jose Manuel Vilchez Arenas
      * @param cantidad como la cantidad que se necesita aportar en un proyecto
@@ -87,7 +101,6 @@ public class Funciones {
 
     /**
      * Apartado de consulta de proyectos para inversores
-     * Devuelve toda la información en lo relativo a proyectos
      *
      * @author Jose Manuel Vilchez Arenas
      * Esta función se encarga de actualizar nuestros arrays previamente declarados
@@ -222,11 +235,9 @@ public class Funciones {
 
     /**
      * Apartado de mis proyectos para gestor y administrador
-     * Permite creación y modificación de proyectos
      *
      * @author Jose Manuel Vilchez Arenas
-     * Esta función se encarga de crear proyectos y de actualizar nuestros arrays previamente declarado
-     * Nos muestra una salida con la información de cada uno de los proyectos que hemos creado
+     * Esta función se encarga de la creación y modificación de proyectos
      */
 
     public static void misProyectos(int proyectos, String[] nombreProyecto, String[] categoria, int[] cantidad, int[] cantidadAportada, String[] descripcionProyecto,
@@ -689,45 +700,6 @@ public class Funciones {
     }
 
     /**
-     * Autentificación mediante código
-     * Esta función permite la modificación del usuario y/o contraseña
-     *
-     * @author Jose Manuel Vilchez Arenas
-     * @param usuario será el nombre de usuario actual
-     * @param contrasena será la contraseña del usuario actual
-     *
-     * Actualiza las respectivas variables
-     */
-
-    public static void configuracion(int opcion, String usuario, String contrasena){
-        Scanner s= new Scanner( System.in);
-        do{
-            System.out.println("1. Cambiar usuario");
-            System.out.println("2. Cambiar contraseña");
-            System.out.println("3. Guardar cambios");
-            opcion = Integer.parseInt(s.next());
-            switch (opcion) {
-                case 1:
-                    System.out.printf("Usuario actual -> %s\n", usuario);
-                    System.out.println("Introduzca su nuevo usuario: ");
-                    usuario = s.next();
-                    break;
-                case 2:
-                    System.out.printf("Contraseña actual -> %s\n", contrasena);
-                    System.out.println("Introduzca su nueva contraseña: ");
-                    contrasena = s.next();
-                    break;
-                case 3:
-                    System.out.println("Cambios guardados.");
-                    break;
-                default:
-                    System.out.println("Opción inválida.");
-                    break;
-            }
-        }while (opcion!=3);
-    }
-
-    /**
      * Menu de selección de proyectos
      * Esta función muestra por pantalla los proyectos existentes ya creados para que el usuario seleccione el que desee para invertir en él
      *
@@ -1137,5 +1109,61 @@ public class Funciones {
         } while (opcion != 3);
         System.out.println("Los cambios se han guardado correctamente");
         System.out.println("Redirigiendo al menú principal");
+    }
+
+    public static void registroUsuarios(String[] inversor, String[]  contrasenaInversor,
+                                        String[]  gestor, String[]  contrasenaGestor){
+        Scanner s = new Scanner(System.in);
+        System.out.println("=========Tipo de usuario==========");
+        System.out.println("1. Inversor");
+        System.out.println("2. Gestor");
+        System.out.println("==================================");
+        int opcion= Integer.parseInt(s.nextLine());
+        boolean primerInversor= false;
+        if (opcion==1){
+            System.out.println("Cuenta de Inversor. Introduzca un nombre de usuario");
+            if(inversor[0].isEmpty()){
+                inversor[0]= s.nextLine();
+                primerInversor = true;
+            }else{
+                inversor[1]= s.nextLine();
+            }
+
+            String contrasena;
+            do{
+                System.out.println("Introduzca su contraseña.");
+                System.out.println("Recuerde que debe de tener mínimo 8 carácteres e incluir mayúsculas, minúsculas y simbolos especiales.");
+                contrasena=s.nextLine();
+            }while(!fortalezaContrasena(contrasena));
+
+            String contrasena2;
+            do{
+                System.out.println("Vuelva a introducir su contraseña: ");
+                contrasena2=s.nextLine();
+            }while(!compararContrasena(contrasena, contrasena2));
+
+            if (primerInversor) contrasenaInversor[0]= contrasena;
+            else contrasenaInversor[1]= contrasena;
+            autentificacion();
+
+        }else{
+            System.out.println("Cuenta de Gestor. Introduzca un nombre de usuario");
+            gestor[0]= s.nextLine();
+
+            String contrasena;
+            do{
+                System.out.println("Introduzca su contraseña.");
+                System.out.println("Recuerde que debe de tener mínimo 8 carácteres e incluir mayúsculas, minúsculas y simbolos especiales.");
+                contrasena=s.nextLine();
+            }while(!fortalezaContrasena(contrasena));
+
+            String contrasena2;
+            do{
+                System.out.println("Vuelva a introducir su contraseña: ");
+                contrasena2=s.nextLine();
+            }while(!compararContrasena(contrasena, contrasena2));
+            contrasenaGestor[0]= contrasena;
+            autentificacion();
+        }
     }
 }
