@@ -35,4 +35,11 @@ public class FuncionesCadenas {
         else return false;
     }
 
+    public static int buscaNombreProyecto(String []nombreProyecto, String nombre) {
+        for (int i=0; i<nombreProyecto.length; i++){
+            if (nombreProyecto[i].toLowerCase().equals(nombre)) return i;
+        }
+        return -1;
+    }
+
 }

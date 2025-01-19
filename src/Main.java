@@ -17,10 +17,10 @@ public class Main {
         String[] correoInversor={"",""};
         String amigo="",contrasena="", correo="";
 
-        String [] nombreProyecto={"","",""};
-        String [] descripcionProyecto= {"","",""};
-        String [] fechaApertura={"","",""};
-        String [] fechaCierre={"","",""};
+        String [] nombreProyecto= new String[10];
+        String [] descripcionProyecto= new String[10];
+        String [] fechaApertura=new String[10];
+        String [] fechaCierre=new String[10];
 
         String []nombreRecompensaA={"","",""};
         String []nombreRecompensaB={"","",""};
@@ -31,16 +31,15 @@ public class Main {
         String []descripcionRecompensaB={"","",""};
         String []descripcionRecompensaC={"","",""};
 
-        float []precioRecompensaA={0,0,0};
-        float []precioRecompensaB={0,0,0};
-        float []precioRecompensaC={0,0,0};
+        float []precioRecompensaA=new float[10];
+        float []precioRecompensaB=new float[10];
+        float []precioRecompensaC=new float[10];
 
-        int proyectos = 0;
         int []recompensas={0,0,0};
-        int []cantidadAportada={0,0,0};
-        int []cantidad={0,0,0};
-        int []cantidadAportada1={0,0,0};
-        int []cantidadAportada2={0,0,0};
+        int []cantidadAportada=new int[10];
+        int []cantidad=new int[10];
+        int []cantidadAportada1=new int[10];
+        int []cantidadAportada2=new int[10];
         int saldo = 0, saldoTotal1 = 0, saldoTotal2 = 0, inversiones1 = 0, inversiones2 = 0;
         int aportacionI1, aportacionI2;
 
@@ -265,7 +264,7 @@ public class Main {
                             }
                             break;
                         case 2:
-                            consultaProyectos(proyectos, nombreProyecto, categoria, cantidad, cantidadAportada, descripcionProyecto, fechaApertura, fechaCierre,
+                            consultaDetalladaProyecto(nombreProyecto, categoria, cantidad, cantidadAportada, descripcionProyecto, fechaApertura, fechaCierre,
                                     nombreRecompensaA, descripcionRecompensaA, precioRecompensaA, nombreRecompensaB, descripcionRecompensaB, precioRecompensaB,
                                     nombreRecompensaC, descripcionRecompensaC, precioRecompensaC, recompensas);
                             break;
@@ -413,7 +412,7 @@ public class Main {
                             }
                             break;
                         case 2:
-                            consultaProyectos(proyectos, nombreProyecto, categoria, cantidad, cantidadAportada, descripcionProyecto, fechaApertura, fechaCierre,
+                            consultaDetalladaProyecto(nombreProyecto, categoria, cantidad, cantidadAportada, descripcionProyecto, fechaApertura, fechaCierre,
                                     nombreRecompensaA, descripcionRecompensaA, precioRecompensaA, nombreRecompensaB, descripcionRecompensaB, precioRecompensaB,
                                     nombreRecompensaC, descripcionRecompensaC, precioRecompensaC, recompensas);
                             break;
@@ -499,7 +498,7 @@ public class Main {
                             break;
 
                         case 2:
-                            misProyectos(proyectos, nombreProyecto, categoria, cantidad, cantidadAportada, descripcionProyecto, fechaApertura, fechaCierre,
+                            misProyectos(nombreProyecto, categoria, cantidad, cantidadAportada, descripcionProyecto, fechaApertura, fechaCierre,
                                     nombreRecompensaA, descripcionRecompensaA, precioRecompensaA, nombreRecompensaB, descripcionRecompensaB, precioRecompensaB,
                                     nombreRecompensaC, descripcionRecompensaC, precioRecompensaC, recompensas);
                             break;
@@ -550,7 +549,7 @@ public class Main {
                     menu = Integer.parseInt(s.next());
                     switch (menu) {
                         case 1:
-                            misProyectos(proyectos, nombreProyecto, categoria, cantidad, cantidadAportada, descripcionProyecto, fechaApertura, fechaCierre,
+                            misProyectos(nombreProyecto, categoria, cantidad, cantidadAportada, descripcionProyecto, fechaApertura, fechaCierre,
                                     nombreRecompensaA, descripcionRecompensaA, precioRecompensaA, nombreRecompensaB, descripcionRecompensaB, precioRecompensaB,
                                     nombreRecompensaC, descripcionRecompensaC, precioRecompensaC, recompensas);
                             break;
