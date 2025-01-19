@@ -8,46 +8,46 @@ public class Main {
         Scanner s = new Scanner(System.in);
 
         String[] administrador= {"jose"} ;
-        String[] contrasenaAdministrador={"1234jose"};
-        String[] gestor= {""};
-        String[] contrasenaGestor= {""};
-        String[] correoGestor={""};
-        String[] inversor={"",""};
-        String[] contrasenaInversor={"", ""};
-        String[] correoInversor={"",""};
+        String[] contrasenaAdministrador= {"1234jose"};
+        String[] listaUsuariosGestor= new String [10];
+        String[] listaUsuariosInversor= new String [10];
+        String[] contrasenasGestor= new String [10];
+        String[] contrasenasInversor= new String [10];
         String amigo="",contrasena="", correo="";
 
-        String [] nombreProyecto= new String[10];
-        String [] descripcionProyecto= new String[10];
-        String [] fechaApertura=new String[10];
-        String [] fechaCierre=new String[10];
+        String [] nombreProyecto= new String[20];
+        String [] descripcionProyecto= new String[20];
+        String [] fechaApertura= new String[20];
+        String [] fechaCierre= new String[20];
 
-        String []nombreRecompensaA={"","",""};
-        String []nombreRecompensaB={"","",""};
-        String []nombreRecompensaC={"","",""};
-        String []categoria={"","",""};
+        String []nombreRecompensaA= new String[20];
+        String []nombreRecompensaB= new String[20];
+        String []nombreRecompensaC= new String[20];
+        String []categoria= new String[20];
 
-        String []descripcionRecompensaA={"","",""};
-        String []descripcionRecompensaB={"","",""};
-        String []descripcionRecompensaC={"","",""};
+        String []descripcionRecompensaA= new String[20];
+        String []descripcionRecompensaB= new String[20];
+        String []descripcionRecompensaC= new String[20];
 
-        float []precioRecompensaA=new float[10];
-        float []precioRecompensaB=new float[10];
-        float []precioRecompensaC=new float[10];
+        float []precioRecompensaA= new float[20];
+        float []precioRecompensaB= new float[20];
+        float []precioRecompensaC= new float[20];
 
-        int []recompensas={0,0,0};
-        int []cantidadAportada=new int[10];
-        int []cantidad=new int[10];
-        int []cantidadAportada1=new int[10];
-        int []cantidadAportada2=new int[10];
+        int []recompensas=new int[20];
+        int []cantidadAportada=new int[20];
+        int []cantidad=new int[20];
+        int []cantidadAportada1=new int[20];
+        int []cantidadAportada2=new int[20];
         int saldo = 0, saldoTotal1 = 0, saldoTotal2 = 0, inversiones1 = 0, inversiones2 = 0;
         int aportacionI1, aportacionI2;
 
         boolean[] inversion1={false,false,false};
         boolean[] inversion2={false,false,false};
 
-        int intentos=2, opcion, numpro=0, menu; //Intentos queda a 2, así los usuarios tendran hasta 3 oportunidades para entrar al sistema (hasta 0)
-        boolean bloqueoGestor=false, bloqueoInversor1=false, bloqueoInversor2=false, sesion=true;
+        int intentos=2, opcion, numpro=0, menu; //Intentos queda a 2, así los listaUsuarios tendran hasta 3 oportunidades para entrar al sistema (hasta 0)
+        boolean[] bloqueoGestor= new boolean[10];
+        boolean[] bloqueoInversor = new boolean[10];
+        boolean sesion=true;
 
         do {
             do{
@@ -56,89 +56,67 @@ public class Main {
                 System.out.println("2. Registrarse");
                 System.out.println("==================================");
                 opcion = Integer.parseInt(s.nextLine());
-                if (opcion == 2) registroUsuarios(inversor,contrasenaInversor, gestor, contrasenaGestor);
+                if (opcion == 2) registroUsuarios(listaUsuariosGestor, listaUsuariosInversor,contrasenasGestor, contrasenasInversor);
             }while (opcion!=1);
 
-            System.out.println("==================================");
-            System.out.println("Introduzca su nombre de usuario: ");
-            System.out.println("==================================");
-            System.out.println("(* para salir)");
-            String usuario = s.next().toLowerCase();
-            if (usuario.equals("*")) return;
+            String usuario;
+            do{
+                System.out.println("Por favor, introduzca su nombre de usuario: ");
+                System.out.println("(* para salir)");
+                System.out.println("==================================");
+                usuario = s.next().toLowerCase();
+                if (usuario.equals("*")) return;
+            }while ((buscaNombreUsuario(listaUsuariosGestor, usuario) == -1) &&
+                    (buscaNombreUsuario(listaUsuariosInversor, usuario) == -1)  && !usuario.equals("jose"));
 
-
-            if (compararUsuario(usuario, administrador[0])){
-                System.out.println("Administrador. Introduzca su contraseña: ");
+            if (usuario.equals("jose")){
+                System.out.println("Introduzca su contraseña: ");
                 contrasena = s.next();
-                while (!compararContrasena(contrasena, contrasenaAdministrador[0])) {
+                while (!compararContrasena(contrasena, contrasenaAdministrador[0])){
                     System.out.println("Contraseña incorrecta.");
                     System.out.println("Por favor, introduzca su contraseña: ");
                     contrasena = s.next();
                 }
-            }
-
-            if (compararUsuario(usuario, gestor[0])) {
-                if (bloqueoGestor) {
+            }else if((buscaNombreUsuario(listaUsuariosGestor, usuario) >= 0){
+                int posicion= buscaNombreUsuario(listaUsuariosGestor, usuario);
+                if (bloqueo[posicion]) {
                     System.out.println("Este usuario está bloqueado.");
                     break;
                 }
-                System.out.println("Gestor. Introduzca su contraseña (3 intentos):  ");
+                System.out.println(" Introduzca su contraseña (3 intentos):  ");
                 contrasena = s.next();
                 intentos=2;
-                while (!compararContrasena(contrasena, contrasenaGestor[0]) && intentos > 0) {
+                while (!compararContrasena(contrasena, contrasenasGestor[posicion]) && intentos > 0) {
                     System.out.printf("Contraseña incorrecta. Por favor, introduzca su contraseña (%d intentos restantes):\n", intentos);
                     contrasena = s.next();
                     intentos--;
                 }
-
                 if (intentos == 0) {
-                    bloqueoGestor = true;
+                    bloqueo[posicion] = true;
                     System.out.println("Se ha superado el máximo de intentos. Usuario bloqueado.");
                 }
-            }
-
-            if (compararUsuario(usuario, inversor[0])){
-                if (bloqueoInversor1) {
+            }else if (buscaNombreUsuario(listaUsuariosInversor, usuario) >= 0){
+                int posicion= buscaNombreUsuario(listaUsuariosInversor, usuario);
+                if (bloqueo[posicion]) {
                     System.out.println("Este usuario está bloqueado.");
                     break;
                 }
-
-                System.out.println("Inversor. Introduzca su contraseña (3 intentos):  ");
+                System.out.println(" Introduzca su contraseña (3 intentos):  ");
                 contrasena = s.next();
                 intentos=2;
-                while (!compararContrasena(contrasena, contrasenaInversor[0]) && intentos > 0) {
+                while (!compararContrasena(contrasena, contrasenasInversor[posicion]) && intentos > 0) {
                     System.out.printf("Contraseña incorrecta. Por favor, introduzca su contraseña (%d intentos restantes):\n", intentos);
                     contrasena = s.next();
                     intentos--;
                 }
-
                 if (intentos == 0) {
-                    bloqueoInversor1 = true;
+                    bloqueo[posicion] = true;
                     System.out.println("Se ha superado el máximo de intentos. Usuario bloqueado.");
                 }
             }
 
-            if (compararUsuario(usuario, inversor[1])){
-                if (bloqueoInversor2) {
-                    System.out.println("Este usuario está bloqueado.");
-                    break;
-                }
-                intentos=2;
-                System.out.println("Inversor. Introduzca su contraseña (3 intentos):  ");
-                contrasena = s.next();
-                while (!compararContrasena(contrasena, contrasenaInversor[1]) && intentos > 0) {
-                    System.out.printf("Contraseña incorrecta. Por favor, introduzca su contraseña (%d intentos restantes):\n", intentos);
-                    contrasena = s.next();
-                    intentos--;
-                }
 
-                if (intentos == 0) {
-                    bloqueoInversor2 = true;
-                    System.out.println("Se ha superado el máximo de intentos. Usuario bloqueado.");
-                }
-            }
-
-            if (compararContrasena(contrasena,contrasenaInversor[0])){ //Menú inversor1----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+            if (buscaNombreUsuario(listaUsuariosInversor, usuario) >= 0){ //Menú inversor1----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
                 System.out.println("Bienvenido. Cuenta de inversor.");
                 do {
@@ -269,13 +247,13 @@ public class Main {
                                     nombreRecompensaC, descripcionRecompensaC, precioRecompensaC, recompensas);
                             break;
                         case 3:
-                            cartera1(opcion =0, saldoTotal1, saldo);
+                            cartera(opcion =0, saldoTotal1, saldo);
                             break;
                         case 4:
-                            anadeamigo1(opcion=0, amigo, correo);
+                            anadeamigo(opcion=0, amigo, correo);
                             break;
                         case 5:
-                            config1(opcion=0, inversor[0], contrasenaInversor[0]);
+                            config(opcion=0, inversor[0], contrasenaInversor[0]);
                             break;
                         case 6:
                             System.out.println("Salir. Usted volverá al login.");
@@ -288,155 +266,7 @@ public class Main {
                 } while (menu != 6);
                 break;
 
-            }if (contrasena.equals(contrasenaInversor[1])) { //Menú inversor2-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
-                System.out.println("Bienvenido. Cuenta de inversor.");
-                do {
-                    System.out.println("========MENÚ========");
-                    System.out.println("1. Mis inversiones");
-                    System.out.println("2. Proyectos");
-                    System.out.println("3. Cartera digital");
-                    System.out.println("4. Invita a un amigo");
-                    System.out.println("5. Configuración");
-                    System.out.println("6. Cerrar sesión");
-                    menu = Integer.parseInt(s.next());
-
-                    switch (menu) {
-                        case 1:
-                            opcion = 1;
-                            while (opcion == 1 || opcion == 2) {
-                                System.out.println("----MIS INVERSIONES----");
-                                System.out.println("1. Crear inversiones");
-                                System.out.println("2. Consultar inversiones");
-                                System.out.println("3. Salir");
-                                opcion = Integer.parseInt(s.next());
-                                switch (opcion) {
-                                    case 1:
-                                        MenuProyectoInversion(nombreProyecto);
-                                        aportacionI2 = Integer.parseInt(s.next());
-                                        switch (aportacionI2) {
-                                            case 1:
-                                                crearInversionA2(cantidad, cantidadAportada2, saldoTotal2, inversion2, cantidadAportada, inversiones2);
-                                            case 2:
-                                                crearInversionB2(cantidad, cantidadAportada2, saldoTotal2, inversion2, cantidadAportada, inversiones2);
-                                            case 3:
-                                                crearInversionC2(cantidad, cantidadAportada2, saldoTotal2, inversion2, cantidadAportada, inversiones2);
-                                            case 4:
-                                                System.out.println("Salir.");
-                                                break;
-                                            default:
-                                                System.out.println("Debe de introducir la opción correspondiente correcta");
-                                                break;
-                                        }
-                                        break;
-                                    case 2:
-                                        if (inversiones2 == 0) {
-                                            System.out.println("Actualmente, no ha realizado ninguna inversión");
-                                            System.out.println("¿Desea invertir en algún proyecto? (s/n)");
-                                            String respuesta2 = s.next();
-                                            while (!respuesta2.equals("s")) {
-                                                if (respuesta2.equals("n")) {
-                                                    return;
-                                                }
-                                                System.out.println("Introduce una opcion valida (s/n)");
-                                                System.out.println("¿Desea invertir en algún proyecto? (s/n)");
-                                                respuesta2 = s.next();
-                                            }
-                                            if (respuesta2.equals("s")) {
-                                                int opcion3 = 0;
-                                                while (opcion3 != 1 || opcion3 != 2 || opcion3 != 3) {
-                                                    MenuProyectoInversion(nombreProyecto);
-                                                    aportacionI2 = Integer.parseInt(s.next());
-                                                    switch (aportacionI2) {
-                                                        case 1:
-                                                            crearInversionA2(cantidad, cantidadAportada2, saldoTotal2, inversion2, cantidadAportada, inversiones2);
-                                                            break;
-                                                        case 2:
-                                                            crearInversionB2(cantidad, cantidadAportada2, saldoTotal2, inversion2, cantidadAportada, inversiones2);
-                                                            break;
-                                                        case 3:
-                                                            crearInversionC2(cantidad, cantidadAportada2, saldoTotal2, inversion2, cantidadAportada, inversiones2);
-                                                            break;
-                                                        case 4:
-                                                            System.out.println("Salir.");
-                                                            break;
-                                                        default:
-                                                            System.out.println("Debe de introducir la opción correspondiente correcta");
-                                                            break;
-                                                    }
-                                                }
-                                            }
-                                        } else if (inversiones2 > 0) {
-                                            System.out.println("*****Consulta de inversiones*****");
-                                            if (inversiones2 == 1) {
-                                                if (inversion2[0]) {
-                                                    inversionA2(nombreProyecto, categoria, cantidadAportada);
-                                                }
-                                                if (inversion2[1]) {
-                                                    inversionB2(nombreProyecto, categoria, cantidadAportada);
-                                                }
-                                                if (inversion2[2]) {
-                                                    inversionC2(nombreProyecto, categoria, cantidadAportada);
-                                                }
-                                            }
-                                            if (inversiones2 == 2) {
-                                                System.out.println("¿Que inversión desea consultar?");
-                                                if (inversion2[0] && inversion2[1]) {
-                                                    inversionA2(nombreProyecto, categoria, cantidadAportada);
-                                                    System.out.println("******************************");
-                                                    inversionB2(nombreProyecto, categoria, cantidadAportada);
-                                                }
-                                                if (inversion2[0] && inversion2[2]) {
-                                                    inversionA2(nombreProyecto, categoria, cantidadAportada);
-                                                    System.out.println("******************************");
-                                                    inversionC2(nombreProyecto, categoria, cantidadAportada);
-                                                }
-                                                if (inversion2[1] && inversion2[2]) {
-                                                    inversionB2(nombreProyecto, categoria, cantidadAportada);
-                                                    System.out.println("******************************");
-                                                    inversionC2(nombreProyecto, categoria, cantidadAportada);
-                                                }
-                                            }
-                                            if (inversiones2 == 3) {
-                                                inversionA2(nombreProyecto, categoria, cantidadAportada);
-                                                System.out.println("******************************");
-                                                inversionB2(nombreProyecto, categoria, cantidadAportada);
-                                                System.out.println("******************************");
-                                                inversionC2(nombreProyecto, categoria, cantidadAportada);
-                                            }
-                                        }
-                                        break;
-                                    case 3:
-                                        System.out.println("Salir. Redirigiendo al menú del inversor.");
-                                        break;
-                                }
-                            }
-                            break;
-                        case 2:
-                            consultaDetalladaProyecto(nombreProyecto, categoria, cantidad, cantidadAportada, descripcionProyecto, fechaApertura, fechaCierre,
-                                    nombreRecompensaA, descripcionRecompensaA, precioRecompensaA, nombreRecompensaB, descripcionRecompensaB, precioRecompensaB,
-                                    nombreRecompensaC, descripcionRecompensaC, precioRecompensaC, recompensas);
-                            break;
-                        case 3:
-                            cartera2(opcion=0, saldoTotal1, saldo);
-                            break;
-                        case 4:
-                            anadeamigo2(opcion=0, amigo, correo);
-                            break;
-
-                        case 5:
-                            config2(opcion=0, inversor[1], contrasenaInversor[1]);
-                            break;
-                        case 6:
-                            System.out.println("Salir. Usted volverá al login.");
-                            break;
-
-                        default:
-                            System.out.println("Por favor, introduzca una opcion válida (1 - 6)");
-                            break;
-                    }
-                } while (menu != 6);
-                break;
-            }else if(contrasena.equals(contrasenaAdministrador[0])){ //Menú Administrador
+            }else if(contrasena.equalsIgnoreCase(contrasenaAdministrador[0])){ //Menú Administrador
                 System.out.println("Bienvenido. Cuenta de administrador");
                 do {
                     System.out.println("=======MENÚ========");
@@ -449,53 +279,46 @@ public class Main {
                     switch (menu) {
                         case 1:
                             System.out.println("PANEL DE CONTROL");
-                            System.out.println("Listado de usuarios");
-                            if (bloqueoInversor1){
-                                System.out.printf("Inversor %s- Bloqueado\n", inversor[0]);
-                                System.out.printf("¿Desea desbloquear a %s? (s/n)\n", inversor[0]);
-                                char b= s.next().toLowerCase().charAt(0);
-                                if(b=='s'){
-                                    bloqueoInversor1=false;
+                            System.out.println("Listado de todos los usuarios");
+                            listadoUsuarios(listaUsuariosGestor, listaUsuariosInversor, bloqueoGestor, bloqueoInversor);
+                            System.out.println("=====================================================================");
+                            System.out.println("Por favor, introduzca el nombre de un usuario para cambiar su estado.");
+                            usuario= s.nextLine().toLowerCase();
+                            if (buscaNombreUsuario(listaUsuariosGestor,usuario)!=-1){
+                                int posicion= buscaNombreUsuario(listaUsuariosGestor,usuario);
+                                System.out.println(listaUsuariosGestor[posicion]);
+                                if(bloqueoInversor[posicion]){
+                                    System.out.print(" - Bloqueado\n");
+                                    System.out.println("¿Desea desbloquear a este usuario? (si/no)");
+                                    String respuesta= s.nextLine().toLowerCase();
+                                    if (respuesta.equals("si")) bloqueoInversor[posicion]=false;
+
+                                }else{
+                                    System.out.print(" - Desbloqueado\n");
+                                    System.out.println("¿Desea bloquear a este usuario? (si/no)");
+                                    String respuesta= s.nextLine().toLowerCase();
+                                    if (respuesta.equals("si")) bloqueoInversor[posicion]=true;
                                 }
+
+                            }else if(buscaNombreUsuario(listaUsuariosInversor,usuario)!=-1){
+                                int posicion= buscaNombreUsuario(listaUsuariosInversor,usuario);
+                                System.out.println(listaUsuariosInversor[posicion]);
+                                if(bloqueoInversor[posicion]){
+                                    System.out.print(" - Bloqueado\n");
+                                    System.out.println("¿Desea desbloquear a este usuario? (si/no)");
+                                    String respuesta= s.nextLine().toLowerCase();
+                                    if (respuesta.equals("si")) bloqueoInversor[posicion]=false;
+
+                                }else{
+                                    System.out.print(" - Desbloqueado\n");
+                                    System.out.println("¿Desea bloquear a este usuario? (si/no)");
+                                    String respuesta= s.nextLine().toLowerCase();
+                                    if (respuesta.equals("si")) bloqueoInversor[posicion]=true;
+                                }
+
                             }else{
-                                System.out.printf("Inversor %s - Desbloqueado\n", inversor[0]);
-                                System.out.printf("¿Desea bloquear a %s? (s/n)\n", inversor[0]);
-                                char b= s.next().toLowerCase().charAt(0);
-                                if(b=='s'){
-                                    bloqueoInversor1=true;
-                                }
+                                System.out.println("El usuario introducido no existe.");
                             }
-                            if (bloqueoInversor2){
-                                System.out.printf("Inversor %s- Bloqueado\n", inversor[1]);
-                                System.out.printf("¿Desea desbloquear a %s? (s/n)\n", inversor[1]);
-                                char b= s.next().toLowerCase().charAt(0);
-                                if(b=='s'){
-                                    bloqueoInversor2=false;
-                                }
-                            }else{
-                                System.out.printf("Inversor %s- Desbloqueado\n", inversor[1]);
-                                System.out.printf("¿Desea bloquear a %s? (s/n)\n", inversor[1]);
-                                char b= s.next().toLowerCase().charAt(0);
-                                if(b=='s'){
-                                    bloqueoInversor2=true;
-                                }
-                            }
-                            if (bloqueoGestor){
-                                System.out.printf("Gestor %s- Bloqueado\n", gestor[0]);
-                                System.out.printf("¿Desea desbloquear a %s? (s/n)\n", inversor[0]);
-                                char b= s.next().toLowerCase().charAt(0);
-                                if(b=='s'){
-                                    bloqueoGestor=false;
-                                }
-                            }else{
-                                System.out.printf("Gestor %s - Desbloqueado\n",gestor[0]);
-                                System.out.printf("¿Desea bloquear a %s? (s/n)\n", gestor[0]);
-                                char b= s.next().toLowerCase().charAt(0);
-                                if(b=='s'){
-                                    bloqueoGestor=true;
-                                }
-                            }
-                            break;
 
                         case 2:
                             misProyectos(nombreProyecto, categoria, cantidad, cantidadAportada, descripcionProyecto, fechaApertura, fechaCierre,
@@ -540,7 +363,8 @@ public class Main {
                     }
                 } while (menu != 4);
 
-            }else if(contrasena.equals(contrasenaGestor[0])){
+            }else if(buscaNombreUsuario(listaUsuariosGestor, usuario) >= 0){
+                int posicion= buscaNombreUsuario(listaUsuariosGestor, usuario);
                 System.out.println("Bienvenido. Cuenta de gestor");
                 do {
                     System.out.println("1. Mis proyectos");
@@ -562,14 +386,14 @@ public class Main {
                                 opcion = Integer.parseInt(s.next());
                                 switch (opcion) {
                                     case 1:
-                                        System.out.printf("Usuario actual -> %s\n", gestor[0]);
+                                        System.out.printf("Usuario actual -> %s\n", listaUsuariosGestor[posicion]);
                                         System.out.println("Introduzca su nuevo usuario: ");
-                                        gestor[0] = s.next();
+                                        listaUsuariosGestor[0] = s.next();
                                         break;
                                     case 2:
-                                        System.out.printf("Contraseña actual -> %s\n", contrasenaGestor[0]);
+                                        System.out.printf("Contraseña actual -> %s\n", contrasenasGestor[posicion]);
                                         System.out.println("Introduzca su nueva contraseña: ");
-                                        contrasenaGestor[0] = s.next();
+                                        contrasenasGestor[posicion] = s.next();
                                         break;
                                     case 3:
                                         System.out.println("Cambios guardados");
