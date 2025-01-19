@@ -1,37 +1,31 @@
 package utilidades;
 
 public class FuncionesCadenas {
-    public static boolean compararUsuario(String usuario, String usuario2){
-        for (int i=0; i< usuario.length(); i++){
-            if (usuario.toLowerCase().charAt(i)== usuario2.toLowerCase().charAt(i));
+
+    public static boolean compararContrasena(String contrasenaUsuario, String contrasenaUsuario2){
+        for (int i=0; i< contrasenaUsuario.length(); i++){
+            if (contrasenaUsuario.charAt(i)==contrasenaUsuario2.charAt(i));
             else return false;
         }
         return true;
     }
-    public static boolean compararContrasena(String contrasena, String contrasena2){
-        for (int i=0; i< contrasena.length(); i++){
-            if (contrasena.charAt(i)== contrasena2.charAt(i));
-            else return false;
-        }
-        return true;
-    }
-    public static boolean fortalezaContrasena(String contrasena){
-        if (contrasena.length()<8) return false;
+    public static boolean fortalezaContrasena(String contrasenaUsuario){
+        if (contrasenaUsuario.length()<8) return false;
 
         int contMinusculas=0;
         int contMayusculas=0;
         int contSimbolos=0;
-        for (int i=0; i< contrasena.length(); i++){
-            if (contrasena.charAt(i)=='+' || contrasena.charAt(i)=='-' || contrasena.charAt(i)=='_' ||
-                    contrasena.charAt(i)=='*' || contrasena.charAt(i)=='.' || contrasena.charAt(i)==',' || contrasena.charAt(i)=='@'){
+        for (int i=0; i< contrasenaUsuario.length(); i++){
+            if (contrasenaUsuario.charAt(i)=='+' || contrasenaUsuario.charAt(i)=='-' || contrasenaUsuario.charAt(i)=='_' ||
+                    contrasenaUsuario.charAt(i)=='*' || contrasenaUsuario.charAt(i)=='.' || contrasenaUsuario.charAt(i)==',' || contrasenaUsuario.charAt(i)=='@'){
                 contSimbolos++;
             }else{
-                if (contrasena.charAt(i)==contrasena.toUpperCase().charAt(i)) contMayusculas++;
+                if (contrasenaUsuario.charAt(i)==contrasenaUsuario.toUpperCase().charAt(i)) contMayusculas++;
                 else contMinusculas++;
             }
         }
 
-        if (contMinusculas > 0 && contMinusculas > 0 && contSimbolos > 0) return true;
+        if (contMinusculas > 0 && contMayusculas > 0 && contSimbolos > 0) return true;
         else return false;
     }
 
@@ -41,5 +35,46 @@ public class FuncionesCadenas {
         }
         return -1;
     }
+
+    public static int buscaProyectoVacio(String [] nombreProyecto){
+        for (int i=0; i< nombreProyecto.length; i++){
+            if (nombreProyecto[i].isEmpty()) return i;
+        }
+        return 20;
+    }
+
+    public static int buscaNombreUsuario(String []listaUsuarios, String usuario) {
+        for (int i=0; i<listaUsuarios.length; i++){
+            if (listaUsuarios[i].toLowerCase().equals(usuario)) return i;
+        }
+        return -1;
+    }
+
+
+    public static int buscaUsuarioVacio(String [] usuarios){
+        for (int i=0; i< usuarios.length; i++){
+            if (usuarios[i].isEmpty()) return i;
+        }
+        return 10;
+    }
+
+    public static void listadoUsuarios (String[] listaUsuariosGestor, String [] listaUsuariosInversor,
+                                        boolean[] bloqueoGestor, boolean[] bloqueoInversor){
+
+        System.out.println("==========Gestores==============");
+        for (int i=0; i< listaUsuariosGestor.length; i++){
+            System.out.println(listaUsuariosGestor[i]);
+            if (bloqueoGestor[i]) System.out.print(" - Bloqueado\n");
+            else System.out.print(" - Desbloqueado\n");
+        }
+        System.out.println("==========Inversores==============");
+        for (int i=0; i< listaUsuariosInversor.length; i++){
+            System.out.println(listaUsuariosInversor[i]);
+            if (bloqueoInversor[i]) System.out.print(" - Bloqueado\n");
+            else System.out.print(" - Desbloqueado\n");
+        }
+    }
+
+
 
 }

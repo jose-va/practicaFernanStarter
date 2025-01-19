@@ -56,12 +56,6 @@ public class Funciones {
             if (i == 100) break;
         }
     }
-    public static int leerListaProyecto(String [] nombreProyecto){
-        for (int i=0; i< nombreProyecto.length; i++){
-            if (nombreProyecto[i].isEmpty()) return i;
-        }
-        return 10;
-    }
 
     /**
      * Vista previa de los proyectos
@@ -74,7 +68,7 @@ public class Funciones {
      */
     public static void vistaPreviaProyecto(String[] nombreProyecto, String[] categoria,
                                            int[] cantidad, int[] cantidadAportada) {
-        int proyecto= leerListaProyecto(nombreProyecto);
+        int proyecto= buscaProyectoVacio(nombreProyecto);
         if (proyecto == 0) {
             System.out.println("****Actualmente no hay ningún proyecto****");
         } else {
@@ -87,6 +81,12 @@ public class Funciones {
             }
         }
     }
+
+    /**
+     * Creación de los proyectos
+     *
+     * @author Jose Manuel Vilchez Arenas
+     */
 
     public static void crearProyecto(int proyecto, String[] nombreProyecto, String[] categoria, int[] cantidad, int[] cantidadAportada, String[] descripcionProyecto,
                                      String[] fechaApertura, String[] fechaCierre, String[] nombreRecompensaA, String[] descripcionRecompensaA, float[] precioRecompensaA,
@@ -114,8 +114,11 @@ public class Funciones {
         System.out.println("Introduzca la fecha de cierre de las inversiones: ");
         fechaCierre[proyecto]= s.next();
         System.out.println("Recompensas del proyecto");
-        System.out.println("¿Cuántas desea añadir? (max 3.)");
-        recompensas[proyecto]= Integer.parseInt(s.next());
+        do{
+            System.out.println("¿Cuántas desea añadir? (max 3.)");
+            recompensas[proyecto]= Integer.parseInt(s.next());
+        }while(recompensas[proyecto]>3);
+
         System.out.println("Nombre de la primera recompensa: ");
         nombreRecompensaB[proyecto]= s.next();
         s.nextLine();
@@ -208,11 +211,13 @@ public class Funciones {
             System.out.println(nombreRecompensaA[proyecto]);
             System.out.println(descripcionRecompensaA[proyecto]);
             System.out.println(precioRecompensaA[proyecto] + "€");
+            if (recompensas[proyecto]<2) return;
             System.out.println("=============================");
             System.out.println("RECOMPENSA 2");
             System.out.println(nombreRecompensaB[proyecto]);
             System.out.println(descripcionRecompensaB[proyecto]);
             System.out.println(precioRecompensaB[proyecto] + "€");
+            if (recompensas[proyecto]<3) return;
             System.out.println("=============================");
             System.out.println("RECOMPENSA 3");
             System.out.println(nombreRecompensaC[proyecto]);
@@ -233,7 +238,7 @@ public class Funciones {
                                      String[] descripcionRecompensaC, float[] precioRecompensaC, int[] recompensas){
         Scanner s = new Scanner(System.in);
         System.out.println("MIS PROYECTOS");
-        int proyecto= leerListaProyecto(nombreProyecto);
+        int proyecto= buscaProyectoVacio(nombreProyecto);
         if (proyecto == 0) {
             System.out.println("Aún no hay proyectos");
             crearProyecto(proyecto, nombreProyecto, categoria, cantidad, cantidadAportada, descripcionProyecto, fechaApertura, fechaCierre,
@@ -486,11 +491,11 @@ public class Funciones {
      *
      * @autor Pablo Valderas Doblas
      * @param opcion Es una variable que permite seleccionar entre las distintas opciones de la interfaz
-     * @param saldoTotal1 Muestra en pantalla el saldo total del inversor
+     * @param saldoTotal Muestra en pantalla el saldo total del inversor
      * @param saldo Esta variable se utiliza para recoger el saldo que el inversor desea introducir en su cartera digital
      */
 
-    public static void cartera1 (int opcion, int saldoTotal1,int saldo){
+    public static void cartera (int opcion, int saldoTotal,int saldo){
         Scanner s = new Scanner(System.in);
         do {
             System.out.println("CARTERA DIGITAL");
@@ -500,56 +505,17 @@ public class Funciones {
             opcion = Integer.parseInt(s.next());
             switch (opcion) {
                 case 1:
-                    if (saldoTotal1 == 0) {
+                    if (saldoTotal == 0) {
                         System.out.println("Usted no dispone de saldo.");
                     } else {
-                        System.out.printf("Saldo: %d€", saldoTotal1);
+                        System.out.printf("Saldo: %d€", saldoTotal);
                         System.out.println();
                     }
                     break;
                 case 2:
                     System.out.println("¿Cuánto dinero desea ingresar?");
                     saldo = Integer.parseInt(s.next());
-                    saldoTotal1 += saldo;
-                    System.out.println("Su saldo ha sido añadido correctamente");
-                    break;
-                case 3:
-                    System.out.println("Usted ha seleccionado salir.");
-                    break;
-                default:
-                    System.out.println("Opcion seleccionada inválida.");
-                    break;
-            }
-        } while (opcion != 3);
-    }
-
-    /**
-     * Esta función trabaja de la misma manera que la anterior pero se enfoca en el inversor 2
-     * @autor Pablo Valderas Doblas
-     *
-     */
-
-    public static void cartera2 (int opcion, int saldoTotal1,int saldo){
-        Scanner s = new Scanner(System.in);
-        do {
-            System.out.println("CARTERA DIGITAL");
-            System.out.println("1. Saldo actual");
-            System.out.println("2. Añadir saldo");
-            System.out.println("3. Salir");
-            opcion = Integer.parseInt(s.next());
-            switch (opcion) {
-                case 1:
-                    if (saldoTotal1 == 0) {
-                        System.out.println("Usted no dispone de saldo.");
-                    } else {
-                        System.out.printf("Saldo: %d€", saldoTotal1);
-                        System.out.println();
-                    }
-                    break;
-                case 2:
-                    System.out.println("¿Cuánto dinero desea ingresar?");
-                    saldo = Integer.parseInt(s.next());
-                    saldoTotal1 += saldo;
+                    saldoTotal += saldo;
                     System.out.println("Su saldo ha sido añadido correctamente");
                     break;
                 case 3:
@@ -569,36 +535,7 @@ public class Funciones {
      * @param amigo Almacena los amigos del inevrsor
      * @param correo Esta variable almacena el correo correspondienet de cada amigo
      */
-    public static void anadeamigo1 (int opcion, String amigo, String correo ){
-        Scanner s = new Scanner(System.in);
-        do {
-            System.out.println("INVITAR A UN AMIGO");
-            System.out.println("1. Listado de amigos");
-            System.out.println("2. Añadir a un amigo");
-            System.out.println("3. Salir");
-            opcion = s.nextInt();
-            switch (opcion) {
-                case 1:
-                    System.out.println("LISTADO DE AMIGOS");
-                    System.out.println(amigo);
-                    break;
-                case 2:
-                    System.out.println("AÑADIR A UN AMIGO: ");
-                    correo = s.next();
-                    amigo = amigo.concat(" " + correo);
-                    break;
-                case 3:
-                    System.out.println("Salir.");
-                    break;
-                default:
-                    System.out.println("Opción inválida.");
-                    break;
-            }
-
-        } while (opcion != 3);
-    }
-
-    public static void anadeamigo2 (int opcion, String amigo, String correo ){
+    public static void anadeamigo(int opcion, String amigo, String correo ){
         Scanner s = new Scanner(System.in);
         do {
             System.out.println("INVITAR A UN AMIGO");
@@ -633,11 +570,11 @@ public class Funciones {
      *
      * @autor Pablo Valderas Doblas
      * @param opcion Es una variable que permite seleccionar entre las distintas opciones de la interfaz
-     * @param inversor1 Esta variable es la que almacena el usuario del inversor
-     * @param contrasenaInversor1 Esta variable guarda la contraseña del inversor
+     * @param inversor Esta variable es la que almacena el usuario del inversor
+     * @param contrasenaInversor Esta variable guarda la contraseña del inversor
      */
 
-    public static void config1 (int opcion, String inversor1, String contrasenaInversor1){
+    public static void config (int opcion, String inversor, String contrasenaInversor){
         Scanner s = new Scanner(System.in);
         System.out.println("CONFIGURACIÓN. Seleccione una opción: ");
         do {
@@ -647,14 +584,14 @@ public class Funciones {
             opcion = s.nextInt();
             switch (opcion) {
                 case 1:
-                    System.out.printf("Usuario actual -> %s\n", inversor1);
+                    System.out.printf("Usuario actual -> %s\n", inversor);
                     System.out.println("Introduzca su nuevo usuario: ");
-                    inversor1 = s.nextLine();
+                    inversor = s.nextLine();
                     break;
                 case 2:
-                    System.out.printf("Contraseña actual -> %s\n", contrasenaInversor1);
+                    System.out.printf("Contraseña actual -> %s\n", contrasenaInversor);
                     System.out.println("Introduzca su nueva contraseña: ");
-                    contrasenaInversor1 = s.nextLine();
+                    contrasenaInversor = s.nextLine();
                     break;
             }
         } while (opcion != 3);
@@ -662,88 +599,57 @@ public class Funciones {
         System.out.println("Redirigiendo al menú principal");
     }
 
-    public static void config2 (int opcion, String inversor2, String contrasenaInversor2){
+    public static void registroUsuarios(String[] listaUsuariosGestor, String []listaUsuariosInversor, String []contrasenasGestor, String []contrasenasInversor){
         Scanner s = new Scanner(System.in);
-        System.out.println("CONFIGURACIÓN. Seleccione una opción: ");
+        int opcion;
         do {
-            System.out.println("1. Cambiar usuario");
-            System.out.println("2. Cambiar contraseña");
-            System.out.println("3. Guardar cambios");
-            opcion = s.nextInt();
-            switch (opcion) {
-                case 1:
-                    System.out.printf("Usuario actual -> %s\n", inversor2);
-                    System.out.println("Introduzca su nuevo usuario: ");
-                    inversor2 = s.nextLine();
-                    break;
-                case 2:
-                    System.out.printf("Contraseña actual -> %s\n", contrasenaInversor2);
-                    System.out.println("Introduzca su nueva contraseña: ");
-                    contrasenaInversor2 = s.nextLine();
-                    break;
-            }
-        } while (opcion != 3);
-        System.out.println("Los cambios se han guardado correctamente");
-        System.out.println("Redirigiendo al menú principal");
-    }
+            System.out.println("=========Tipo de usuario==========");
+            System.out.println("1. Gestor");
+            System.out.println("2. Inversor");
+            System.out.println("==================================");
+            opcion = Integer.parseInt(s.nextLine());
+        }while (opcion!= 1 && opcion !=2);
+            if (opcion==1){
+                int posicion= buscaUsuarioVacio(listaUsuariosGestor);
+                System.out.println("Cuenta de Gestor. Introduzca un nombre de usuario");
+                listaUsuariosGestor[posicion]= s.nextLine();
 
-    public static void registroUsuarios(String[] inversor, String[]  contrasenaInversor,
-                                        String[]  gestor, String[]  contrasenaGestor){
-        Scanner s = new Scanner(System.in);
-        System.out.println("=========Tipo de usuario==========");
-        System.out.println("1. Inversor");
-        System.out.println("2. Gestor");
-        System.out.println("==================================");
-        int opcion= Integer.parseInt(s.nextLine());
-        boolean primerInversor= false;
-        if (opcion==1){
-            System.out.println("Cuenta de Inversor. Introduzca un nombre de usuario");
-            if(inversor[0].isEmpty()){
-                inversor[0]= s.nextLine();
-                primerInversor = true;
+                String contrasenaUsuario, contrasenaUsuario2;
+                do{
+                    System.out.println("Introduzca su contraseña.");
+                    System.out.println("Recuerde que debe de tener mínimo 8 carácteres e incluir mayúsculas, minúsculas y simbolos especiales.");
+                    contrasenaUsuario=s.nextLine();
+                }while(!fortalezaContrasena(contrasenaUsuario));
+                do{
+                    System.out.println("Vuelva a introducir su contraseña: ");
+                    contrasenaUsuario2=s.nextLine();
+                }while(!compararContrasena(contrasenaUsuario, contrasenaUsuario2));
+                contrasenasGestor[posicion]= contrasenaUsuario;
+
+                autentificacion();
+
+            }else if (opcion==2){
+                int posicion= buscaUsuarioVacio(listaUsuariosInversor);
+                System.out.println("Cuenta de Inversor. Introduzca un nombre de usuario");
+                listaUsuariosInversor[posicion]= s.nextLine();
+
+                String contrasenaUsuario, contrasenaUsuario2;
+                do{
+                    System.out.println("Introduzca su contraseña.");
+                    System.out.println("Recuerde que debe de tener mínimo 8 carácteres e incluir mayúsculas, minúsculas y simbolos especiales.");
+                    contrasenaUsuario=s.nextLine();
+                }while(!fortalezaContrasena(contrasenaUsuario));
+                do{
+                    System.out.println("Vuelva a introducir su contraseña: ");
+                    contrasenaUsuario2=s.nextLine();
+                }while(!compararContrasena(contrasenaUsuario, contrasenaUsuario2));
+                contrasenasInversor[posicion]= contrasenaUsuario;
+
+                autentificacion();
             }else{
-                inversor[1]= s.nextLine();
+                System.out.println("Por favor, introduzca una opción correcta (1 o 2)");
             }
-
-            String contrasena;
-            do{
-                System.out.println("Introduzca su contraseña.");
-                System.out.println("Recuerde que debe de tener mínimo 8 carácteres e incluir mayúsculas, minúsculas y simbolos especiales.");
-                contrasena=s.nextLine();
-            }while(!fortalezaContrasena(contrasena));
-
-            String contrasena2;
-            do{
-                System.out.println("Vuelva a introducir su contraseña: ");
-                contrasena2=s.nextLine();
-            }while(!compararContrasena(contrasena, contrasena2));
-
-            if (primerInversor) contrasenaInversor[0]= contrasena;
-            else contrasenaInversor[1]= contrasena;
-            autentificacion();
-
-        }else{
-            System.out.println("Cuenta de Gestor. Introduzca un nombre de usuario");
-            gestor[0]= s.nextLine();
-
-            String contrasena;
-            do{
-                System.out.println("Introduzca su contraseña.");
-                System.out.println("Recuerde que debe de tener mínimo 8 carácteres e incluir mayúsculas, minúsculas y simbolos especiales.");
-                contrasena=s.nextLine();
-            }while(!fortalezaContrasena(contrasena));
-
-            String contrasena2;
-            do{
-                System.out.println("Vuelva a introducir su contraseña: ");
-                contrasena2=s.nextLine();
-            }while(!compararContrasena(contrasena, contrasena2));
-            contrasenaGestor[0]= contrasena;
-            autentificacion();
-        }
     }
-
-
 }
 
 
