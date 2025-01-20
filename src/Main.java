@@ -171,7 +171,7 @@ public class Main {
                             anadeamigo1(opcion=0, amigo, correo);
                             break;
                         case 5:
-                            config1(opcion=0, inversor1, contrasenaInversor1);
+                            config1(opcion=0, inversor, contrasenasInversor);
                             break;
                         case 6:
                             System.out.println("Salir. Usted volverá al login.");
