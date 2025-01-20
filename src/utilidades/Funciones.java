@@ -309,6 +309,24 @@ public class Funciones {
         return opcion;
     }
 
+    /**
+     * Esta función sirve para posibilizar la consulta de proyectos en los que ha invertido el inversor que solicita el inversor
+     * Se muestra por pantalla los siguientes parámetros:
+     *
+     * @autor Pablo Valderas Doblas
+     * @param nombreProyecto Es el nombre del proyecto en el cual ha invertido el inversor
+     * @param mostrarNombreProyecto Es el nombre del proyecto el cual se va a mostrar por pantalla
+     * @param mostrarInversion Es la inversion que se va a mostrar por pantalla
+     * @param AportacionInversor Es la cantidad que aporta el inversor a un proyecto determinado
+     */
+    public static int consultaInversion(int seleccionInversor, int[] id, String mostrarNombreProyecto, int mostrarInversion, String[] listaUsuarios, String usuario, String[] nombreProyecto, int[] AportacionInversor, int[] inversiones){
+        for (int i = 0; i < id.length; i++) {
+            System.out.println("");
+            mostrarNombreProyecto=nombreProyecto[seleccionInversor];
+            mostrarInversion=AportacionInversor[seleccionInversor];
+        }
+        return (consultaInversion(id, seleccionInversor, mostrarInversion, mostrarNombreProyecto, listaUsuarios, usuario, nombreProyecto, AportacionInversor, inversiones));
+    }
 
     /**
      * Esta función permite al inversor poder invertir en el proyecto que ha seleccionado anteriormente
@@ -323,10 +341,9 @@ public class Funciones {
      * @param inversiones Esta variable almacena la cantidad de veces que ha invertido el inversor
      * @return Detiene la ejecución de la función y devuelve los valores que ha ingresado el usuario al main
      */
-
-    public static int crearInversion(int[] id, String[] listaUsuarios, String usuario, String[] nombreProyecto, int[] cantidad, int[] AportacionInversor, int[] saldoTotal, boolean[] inversion, int[] cantidadAportada, int[] inversiones) {
+    public static int crearInversion(int seleccionInversor,String[] mostrarInversion, String[] mostrarNombreProyecto, int[] id, String[] listaUsuarios, String usuario, String[] nombreProyecto, int[] cantidad, int[] AportacionInversor, int[] saldoTotal, boolean[] inversion, int[] cantidadAportada, int[] inversiones) {
         Scanner s = new Scanner(System.in);
-        int seleccionInversor = 0;
+        seleccionInversor = 0;
         do {
             System.out.println("¿En qué proyecto desea invertir?");
             System.out.println("0. Salir");
@@ -350,47 +367,13 @@ public class Funciones {
                 saldoTotal[buscaNombreUsuario(listaUsuarios, usuario)] -= cantidadAportada[buscaNombreUsuario(listaUsuarios, usuario)];
                 cantidadAportada[seleccionInversor] += cantidadAportada[seleccionInversor];
                 inversiones[buscaNombreUsuario(listaUsuarios, usuario)]++;
-                id[buscaNombreUsuario(listaUsuarios, usuario)] = seleccionInversor;
+                id[buscaNombreUsuario(listaUsuarios, usuario)]++;
                 System.out.println("¡¡¡Gracias por aportar su parte!!!");
             }
         } while (seleccionInversor < 0 || seleccionInversor > 20);
-        return crearInversion(id, nombreProyecto, listaUsuarios, usuario, cantidad, AportacionInversor, saldoTotal, inversion, cantidadAportada, inversiones);
+        consultaInversion(id, listaUsuarios, usuario, nombreProyecto, AportacionInversor, inversiones, mostrarInversion, mostrarNombreProyecto);
+        return (id, seleccionInversor, nombreProyecto, listaUsuarios, usuario, cantidad, AportacionInversor, saldoTotal, inversion, cantidadAportada, inversiones);
     }
-
-
-    public static int consultaInversion(int[] id, String[] listaUsuarios, String usuario, String[] nombreProyecto, int[] AportacionInversor, int[] inversiones){
-        for (int i = 0; i < inversiones[buscaNombreUsuario(listaUsuarios, usuario)]; i++) {
-            System.out.println("Inversion - "+);
-        }
-
-        return ();
-    }
-
-
-
-
-    /**
-     * Esta función sirve para posibilizar la consulta de proyectos en los que ha invertido el inversor que solicita el inversor
-     * Se muestra por pantalla los siguientes parámetros:
-     *
-     * @autor Pablo Valderas Doblas
-     * @param nombreProyecto Es el nombre del proyecto en el cual ha invertido el inversor
-     * @param categoria Es la categoría de un proyecto determinado
-     * @param cantidadAportada Es la cantidad que ha aportado el inversor en un proyecto en concreto
-     */
-
-
-    public static void inversionA1 (String[]nombreProyecto, String[]categoria, int[]cantidadAportada) {
-        System.out.println();
-        System.out.println(nombreProyecto[0]);
-        System.out.print("Categoría: ");
-        System.out.println(categoria[0]);
-        System.out.print("Cantidad aportada: ");
-        System.out.println(cantidadAportada[0]+ "€");
-        System.out.println();
-    }
-
-
 
     /**
      * Esta función sirve para mostrar la cartera digital del inversor

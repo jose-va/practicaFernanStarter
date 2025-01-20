@@ -28,18 +28,6 @@ public class FuncionesCadenas {
         if (contMinusculas > 0 && contMayusculas > 0 && contSimbolos > 0) return true;
         else return false;
     }
-
-
-
-    public static int buscaInversion(int[] id) {
-        for (int i=0; i< id.length; i++){
-            if (id[i].) return i;
-        }
-        return -1;
-    }
-
-
-
     public static int buscaNombreProyecto(String []nombreProyecto, String nombre) {
         for (int i=0; i<nombreProyecto.length; i++){
             if (nombreProyecto[i].toLowerCase().equals(nombre)) return i;

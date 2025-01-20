@@ -36,7 +36,7 @@ public class Main {
 
 
         int[]id = new int[100];
-
+        int seleccionInversor=0;
 
         int []recompensas=new int[20];
         int []cantidadAportada=new int[20];
@@ -50,7 +50,6 @@ public class Main {
         int[] inversiones = new int[10];
 
         int[] AportacionInversor = new int[10];
-        int seleccionInversor = 0;
 
         boolean[] inversion={false,false,false};
 
