@@ -209,17 +209,17 @@ public class Main {
                             if (buscaNombreUsuario(listaUsuariosGestor, usuario)!=-1){
                                 int posicion= buscaNombreUsuario(listaUsuariosGestor, usuario);
                                 System.out.println(listaUsuariosGestor[posicion]);
-                                if(bloqueoInversor[posicion]){
+                                if(bloqueoGestor[posicion]){
                                     System.out.print(" - Bloqueado\n");
                                     System.out.println("¿Desea desbloquear a este usuario? (si/no)");
                                     String respuesta= s.nextLine().toLowerCase();
-                                    if (respuesta.equals("si")) bloqueoInversor[posicion]=false;
+                                    if (respuesta.equals("si")) bloqueoGestor[posicion]=false;
 
                                 }else{
                                     System.out.print(" - Desbloqueado\n");
                                     System.out.println("¿Desea bloquear a este usuario? (si/no)");
                                     String respuesta= s.nextLine().toLowerCase();
-                                    if (respuesta.equals("si")) bloqueoInversor[posicion]=true;
+                                    if (respuesta.equals("si")) bloqueoGestor[posicion]=true;
                                 }
 
                             }else if(buscaNombreUsuario(listaUsuariosInversor,usuario)!=-1){
