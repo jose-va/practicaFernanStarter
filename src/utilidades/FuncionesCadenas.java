@@ -33,7 +33,7 @@ public class FuncionesCadenas {
 
     public static int buscaInversion(int[] id) {
         for (int i=0; i< id.length; i++){
-            if (id[i].equals(nombre)) return i;
+            if (id[i].) return i;
         }
         return -1;
     }

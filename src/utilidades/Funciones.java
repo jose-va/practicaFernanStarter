@@ -324,7 +324,7 @@ public class Funciones {
      * @return Detiene la ejecución de la función y devuelve los valores que ha ingresado el usuario al main
      */
 
-    public static int crearInversion(int[] id, String[] nombreProyecto, int[] cantidad, int[] AportacionInversor, int[] saldoTotal, boolean[] inversion, int[] cantidadAportada, int[] inversiones) {
+    public static int crearInversion(int[] id, String[] listaUsuarios, String usuario, String[] nombreProyecto, int[] cantidad, int[] AportacionInversor, int[] saldoTotal, boolean[] inversion, int[] cantidadAportada, int[] inversiones) {
         Scanner s = new Scanner(System.in);
         int seleccionInversor = 0;
         do {
@@ -338,25 +338,32 @@ public class Funciones {
                 System.out.println("Debe de introducir la opción correspondiente correcta");
             }
         }while (seleccionInversor < 0 || seleccionInversor > 10);
-        switch (seleccionInversor) {
-            do {
-                System.out.println("La cantidad necesaria de este proyecto es de " + cantidad[seleccionInversor] + "€");
-                System.out.println("¿Que cantidad desea aportar?");
-                AportacionInversor[seleccionInversor] = s.nextInt();
-                if (AportacionInversor[seleccionInversor] > saldoTotal[buscaNombreUsuario(listaUsuarios, usuario)]) {
-                    System.out.println("No dispone de saldo suficiente para realizar la aportación.");
-                    System.out.println("Su saldo es de: " + saldoTotal + "€");
-                } else {
-                    inversion[seleccionInversor] = true;
-                    saldoTotal -= cantidadAportada[buscaNombreUsuario()];
-                    cantidadAportada[seleccionInversor] += cantidadAportada[seleccionInversor];
-                    inversiones[buscaNombreUsuario()]++;
-                    id[inversiones[buscaNombreUsuario()]]=seleccionInversor;
-                    System.out.println("¡¡¡Gracias por aportar su parte!!!");
-                }
-            } while (seleccionInversor < 0 || seleccionInversor > 20);
+        do {
+            System.out.println("La cantidad necesaria de este proyecto es de " + cantidad[seleccionInversor] + "€");
+            System.out.println("¿Que cantidad desea aportar?");
+            AportacionInversor[seleccionInversor] = s.nextInt();
+            if (AportacionInversor[seleccionInversor] > saldoTotal[buscaNombreUsuario(listaUsuarios, usuario)]) {
+                System.out.println("No dispone de saldo suficiente para realizar la aportación.");
+                System.out.println("Su saldo es de: " + saldoTotal + "€");
+            } else {
+                inversion[seleccionInversor] = true;
+                saldoTotal[buscaNombreUsuario(listaUsuarios, usuario)] -= cantidadAportada[buscaNombreUsuario(listaUsuarios, usuario)];
+                cantidadAportada[seleccionInversor] += cantidadAportada[seleccionInversor];
+                inversiones[buscaNombreUsuario(listaUsuarios, usuario)]++;
+                id[buscaNombreUsuario(listaUsuarios, usuario)] = seleccionInversor;
+                System.out.println("¡¡¡Gracias por aportar su parte!!!");
+            }
+        } while (seleccionInversor < 0 || seleccionInversor > 20);
+        return crearInversion(id, nombreProyecto, listaUsuarios, usuario, cantidad, AportacionInversor, saldoTotal, inversion, cantidadAportada, inversiones);
+    }
+
+
+    public static int consultaInversion(int[] id, String[] listaUsuarios, String usuario, String[] nombreProyecto, int[] AportacionInversor, int[] inversiones){
+        for (int i = 0; i < inversiones[buscaNombreUsuario(listaUsuarios, usuario)]; i++) {
+            System.out.println("Inversion - "+);
         }
-        return crearInversion(id, nombreProyecto, cantidad, AportacionInversor, saldoTotal, inversion, cantidadAportada, inversiones);
+
+        return ();
     }
 
 

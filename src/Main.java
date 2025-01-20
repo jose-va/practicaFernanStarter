@@ -148,21 +148,17 @@ public class Main {
                                             }
                                         } while (!respuesta.equals("s") || !respuesta.equals("n"));
                                         if (respuesta.equals("s")) {
-                                            crearInversion(id, nombreProyecto, cantidad, AportacionInversor, saldoTotal, inversion, cantidadAportada, inversiones);
+                                            crearInversion(id, nombreProyecto, listaUsuarios, usuario, cantidad, AportacionInversor, saldoTotal, inversion, cantidadAportada, inversiones);
                                             break;
                                         }
                                     } else if (inversiones[buscaNombreUsuario()] > 0) {
                                         System.out.println("*****Consulta de inversiones*****");
-                                        for (int x = 0; x < id.length; x++) {
-
-                                        }
+                                        consultaInversion()
                                         }
                                     }
                                     break;
                                 case 3:
                                     System.out.println("Salir. Redirigiendo al menú del inversor.");
-                                    break;
-                            }
                             break;
                         case 2:
                             consultaDetalladaProyecto( nombreProyecto, categoria, cantidad, cantidadAportada, descripcionProyecto, fechaApertura, fechaCierre,
