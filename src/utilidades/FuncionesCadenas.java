@@ -29,6 +29,17 @@ public class FuncionesCadenas {
         else return false;
     }
 
+
+
+    public static int buscaInversion(int[] id) {
+        for (int i=0; i< id.length; i++){
+            if (id[i].equals(nombre)) return i;
+        }
+        return -1;
+    }
+
+
+
     public static int buscaNombreProyecto(String []nombreProyecto, String nombre) {
         for (int i=0; i<nombreProyecto.length; i++){
             if (nombreProyecto[i].toLowerCase().equals(nombre)) return i;
